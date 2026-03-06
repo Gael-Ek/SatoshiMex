@@ -8,13 +8,13 @@ class CustomTextField extends StatelessWidget {
   final TextEditingController? controller;
 
   const CustomTextField({
-    Key? key,
+    super.key,
     required this.hintText,
     required this.prefixIcon,
     this.isPassword = false,
     this.suffixIcon,
     this.controller,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
