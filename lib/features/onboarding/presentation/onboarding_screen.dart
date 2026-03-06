@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:satoshimex/core/widgets/app_scaffold.dart';
 import 'package:satoshimex/core/widgets/app_widgets.dart';
 
 class OnboardingScreen extends StatelessWidget {
@@ -7,7 +6,7 @@ class OnboardingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppScaffold(
+    return Scaffold(
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
