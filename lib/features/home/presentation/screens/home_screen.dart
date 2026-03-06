@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:satoshimex/core/config/constants/app_colors.dart';
+import 'package:satoshimex/features/activited/presentation/screens/activited_screen.dart';
 import 'package:satoshimex/features/screens.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -14,9 +15,10 @@ class _HomeScreenState extends State<HomeScreen> {
   int previousIndex = 0;
 
   final List<Widget> screens = const [
+    ActivitedScreen(key: ValueKey('activited')),
+    WalletScreen(key: ValueKey('wallet')),
     RoadmapScreen(key: ValueKey('roadmap')),
     ChatbotScreen(key: ValueKey('chatbot')),
-    WalletScreen(key: ValueKey('wallet')),
     ProfileScreen(key: ValueKey('profile')),
   ];
 
@@ -44,46 +46,55 @@ class _HomeScreenState extends State<HomeScreen> {
         },
         child: screens[currentIndex],
       ),
-      bottomNavigationBar: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          const Divider(
-            color: AppColors.primaryAmber,
-            height: 0,
-            thickness: 0.5,
+      bottomNavigationBar: Container(
+        decoration: const BoxDecoration(
+          border: Border(
+            top: BorderSide(color: AppColors.primaryAmber, width: 0.5),
           ),
-          BottomNavigationBar(
-            currentIndex: currentIndex,
-            onTap: (index) {
-              if (index == currentIndex) return;
-              setState(() {
-                previousIndex = currentIndex;
-                currentIndex = index;
-              });
-            },
-            items: [
-              BottomNavigationBarItem(
-                icon: const Icon(Icons.home),
-                label: "Home",
-              ),
+        ),
+        child: BottomNavigationBar(
+          currentIndex: currentIndex,
+          onTap: (index) {
+            if (index == currentIndex) return;
+            setState(() {
+              previousIndex = currentIndex;
+              currentIndex = index;
+            });
+          },
+          // Aplicamos el diseño circular mediante una función auxiliar
+          items: [
+            _buildNavItem(Icons.auto_graph_rounded, "Actividad", 0),
+            _buildNavItem(Icons.account_balance_wallet_rounded, "Cartera", 1),
+            _buildNavItem(Icons.map_rounded, "Roadmap", 2),
+            _buildNavItem(Icons.forum_rounded, "ChatBot", 3),
+            _buildNavItem(Icons.person_rounded, "Perfil", 4),
+          ],
+        ),
+      ),
+    );
+  }
 
-              BottomNavigationBarItem(
-                icon: const Icon(Icons.chat_bubble_outline),
-                label: "ChatBot",
-              ),
-
-              BottomNavigationBarItem(
-                icon: const Icon(Icons.wallet_sharp),
-                label: "Cartera",
-              ),
-
-              BottomNavigationBarItem(
-                icon: const Icon(Icons.person),
-                label: "Profile",
-              ),
-            ],
-          ),
-        ],
+  BottomNavigationBarItem _buildNavItem(
+    IconData icon,
+    String label,
+    int index,
+  ) {
+    bool isSelected = currentIndex == index;
+    return BottomNavigationBarItem(
+      label: label,
+      icon: AnimatedContainer(
+        duration: const Duration(milliseconds: 200),
+        padding: const EdgeInsets.all(8),
+        decoration: BoxDecoration(
+          color: isSelected ? AppColors.primaryAmber : Colors.transparent,
+          shape: BoxShape.circle,
+        ),
+        child: Icon(
+          icon,
+          color: isSelected
+              ? Colors.white
+              : Colors.grey, // Cambia color si está seleccionado
+        ),
       ),
     );
   }
