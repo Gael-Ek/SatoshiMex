@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:satoshimex/core/config/constants/app_colors.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;
@@ -10,7 +11,7 @@ class CustomButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.blue,
+        backgroundColor: AppColors.blueGray,
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       ),
