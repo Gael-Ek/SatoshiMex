@@ -5,9 +5,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:satoshimex/core/config/constants/app_colors.dart';
 import 'package:satoshimex/core/widgets/app_widgets.dart';
 import 'package:satoshimex/features/onboarding/presentation/providers/onboarding_provider.dart';
-import 'package:satoshimex/features/onboarding/presentation/widgets/chatbot_page.dart';
-import 'package:satoshimex/features/onboarding/presentation/widgets/learn_bitcoin_page.dart';
-import 'package:satoshimex/features/onboarding/presentation/widgets/progress_page.dart';
+import 'package:satoshimex/features/onboarding/presentation/screens/chatbot_page.dart';
+import 'package:satoshimex/features/onboarding/presentation/screens/learn_bitcoin_page.dart';
+import 'package:satoshimex/features/onboarding/presentation/screens/progress_page.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardingScreen extends ConsumerStatefulWidget {
