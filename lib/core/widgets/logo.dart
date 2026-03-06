@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:satoshimex/core/config/constants/app_colors.dart';
 
 class LogoBitcoin extends StatelessWidget {
-  const LogoBitcoin({Key? key}) : super(key: key);
+  const LogoBitcoin({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,20 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:satoshimex/core/config/constants/app_colors.dart';
 import 'package:satoshimex/core/widgets/app_widgets.dart';
+import 'package:satoshimex/features/onboarding/presentation/providers/onboarding_provider.dart';
 import 'package:satoshimex/features/onboarding/presentation/widgets/chatbot_page.dart';
 import 'package:satoshimex/features/onboarding/presentation/widgets/learn_bitcoin_page.dart';
 import 'package:satoshimex/features/onboarding/presentation/widgets/progress_page.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class OnboardingScreen extends StatefulWidget {
+class OnboardingScreen extends ConsumerStatefulWidget {
   const OnboardingScreen({super.key});
 
   @override
-  State<OnboardingScreen> createState() => _OnboardingScreenState();
+  ConsumerState<OnboardingScreen> createState() => _OnboardingScreenState();
 }
 
-class _OnboardingScreenState extends State<OnboardingScreen> {
+class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
   final PageController controller = PageController();
   int currentPage = 0;
 
@@ -44,7 +47,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   }
 
   void completeOnboarding() {
-    // ref.read(onboardingSeenProvider.notifier).completeOnboarding();
+    ref.read(onboardginShowProvider.notifier).completeOnboarding();
   }
 
   @override
@@ -109,7 +112,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   //Verificar si es la ultima pagina
                   if (currentPage == pages.length - 1) ...[
                     //Boto para ir a iniciar sesion
-                    CustomButton(text: 'Registrarse', onPressed: () {}),
+                    CustomButton(
+                      text: 'Registrarse',
+                      onPressed: () {
+                        context.push('/register');
+                      },
+                    ),
                     const SizedBox(height: 16),
                   ],
 
@@ -117,7 +125,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     text: currentPage == pages.length - 1
                         ? "Continuar como invitado"
                         : "Siguiente",
-                    onPressed: nextPage,
+                    onPressed: currentPage == pages.length - 1
+                        ? () {
+                            completeOnboarding();
+                            context.go('/home');
+                          }
+                        : nextPage,
                     isSecondary: currentPage == pages.length - 1,
                   ),
                 ],

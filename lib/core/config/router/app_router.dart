@@ -5,14 +5,19 @@ final GoRouter approuter = GoRouter(
   initialLocation: '/splash',
   routes: [
     GoRoute(path: '/splash', builder: (context, state) => const SplashScreen()),
+
     GoRoute(
       path: '/onboarding',
       builder: (context, state) => const OnboardingScreen(),
     ),
+
     GoRoute(path: '/login', builder: (context, state) => const LoginScreen()),
+
     GoRoute(
       path: '/register',
       builder: (context, state) => const RegisterScreen(),
     ),
+
+    GoRoute(path: '/home', builder: (context, state) => const HomeScreen()),
   ],
 );

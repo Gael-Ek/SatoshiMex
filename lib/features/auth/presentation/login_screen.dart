@@ -3,7 +3,7 @@ import 'package:satoshimex/core/config/constants/app_colors.dart';
 import 'package:satoshimex/core/widgets/app_widgets.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+  const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -120,12 +120,7 @@ class LoginScreen extends StatelessWidget {
                 const SizedBox(height: 32),
 
                 // --- TU WIDGET: BOTÓN DE INICIAR SESIÓN ---
-                CustomButton(
-                  text: 'Iniciar Sesión',
-                  onPressed: () {
-                    print("Botón presionado");
-                  },
-                ),
+                CustomButton(text: 'Iniciar Sesión', onPressed: () {}),
                 const SizedBox(height: 24),
 
                 // --- TEXTO FINAL: REGÍSTRATE ---
