@@ -19,6 +19,7 @@ class AppTheme {
       backgroundColor: AppColors.blueDark,
       selectedItemColor: AppColors.primaryAmber,
       unselectedItemColor: Colors.grey,
+      showUnselectedLabels: true,
       selectedLabelStyle: GoogleFonts.lexend(
         fontSize: 14,
         fontWeight: FontWeight.bold,

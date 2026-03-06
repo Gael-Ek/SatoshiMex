@@ -1,0 +1,93 @@
+{
+  "roadmap_title": "Aprende Bitcoin de 0 a Experto",
+  "units": [
+    {
+      "id": 1,
+      "title": "Introducción a Bitcoin",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Qué es Bitcoin",
+          "sections": [
+            {
+              "type": "explanation",
+              "content": "Bitcoin es una moneda digital descentralizada que permite transferencias sin intermediarios."
+            },
+            {
+              "type": "example",
+              "content": "Por ejemplo, puedes enviar 0.01 BTC a un amigo sin necesidad de un banco."
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "¿Bitcoin tiene un banco central?",
+                  "options": ["Sí", "No"],
+                  "answer": "No"
+                }
+              ]
+            },
+            {
+              "type": "activity",
+              "content": "Busca una wallet gratuita y crea una cuenta de prueba."
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Historia del dinero",
+          "sections": [
+            {
+              "type": "explanation",
+              "content": "Desde el trueque hasta el dinero fiat y finalmente Bitcoin..."
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "¿Qué se usaba antes del dinero?",
+                  "options": ["Trueque", "Criptomonedas"],
+                  "answer": "Trueque"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Blockchain",
+      "lessons": [
+        {
+          "id": 3,
+          "title": "Cómo funciona la blockchain",
+          "sections": [
+            {
+              "type": "explanation",
+              "content": "La blockchain es un registro público que almacena todas las transacciones."
+            },
+            {
+              "type": "example",
+              "content": "Cada bloque contiene un grupo de transacciones verificadas."
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "¿Todos pueden ver la blockchain?",
+                  "options": ["Sí", "No"],
+                  "answer": "Sí"
+                }
+              ]
+            },
+            {
+              "type": "activity",
+              "content": "Simula enviar una transacción en un testnet de Bitcoin."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
