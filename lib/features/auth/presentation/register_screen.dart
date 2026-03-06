@@ -3,7 +3,7 @@ import 'package:satoshimex/core/config/constants/app_colors.dart';
 import 'package:satoshimex/core/widgets/app_widgets.dart'; // Asegúrate de que aquí estén tus widgets personalizados
 
 class RegisterScreen extends StatelessWidget {
-  const RegisterScreen({Key? key}) : super(key: key);
+  const RegisterScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,13 +13,6 @@ class RegisterScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () {
-            // Regresa a la pantalla anterior (Login)
-            Navigator.pop(context);
-          },
-        ),
         title: const Text(
           'Crea tu cuenta',
           style: TextStyle(
@@ -125,7 +118,6 @@ class RegisterScreen extends StatelessWidget {
                   text: 'Registrarse',
                   onPressed: () {
                     // Acción para crear la cuenta
-                    print("Botón de registro presionado");
                   },
                 ),
                 const SizedBox(height: 24),

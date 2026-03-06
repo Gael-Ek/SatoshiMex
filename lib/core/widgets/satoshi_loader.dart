@@ -32,7 +32,7 @@ class SatoshiLoader extends StatelessWidget {
           Text(
             'CARGANDO ECOSISTEMA...',
             style: TextStyle(
-              color: Colors.white.withOpacity(0.5),
+              color: Colors.white.withValues(alpha: .5),
               fontSize: 10,
               letterSpacing: 1.5,
             ),
