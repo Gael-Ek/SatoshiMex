@@ -34,3 +34,9 @@ export 'wallet/presentation/screens/wallet_intro_page_three.dart';
 export 'wallet/presentation/screens/wallet_setup_page_one.dart';
 export 'wallet/presentation/screens/wallet_setup_page_two.dart';
 export 'wallet/presentation/screens/wallet_setup_page_three.dart';
+
+//panalla de billetera_Dashboard
+export 'wallet/presentation/screens/wallet_dashboard_screen.dart';
+
+//pantalla de billetera_recibir
+export 'wallet/presentation/screens/wallet_receive_screen.dart';
