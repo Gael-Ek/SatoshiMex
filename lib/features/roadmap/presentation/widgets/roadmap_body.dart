@@ -67,26 +67,39 @@ class RoadmapBody extends ConsumerWidget {
         CustomScrollView(
           physics: const BouncingScrollPhysics(),
           slivers: [
-            SliverPadding(
-              padding: const EdgeInsets.symmetric(vertical: 32),
-              sliver: SliverList(
-                delegate: SliverChildBuilderDelegate((context, index) {
-                  final node = nodes[index];
-                  if (node.isHeader) return UnitHeaderTile(unit: node.unit!);
+            SliverList(
+              delegate: SliverChildBuilderDelegate((context, index) {
+                final node = nodes[index];
+                if (node.isHeader) {
+                  return Column(
+                    children: [
+                      // Un pequeño espacio extra arriba de cada unidad (excepto la primera)
+                      if (index != 0) const SizedBox(height: 32),
+                      UnitHeaderTile(unit: node.unit!),
+                      const SizedBox(
+                        height: 16,
+                      ), // Espacio entre el título y la primera lección
+                    ],
+                  );
+                }
 
-                  final lessonIndex =
-                      nodes.take(index + 1).where((n) => !n.isHeader).length -
-                      1;
-                  const zigzag = [0.65, 0.35, 0.5, 0.2, 0.8];
+                final lessonIndex =
+                    nodes.take(index + 1).where((n) => !n.isHeader).length - 1;
+                const zigzag = [0.65, 0.35, 0.5, 0.2, 0.8];
 
-                  return LessonNodeTile(
+                return Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 24,
+                    vertical: 8,
+                  ),
+                  child: LessonNodeTile(
                     node: node,
                     xFactor: zigzag[lessonIndex % zigzag.length],
                     isActive: index == activeIndex,
                     roadmap: roadmap,
-                  );
-                }, childCount: nodes.length),
-              ),
+                  ),
+                );
+              }, childCount: nodes.length),
             ),
             const SliverToBoxAdapter(child: SizedBox(height: 100)),
           ],

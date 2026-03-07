@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 // Importamos el archivo de barril para tener acceso a tus nuevos widgets
 import 'package:satoshimex/core/widgets/app_widgets.dart';
 import 'package:satoshimex/features/onboarding/presentation/providers/onboarding_provider.dart';
+import 'package:satoshimex/features/roadmap/presentation/providers/roadmap_providers.dart';
 
 class SplashScreen extends ConsumerStatefulWidget {
   const SplashScreen({super.key});
@@ -20,8 +21,9 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
   }
 
   Future<void> _checkOnboarding() async {
-    await Future.delayed(const Duration(seconds: 3));
+    ref.read(getRoadmapProvider.future);
 
+    await Future.delayed(const Duration(seconds: 3));
     final onboardingCompleted = await ref.read(onboardginShowProvider.future);
 
     if (!mounted) return;

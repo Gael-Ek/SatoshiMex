@@ -12,11 +12,17 @@
           "sections": [
             {
               "type": "explanation",
-              "content": "Bitcoin es una moneda digital descentralizada que permite transferencias sin intermediarios."
+              "title": "¿Qué es Bitcoin?",
+              "subtitle": "Una moneda digital sin intermediarios",
+              "image_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuCF5fjI08f4rTlNCeKAjxc2zfkWb69M9C3UpoFsT0D95pBM1q9z9f_U5HFKdmDF3-T5UofN1bVAMLMTc6WnVWzaF65s2avVk3d7pePQlEZn0zpFxahEw5qWigXcslltwd1Tzt6Y4G28SSPOOLQ8RUdkXvKynRxwvWR8xO61PUbX1AyyClUwArbXaLYcQtvQSuFsArHur0O-aTo032p9vMthLSpEjEiyTVz_OT5Sz23lCPuqGbbsP_O9vjjbGpMZbvdtUFHTFIjbWmU",
+              "content": "Bitcoin es una moneda digital descentralizada creada en 2009 por una persona o grupo bajo el seudónimo de Satoshi Nakamoto. Permite realizar transferencias de valor entre personas en cualquier parte del mundo sin necesidad de bancos ni intermediarios."
             },
             {
               "type": "example",
-              "content": "Por ejemplo, puedes enviar 0.01 BTC a un amigo sin necesidad de un banco."
+              "title": "Enviar Bitcoin a un amigo",
+              "subtitle": "Transferencia rápida y sin comisiones altas",
+              "image_url": "https://imgs.search.brave.com/Ddytkl4v62TR93bNpS2D7FFlP9DXPAK3nKI7B-2ZKsU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wMjAv/ODQwLzIzMS9zbWFs/bC9tYW4tYW5kLXdv/bWFuLXRyYW5zZmVy/LWJpdGNvaW4tdXNp/bmctYXBwbGljYXRp/b24tb24tc21hcnRw/aG9uZS1wZW9wbGUt/bWluZS13b3JrLXdp/dGgtY3J5cHRvY3Vy/cmVuY3ktb24tc3Rv/Y2stZXhjaGFuZ2Ut/bWFya2V0LW9uLWNl/bGxwaG9uZS1jcnlw/dG8tdmlydHVhbC1t/b25leS1mbGF0LWls/bHVzdHJhdGlvbi12/ZWN0b3IuanBn",
+              "content": "Supongamos que quieres enviar 0.01 BTC a un amigo que vive en otro país. Con Bitcoin, solo necesitas su dirección de billetera digital. La transacción se verifica en la blockchain y llega en minutos, sin comisiones bancarias elevadas ni intermediarios que puedan bloquear la operación."
             },
             {
               "type": "quiz",
@@ -24,7 +30,8 @@
                 {
                   "q": "¿Bitcoin tiene un banco central?",
                   "options": ["Sí", "No"],
-                  "answer": "No"
+                  "answer": "No",
+                  "feedback": "Bitcoin es descentralizado y no tiene un banco central."
                 }
               ]
             }
@@ -36,7 +43,16 @@
           "sections": [
             {
               "type": "explanation",
-              "content": "Desde el trueque hasta el dinero fiat y finalmente Bitcoin..."
+              "title": "¿Cómo ha evolucionado el dinero?",
+              "subtitle": "Desde el trueque hasta las criptomonedas",
+              "content": "El dinero ha pasado por diversas etapas a lo largo de la historia. Inicialmente existió el trueque, donde se intercambiaban bienes y servicios directamente. Más tarde surgieron las monedas metálicas y billetes respaldados por gobiernos, conocidas como dinero fiat. Con la llegada de la era digital, se crearon las criptomonedas como Bitcoin, que permiten transferencias directas entre personas sin necesidad de bancos, con un registro público seguro y transparente mediante blockchain."
+            },
+            {
+              "type": "example",
+              "title": "Comparación de métodos de intercambio",
+              "subtitle": "De trueque a dinero digital",
+              "image_url": "https://www.example.com/evolution-money.png",
+              "content": "Antes, para conseguir harina necesitabas ofrecer leche a alguien que la necesitara (trueque). Luego, usabas monedas o billetes (dinero fiat) y ahora puedes enviar Bitcoin digitalmente a cualquier persona en el mundo con tu móvil, mostrando cómo ha evolucionado la facilidad de intercambio."
             },
             {
               "type": "quiz",
@@ -44,7 +60,8 @@
                 {
                   "q": "¿Qué se usaba antes del dinero?",
                   "options": ["Trueque", "Criptomonedas"],
-                  "answer": "Trueque"
+                  "answer": "Trueque",
+                  "feedback": "Antes del dinero se utilizaba el trueque para intercambiar bienes."
                 }
               ]
             }
@@ -62,11 +79,16 @@
           "sections": [
             {
               "type": "explanation",
-              "content": "La blockchain es un registro público que almacena todas las transacciones."
+              "title": "¿Qué es la blockchain?",
+              "subtitle": "Un registro público de transacciones",
+              "content": "La blockchain es una tecnología que funciona como un libro de contabilidad digital distribuido y público. Cada transacción realizada con Bitcoin u otras criptomonedas se agrupa en bloques que se validan mediante nodos de la red. Una vez validados, los bloques se enlazan de manera cronológica formando la cadena de bloques. Esto garantiza que las transacciones sean inmutables, transparentes y seguras, y que cualquier persona pueda verificar la información sin depender de intermediarios centrales."
             },
             {
               "type": "example",
-              "content": "Cada bloque contiene un grupo de transacciones verificadas."
+              "title": "Estructura de un bloque",
+              "subtitle": "Cómo se asegura la cadena de bloques",
+              "image_url": "https://www.example.com/blockchain-block.png",
+              "content": "Cada bloque contiene un conjunto de transacciones verificadas, un timestamp y un enlace al bloque anterior. Esto asegura que nadie pueda alterar información sin que toda la red lo detecte, manteniendo la seguridad y la integridad de la blockchain."
             },
             {
               "type": "quiz",
@@ -74,7 +96,8 @@
                 {
                   "q": "¿Todos pueden ver la blockchain?",
                   "options": ["Sí", "No"],
-                  "answer": "Sí"
+                  "answer": "Sí",
+                  "feedback": "La blockchain es pública y cualquier persona puede consultarla."
                 }
               ]
             }

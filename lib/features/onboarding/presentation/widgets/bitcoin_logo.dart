@@ -25,7 +25,6 @@ class BitcoinLogo extends StatelessWidget {
             ),
           ),
 
-          ///Glow / resplandor
           /// Glow / resplandor
           Container(
             width: 180,
