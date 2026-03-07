@@ -43,6 +43,7 @@ dependencies:
   riverpod_annotation: ^4.0.2
   shared_preferences: ^2.5.4
   animations: ^2.1.1
+  http: ^1.6.0
 
 dev_dependencies:
   flutter_test:
