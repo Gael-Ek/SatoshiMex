@@ -14,7 +14,7 @@ class _HomeScreenState extends State<HomeScreen> {
   int currentIndex = 2; // Iniciamos en el Roadmap
   int previousIndex = 0;
 
-  final List<Widget> screens = const [
+  late List<Widget> screens = [
     ActivitedScreen(key: ValueKey('activited')),
     WalletScreen(key: ValueKey('wallet')),
     RoadmapScreen(key: ValueKey('roadmap')),
@@ -23,12 +23,33 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
 
   @override
+  void initState() {
+    super.initState();
+
+    screens = [
+      ActivitedScreen(
+        key: const ValueKey('activited'),
+        onNavigate: (index) {
+          setState(() {
+            previousIndex = currentIndex;
+            currentIndex = index;
+          });
+        },
+      ),
+      const WalletScreen(key: ValueKey('wallet')),
+      const RoadmapScreen(key: ValueKey('roadmap')),
+      const ChatbotScreen(key: ValueKey('chatbot')),
+      const ProfileScreen(key: ValueKey('profile')),
+    ];
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: AnimatedSwitcher(
-        duration: const Duration(milliseconds: 250),
-        switchInCurve: Curves.easeOut,
-        switchOutCurve: Curves.easeIn,
+        duration: const Duration(milliseconds: 350),
+        switchInCurve: Curves.easeOutCubic,
+        switchOutCurve: Curves.easeInCubic,
         transitionBuilder: (child, animation) {
           final isForward = currentIndex > previousIndex;
 
@@ -44,7 +65,10 @@ class _HomeScreenState extends State<HomeScreen> {
             child: FadeTransition(opacity: animation, child: child),
           );
         },
-        child: screens[currentIndex],
+        child: KeyedSubtree(
+          key: ValueKey(currentIndex),
+          child: screens[currentIndex],
+        ),
       ),
       bottomNavigationBar: Container(
         decoration: const BoxDecoration(

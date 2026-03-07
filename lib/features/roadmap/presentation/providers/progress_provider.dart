@@ -1,6 +1,7 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:satoshimex/core/providers/providers.dart';
 import 'package:satoshimex/core/utils/roadmap/generate_progress.dart';
+import 'package:satoshimex/features/roadmap/presentation/providers/streak_provider.dart';
 import 'package:satoshimex/shared/models/models.dart';
 
 import 'states/roadmap_states.dart';
@@ -31,6 +32,13 @@ class ProgressNotifier extends _$ProgressNotifier {
 
   // Marca una sección como completada
   void completeSection(int unitId, int lessonId, int sectionIndex) {
+    final unit = state.firstWhere((u) => u.unitId == unitId);
+    final lesson = unit.lessons.firstWhere((l) => l.lessonId == lessonId);
+
+    final wasCompleted = lesson.completed;
+
+    final isLastSection = sectionIndex == lesson.sections.length - 1;
+
     state = [
       for (final unit in state)
         if (unit.unitId == unitId)
@@ -54,7 +62,23 @@ class ProgressNotifier extends _$ProgressNotifier {
         else
           unit,
     ];
+
     _persist();
+
+    if (isLastSection && !wasCompleted) {
+      completeLesson(unitId, lessonId);
+    }
+  }
+
+  Future<void> completeLesson(int unitId, int lessonId) async {
+    // 🔥 actualizar racha
+    await ref.read(streakProvider.notifier).updateStreak();
+
+    // aquí luego puedes agregar:
+    // addXP()
+    // unlockAchievement()
+
+    await _persist();
   }
 
   Future<void> _persist() async {

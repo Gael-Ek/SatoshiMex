@@ -12,3 +12,6 @@ export 'package:satoshimex/shared/models/roadmap/unit.dart';
 
 //Modelo del roadmap
 export 'package:satoshimex/shared/models/roadmap/roadmap.dart';
+
+//Modelo de la racha
+export 'package:satoshimex/shared/models/roadmap/streak.dart';
