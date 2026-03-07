@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter/rendering.dart';
 import 'package:http/http.dart' as http;
 
 class AuthService {
@@ -21,11 +22,11 @@ class AuthService {
         nombreUsuarioLogueado = username;
         return data['message'];
       } else {
-        print('Error en el login: ${response.statusCode}');
+        debugPrint('Error en el login: ${response.statusCode}');
         return null;
       }
     } catch (e) {
-      print('Error en la conexión: $e');
+      debugPrint('Error en la conexión: $e');
       return null;
     }
   }
@@ -51,11 +52,11 @@ class AuthService {
       if (response.statusCode == 201) {
         return true; // Registro exitoso
       } else {
-        print('Error en el registro: ${response.statusCode}');
+        debugPrint('Error en el registro: ${response.statusCode}');
         return false;
       }
     } catch (e) {
-      print('Error en la conexión: $e');
+      debugPrint('Error en la conexión: $e');
       return false;
     }
   }

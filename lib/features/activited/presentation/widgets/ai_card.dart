@@ -19,7 +19,7 @@ class ActivityAiCard extends StatelessWidget {
           padding: const EdgeInsets.all(18),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
-            border: Border.all(color: Colors.white.withOpacity(0.08)),
+            border: Border.all(color: Colors.white.withValues(alpha: .08)),
           ),
           child: Row(
             children: [
@@ -27,7 +27,7 @@ class ActivityAiCard extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
-                  color: AppColors.primaryAmber.withOpacity(.2),
+                  color: AppColors.primaryAmber.withValues(alpha: .2),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Icon(
