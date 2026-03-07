@@ -1,14 +1,73 @@
 import 'package:flutter/material.dart';
 import 'package:satoshimex/core/config/constants/app_colors.dart';
 import 'package:satoshimex/core/widgets/app_widgets.dart';
+import 'package:satoshimex/features/auth/services/auth_service.dart';
+import 'package:go_router/go_router.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:satoshimex/features/onboarding/presentation/providers/onboarding_provider.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends ConsumerStatefulWidget {
   const LoginScreen({super.key});
+
+  @override
+  ConsumerState<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends ConsumerState<LoginScreen> {
+  final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
+  bool _isLoading = false;
+
+  @override
+  void dispose() {
+    _usernameController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+
+  Future<void> _handleLogin() async {
+    if (_usernameController.text.trim().isEmpty ||
+        _passwordController.text.trim().isEmpty) {
+      _showSnackBar('Por favor, llena todos los campos', isError: true);
+      return;
+    }
+
+    setState(() {
+      _isLoading = true;
+    });
+
+    final token = await AuthService.login(
+      _usernameController.text.trim(),
+      _passwordController.text.trim(),
+    );
+
+    if (!mounted) return;
+
+    setState(() {
+      _isLoading = false;
+    });
+
+    if (token != null) {
+      ref.read(onboardginShowProvider.notifier).completeOnboarding();
+      context.go('/home');
+    } else {
+      _showSnackBar('Usuario o contraseña incorrectos', isError: true);
+    }
+  }
+
+  void _showSnackBar(String message, {bool isError = false}) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(message),
+        backgroundColor: isError ? Colors.redAccent : AppColors.slateBlueGray,
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // 1. FONDO DE LA PANTALLA
       backgroundColor: AppColors.blueDark,
       body: SafeArea(
         child: Center(
@@ -21,11 +80,9 @@ class LoginScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                // --- LOGO BITCOIN ---
                 const LogoBitcoin(),
                 const SizedBox(height: 16),
 
-                // --- TEXTO: SATOSHIMX ---
                 Text(
                   'SATOSHIMX',
                   textAlign: TextAlign.center,
@@ -38,7 +95,6 @@ class LoginScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
 
-                // --- TÍTULO PRINCIPAL ---
                 Text(
                   'Bienvenido de\nnuevo',
                   textAlign: TextAlign.center,
@@ -51,7 +107,6 @@ class LoginScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 12),
 
-                // --- SUBTÍTULO ---
                 Text(
                   'Continúa tu viaje en el mundo de BitCoin',
                   textAlign: TextAlign.center,
@@ -61,6 +116,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 40),
+
                 Text(
                   'Nombre de usuario',
                   style: TextStyle(
@@ -71,33 +127,31 @@ class LoginScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
 
-                // --- TU WIDGET: CAMPO DE USUARIO ---
-                const CustomTextField(
+                // ASIGNAMOS EL CONTROLADOR
+                CustomTextField(
                   hintText: 'Nombre de usuario',
                   prefixIcon: Icons.person_outline,
+                  controller: _usernameController,
                 ),
                 const SizedBox(height: 24),
 
-                // --- ETIQUETAS: CONTRASEÑA Y OLVIDÓ CONTRASEÑA ---
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       'Contraseña',
                       style: TextStyle(
-                        color: AppColors.white, // Color blanco
+                        color: AppColors.white,
                         fontSize: 14,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
                     GestureDetector(
-                      onTap: () {
-                        // Acción para recuperar contraseña
-                      },
+                      onTap: () {},
                       child: Text(
                         '¿Olvidaste tu contraseña?',
                         style: TextStyle(
-                          color: AppColors.primaryAmber, // Color naranja/dorado
+                          color: AppColors.primaryAmber,
                           fontSize: 12,
                           fontWeight: FontWeight.w600,
                         ),
@@ -107,11 +161,11 @@ class LoginScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
 
-                // --- TU WIDGET: CAMPO DE CONTRASEÑA ---
                 CustomTextField(
                   hintText: '••••••••',
                   prefixIcon: Icons.lock_outline,
                   isPassword: true,
+                  controller: _passwordController,
                   suffixIcon: Icon(
                     Icons.visibility_off_outlined,
                     color: AppColors.slateBlueGray,
@@ -119,11 +173,18 @@ class LoginScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 32),
 
-                // --- TU WIDGET: BOTÓN DE INICIAR SESIÓN ---
-                CustomButton(text: 'Iniciar Sesión', onPressed: () {}),
+                _isLoading
+                    ? const Center(
+                        child: CircularProgressIndicator(
+                          color: AppColors.primaryAmber,
+                        ),
+                      )
+                    : CustomButton(
+                        text: 'Iniciar Sesión',
+                        onPressed: _handleLogin,
+                      ),
                 const SizedBox(height: 24),
 
-                // --- TEXTO FINAL: REGÍSTRATE ---
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -136,7 +197,7 @@ class LoginScreen extends StatelessWidget {
                     ),
                     GestureDetector(
                       onTap: () {
-                        // Navegar a la pantalla de registro
+                        context.push('/register');
                       },
                       child: Text(
                         'Regístrate gratis',
