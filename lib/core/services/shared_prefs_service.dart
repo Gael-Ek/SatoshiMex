@@ -41,4 +41,22 @@ class SharedPreferencesService {
   Future<void> clearProgress(int roadmapId) async {
     await prefs.remove(_progressKey(roadmapId));
   }
+
+  // ── Racha diaria ───────────────────────────────────
+
+  static const _streakKey = "user_streak";
+
+  Future<void> saveStreak(Map<String, dynamic> streakJson) async {
+    await prefs.setString(_streakKey, jsonEncode(streakJson));
+  }
+
+  Map<String, dynamic>? loadStreak() {
+    final raw = prefs.getString(_streakKey);
+    if (raw == null) return null;
+    return jsonDecode(raw) as Map<String, dynamic>;
+  }
+
+  Future<void> clearStreak() async {
+    await prefs.remove(_streakKey);
+  }
 }

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:satoshimex/core/config/constants/app_colors.dart';
 import 'package:satoshimex/features/roadmap/presentation/providers/roadmap_providers.dart';
+import 'package:satoshimex/features/roadmap/presentation/providers/streak_provider.dart';
 import 'package:satoshimex/features/roadmap/presentation/widgets/roadmap_body.dart';
 import 'package:satoshimex/features/roadmap/presentation/widgets/unit_progress_disk.dart';
 
@@ -11,6 +13,7 @@ class RoadmapScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final roadmapAsync = ref.watch(getRoadmapProvider);
+    final streak = ref.watch(streakProvider);
 
     // Unificamos el estado de carga para toda la pantalla
     return roadmapAsync.when(
@@ -29,11 +32,19 @@ class RoadmapScreen extends ConsumerWidget {
         ),
       ),
       data: (roadmap) => Scaffold(
-        // Ahora el AppBar y el Body tienen acceso directo a 'roadmap'
         appBar: AppBar(
-          // Quitamos el title por defecto si UnitProgressDisk ya ocupa el espacio
-          title: UnitProgressDisk(roadmap: roadmap),
+          title: Text(
+            'Aprende Bitcoin',
+            style: GoogleFonts.lexend(color: Colors.white),
+          ),
           centerTitle: true,
+          bottom: PreferredSize(
+            preferredSize: const Size.fromHeight(60),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              child: UnitProgressDisk(roadmap: roadmap, streak: streak.current),
+            ),
+          ),
         ),
         body: RoadmapBody(roadmap: roadmap),
       ),

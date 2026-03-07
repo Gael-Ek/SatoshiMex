@@ -2,8 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class AuthService {
-  static const String baseUrl =
-      'https://brittany-pasquilic-adria.ngrok-free.dev/api';
+  static const String baseUrl = 'https://zara-nonheroical-heath.ngrok-free.dev';
 
   static String? nombreUsuarioLogueado;
 

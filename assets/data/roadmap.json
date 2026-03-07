@@ -5,6 +5,7 @@
     {
       "id": 1,
       "title": "Introducción a Bitcoin",
+      "image_unit_url": "https://imgs.search.brave.com/DDNbTH3BDUiSln2FPc2S0MXkfuc4emNT4PXHo3l74zY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/Yml0Y29pbi5jb20v/c3RhdGljLzhiYzlj/NmQ3NmJiYzgwZWQw/OTY2Zjk5NWIwMTk4/OWM3L3doYXQtaXMt/Yml0Y29pbl9uZXcu/c3Zn",
       "lessons": [
         {
           "id": 1,
@@ -40,6 +41,7 @@
         {
           "id": 2,
           "title": "Historia del dinero",
+
           "sections": [
             {
               "type": "explanation",
@@ -72,6 +74,7 @@
     {
       "id": 2,
       "title": "Blockchain",
+      "image_unit_url": "https://imgs.search.brave.com/z6mXjNbGhLXdD58eAszuXZ-0xyrASjFRTh7Y3wrGE5Q/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTI5/NzQ2NTc5Mi9waG90/by9iaXRjb2luLW5l/dHdvcmstY29uY2Vw/dC1vbi1kaWdpdGFs/LXNjcmVlbi5qcGc_/cz02MTJ4NjEyJnc9/MCZrPTIwJmM9aG9G/bUxsbzlaUTlmTldR/dm93OGlrRHBXZXFo/RWEyQTlSN1NJaDNQ/ZzNCRT0",
       "lessons": [
         {
           "id": 3,

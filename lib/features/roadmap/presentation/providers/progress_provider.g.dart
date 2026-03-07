@@ -58,7 +58,7 @@ final class ProgressNotifierProvider
   }
 }
 
-String _$progressNotifierHash() => r'7c15aa0a9f6f7b6aee920ccc6116a01fa3a030d5';
+String _$progressNotifierHash() => r'21e4ba74a447d9df906b6098a90c4b15323797d6';
 
 final class ProgressNotifierFamily extends $Family
     with

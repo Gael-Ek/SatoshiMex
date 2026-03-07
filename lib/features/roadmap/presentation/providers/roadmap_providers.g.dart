@@ -26,7 +26,7 @@ final class GetRoadmapProvider
         argument: null,
         retry: null,
         name: r'getRoadmapProvider',
-        isAutoDispose: true,
+        isAutoDispose: false,
         dependencies: null,
         $allTransitiveDependencies: null,
       );
@@ -46,4 +46,4 @@ final class GetRoadmapProvider
   }
 }
 
-String _$getRoadmapHash() => r'b620ec95f576358155ae0c13b4bebadb410a9eb4';
+String _$getRoadmapHash() => r'1000419d9d72cd92a1765fc140ff18157e3d4c04';

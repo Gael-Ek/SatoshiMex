@@ -18,6 +18,7 @@ class AppTheme {
       foregroundColor: Colors.white,
       systemOverlayStyle: SystemUiOverlayStyle.light,
       elevation: 0,
+      scrolledUnderElevation: 0,
     ),
 
     //Tema para el bottom navigation bar

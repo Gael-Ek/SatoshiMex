@@ -65,7 +65,7 @@ class RoadmapBody extends ConsumerWidget {
           ),
         ),
         CustomScrollView(
-          physics: const BouncingScrollPhysics(),
+          physics: const ClampingScrollPhysics(),
           slivers: [
             SliverList(
               delegate: SliverChildBuilderDelegate((context, index) {
