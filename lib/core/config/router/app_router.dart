@@ -60,5 +60,14 @@ final GoRouter approuter = GoRouter(
       path: '/wallet-setup-3',
       builder: (context, state) => const WalletSetupPageThree(),
     ),
+
+    GoRoute(
+      path: '/wallet-dashboard',
+      builder: (context, state) => const WalletDashboardScreen(),
+    ),
+    GoRoute(
+      path: '/wallet-receive',
+      builder: (context, state) => const WalletReceiveScreen(),
+    ),
   ],
 );

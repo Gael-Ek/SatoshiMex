@@ -175,7 +175,7 @@ class _WalletScreenState extends State<WalletScreen> {
                         text: 'Ir a mi billetera',
                         icon: Icons.arrow_forward,
                         onPressed: () {
-                          // Aún no tenemos esta pantalla, por ahora solo imprimimos en consola
+                          context.push('/wallet-dashboard');
                           debugPrint(
                             'Redirigiendo al Dashboard de Gráficas y Transacciones...',
                           );
