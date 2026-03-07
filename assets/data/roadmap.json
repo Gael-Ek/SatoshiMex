@@ -1,4 +1,5 @@
 {
+  "id": 1,
   "roadmap_title": "Aprende Bitcoin de 0 a Experto",
   "units": [
     {
@@ -26,10 +27,6 @@
                   "answer": "No"
                 }
               ]
-            },
-            {
-              "type": "activity",
-              "content": "Busca una wallet gratuita y crea una cuenta de prueba."
             }
           ]
         },
@@ -80,10 +77,6 @@
                   "answer": "Sí"
                 }
               ]
-            },
-            {
-              "type": "activity",
-              "content": "Simula enviar una transacción en un testnet de Bitcoin."
             }
           ]
         }

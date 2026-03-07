@@ -1,7 +1,9 @@
 import 'package:satoshimex/shared/models/models.dart';
 
+enum SectionType { explanation, example, quiz }
+
 class SectionModel {
-  final String type;
+  final SectionType type;
   final String? content;
   final List<QuestionsModel>? questions;
 
@@ -10,7 +12,7 @@ class SectionModel {
   //pasar de json a modelo
   factory SectionModel.fromJson(Map<String, dynamic> json) {
     return SectionModel(
-      type: json['type'],
+      type: SectionType.values.byName(json['type']),
       content: json['content'],
       questions: json['questions'] != null
           ? List<QuestionsModel>.from(

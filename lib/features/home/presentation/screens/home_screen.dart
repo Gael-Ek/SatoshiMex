@@ -11,7 +11,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int currentIndex = 0;
+  int currentIndex = 2; // Iniciamos en el Roadmap
   int previousIndex = 0;
 
   final List<Widget> screens = const [
