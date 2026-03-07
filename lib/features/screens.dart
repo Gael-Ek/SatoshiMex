@@ -20,7 +20,17 @@ export 'roadmap/presentation/screens/roadmap_screen.dart';
 export 'chatbot/presentation/screens/chatbot_screen.dart';
 
 //Pantalla de cartera
-export 'wallet/presentation/wallet_screen.dart';
+export 'wallet/presentation/screens/wallet_screen.dart';
 
 //Pantalla de perfil
 export 'profile/presentation/screens/profile_screen.dart';
+
+//pantalla de billetera_Presentacion_inicial
+export 'wallet/presentation/screens/wallet_intro_page_one.dart';
+export 'wallet/presentation/screens/wallet_intro_page_two.dart';
+export 'wallet/presentation/screens/wallet_intro_page_three.dart';
+
+//pantalla de billetera_Presentacion_crear cuenta
+export 'wallet/presentation/screens/wallet_setup_page_one.dart';
+export 'wallet/presentation/screens/wallet_setup_page_two.dart';
+export 'wallet/presentation/screens/wallet_setup_page_three.dart';
