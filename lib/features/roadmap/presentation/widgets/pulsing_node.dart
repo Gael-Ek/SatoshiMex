@@ -43,7 +43,7 @@ class _PulsingNodeState extends State<PulsingNode>
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: _pulse,
-      builder: (_, __) => Transform.scale(
+      builder: (_, _) => Transform.scale(
         scale: _pulse.value,
         child: Container(
           width: widget.size,
@@ -53,7 +53,7 @@ class _PulsingNodeState extends State<PulsingNode>
             color: widget.color,
             boxShadow: [
               BoxShadow(
-                color: widget.color.withOpacity(0.5),
+                color: widget.color.withValues(alpha: 0.5),
                 blurRadius: 20 * _pulse.value,
                 spreadRadius: 4 * _pulse.value,
               ),

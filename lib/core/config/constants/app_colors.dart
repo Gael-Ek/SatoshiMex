@@ -21,5 +21,5 @@ class AppColors {
   static const Color blueDark = Color(0xFF091521);
   static const Color white = Color.fromARGB(255, 255, 255, 255);
 
-  static const Color Red = Color.fromARGB(255, 255, 0, 0);
+  static const Color red = Color.fromARGB(255, 255, 0, 0);
 }
