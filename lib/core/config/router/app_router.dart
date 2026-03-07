@@ -35,5 +35,30 @@ final GoRouter approuter = GoRouter(
         );
       },
     ),
+
+    GoRoute(
+      path: '/wallet-intro-1',
+      builder: (context, state) => const WalletIntroPageOne(),
+    ),
+    GoRoute(
+      path: '/wallet-intro-2',
+      builder: (context, state) => const WalletIntroPageTwo(),
+    ),
+    GoRoute(
+      path: '/wallet-intro-3',
+      builder: (context, state) => const WalletIntroPageThree(),
+    ),
+    GoRoute(
+      path: '/wallet-setup-1',
+      builder: (context, state) => const WalletSetupPageOne(),
+    ),
+    GoRoute(
+      path: '/wallet-setup-2',
+      builder: (context, state) => const WalletSetupPageTwo(),
+    ),
+    GoRoute(
+      path: '/wallet-setup-3',
+      builder: (context, state) => const WalletSetupPageThree(),
+    ),
   ],
 );
