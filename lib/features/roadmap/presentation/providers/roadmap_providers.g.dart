@@ -46,4 +46,4 @@ final class GetRoadmapProvider
   }
 }
 
-String _$getRoadmapHash() => r'46d9e1658e39b44f2d706bec57ac83151ee00fee';
+String _$getRoadmapHash() => r'b620ec95f576358155ae0c13b4bebadb410a9eb4';
