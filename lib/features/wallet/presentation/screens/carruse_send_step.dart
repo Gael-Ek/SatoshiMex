@@ -1,12 +1,16 @@
 // carruse_send_step.dart
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:satoshimex/core/widgets/satoshi_button.dart';
 import 'package:satoshimex/features/wallet/presentation/screens/wallet_send_step_four_screen.dart';
 import 'package:satoshimex/features/wallet/presentation/screens/wallet_send_step_one_screen.dart';
 import 'package:satoshimex/features/wallet/presentation/screens/wallet_send_step_three_screen.dart';
 import 'package:satoshimex/features/wallet/presentation/screens/wallet_send_step_two_screen.dart';
+import 'package:satoshimex/features/wallet/presentation/widgets/satoshi_warning_card.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import 'package:satoshimex/core/config/constants/app_colors.dart';
@@ -120,15 +124,27 @@ class _CarruseSendStepState extends ConsumerState<CarruseSendStep> {
 
       if (!mounted) return;
 
-      // Nombre para la pantalla de éxito
       final name = ref
           .read(walletTransaction_Provider.notifier)
           .findRecipientName(_addressController.text.trim());
 
-      context.go(
-        '/wallet-send-success',
-        extra: {'recipientName': name, 'amount': _amount, 'feeSats': _feeSats},
+      // ── Modal fullscreen en lugar de nueva ruta ──
+      await showModalBottomSheet(
+        context: context,
+        isScrollControlled: true,
+        isDismissible: false,
+        enableDrag: false,
+        backgroundColor: Colors.transparent,
+        builder: (_) => _SendSuccessModal(
+          recipientName: name,
+          amount: _amount,
+          feeSats: _feeSats,
+        ),
       );
+
+      // Cuando cierra el modal, regresamos al dashboard (que ya está en stack)
+      if (!mounted) return;
+      context.pop();
     } finally {
       if (mounted) setState(() => _isSending = false);
     }
@@ -148,7 +164,7 @@ class _CarruseSendStepState extends ConsumerState<CarruseSendStep> {
     return 'Continuar';
   }
 
-  // ── UI ──────────────────────────────────────────────────
+  // ── UI
 
   @override
   Widget build(BuildContext context) {
@@ -341,6 +357,264 @@ class _CarruseSendStepState extends ConsumerState<CarruseSendStep> {
           ],
         ),
       ),
+    );
+  }
+}
+
+class _SendSuccessModal extends StatefulWidget {
+  final String recipientName;
+  final double amount;
+  final int feeSats;
+
+  const _SendSuccessModal({
+    required this.recipientName,
+    required this.amount,
+    required this.feeSats,
+  });
+
+  @override
+  State<_SendSuccessModal> createState() => _SendSuccessModalState();
+}
+
+class _SendSuccessModalState extends State<_SendSuccessModal> {
+  late final String _txId;
+
+  @override
+  void initState() {
+    super.initState();
+    _txId = _generateTxId();
+  }
+
+  String _generateTxId() {
+    const chars = 'abcdef0123456789';
+    final rng = Random();
+    String part(int n) => String.fromCharCodes(
+      Iterable.generate(n, (_) => chars.codeUnitAt(rng.nextInt(chars.length))),
+    );
+    return '${part(4)}...${part(4)}';
+  }
+
+  String _fmtBtc(double b) =>
+      b.toStringAsFixed(8).replaceAll(RegExp(r'([.]*0+)(?!.*\d)'), '');
+
+  String _fmtSats(int s) {
+    final reg = RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))');
+    return s.toString().replaceAllMapped(reg, (m) => '${m[1]},');
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final feeLabel = widget.feeSats == 2000
+        ? 'Baja'
+        : widget.feeSats == 4200
+        ? 'Media'
+        : 'Alta';
+
+    return PopScope(
+      canPop: false,
+      child: Container(
+        height: MediaQuery.of(context).size.height * 0.92,
+        decoration: const BoxDecoration(
+          color: AppColors.blueDark,
+          borderRadius: BorderRadius.vertical(top: Radius.circular(28)),
+        ),
+        child: Column(
+          children: [
+            // Handle
+            const SizedBox(height: 12),
+            Container(
+              width: 40,
+              height: 4,
+              decoration: BoxDecoration(
+                color: AppColors.blueGray.withValues(alpha: .4),
+                borderRadius: BorderRadius.circular(2),
+              ),
+            ),
+            Expanded(
+              child: SingleChildScrollView(
+                physics: const BouncingScrollPhysics(),
+                padding: const EdgeInsets.symmetric(horizontal: 24),
+                child: Column(
+                  children: [
+                    const SizedBox(height: 32),
+
+                    // Icono éxito
+                    Container(
+                      width: 90,
+                      height: 90,
+                      decoration: BoxDecoration(
+                        color: AppColors.primaryAmber,
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                          BoxShadow(
+                            color: AppColors.primaryAmber.withValues(
+                              alpha: .35,
+                            ),
+                            blurRadius: 24,
+                            spreadRadius: 4,
+                          ),
+                        ],
+                      ),
+                      child: const Icon(
+                        Icons.check_rounded,
+                        color: AppColors.blueDark,
+                        size: 52,
+                      ),
+                    ),
+                    const SizedBox(height: 20),
+
+                    const Text(
+                      '¡Transacción Enviada!',
+                      style: TextStyle(
+                        color: AppColors.white,
+                        fontSize: 26,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(height: 6),
+                    const Text(
+                      'Tu simulación fue procesada con éxito.',
+                      style: TextStyle(color: AppColors.blueGray, fontSize: 13),
+                    ),
+                    const SizedBox(height: 28),
+
+                    // Detalles
+                    Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        color: AppColors.deepNavy,
+                        borderRadius: BorderRadius.circular(16),
+                        border: Border.all(
+                          color: AppColors.blueGray.withValues(alpha: .15),
+                        ),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            'DETALLES',
+                            style: TextStyle(
+                              color: AppColors.primaryAmber,
+                              fontSize: 11,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 1.2,
+                            ),
+                          ),
+                          const SizedBox(height: 16),
+                          _DetailRow('Destinatario', widget.recipientName),
+                          const SizedBox(height: 12),
+                          _DetailRow(
+                            'Monto',
+                            '${_fmtBtc(widget.amount)} BTC',
+                            valueColor: AppColors.primaryAmber,
+                          ),
+                          const SizedBox(height: 12),
+                          _DetailRow(
+                            'Comisión',
+                            '$feeLabel · ${_fmtSats(widget.feeSats)} SATS',
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.symmetric(vertical: 14),
+                            child: Divider(
+                              color: AppColors.charcoalBlack,
+                              thickness: 1,
+                            ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              const Text(
+                                'ID Transacción',
+                                style: TextStyle(
+                                  color: AppColors.blueGray,
+                                  fontSize: 13,
+                                ),
+                              ),
+                              Row(
+                                children: [
+                                  Text(
+                                    _txId,
+                                    style: const TextStyle(
+                                      color: AppColors.white,
+                                      fontSize: 13,
+                                      letterSpacing: 1.0,
+                                    ),
+                                  ),
+                                  const SizedBox(width: 6),
+                                  const Icon(
+                                    Icons.copy_rounded,
+                                    color: AppColors.primaryAmber,
+                                    size: 15,
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+
+                    // Warning educativo
+                    const SatoshiWarningCard(
+                      title: 'Confirmación de mineros',
+                      description:
+                          'En Bitcoin real, tu transacción esperaría confirmación de los mineros. Tarda ~10-20 min según la comisión.',
+                    ),
+                    const SizedBox(height: 28),
+
+                    // Botón cerrar
+                    SatoshiButton(
+                      text: 'Volver a la Billetera',
+                      onPressed: () => Navigator.of(context).pop(),
+                    ),
+                    const SizedBox(height: 12),
+                    const Text(
+                      'Simulación segura. No se ha enviado dinero real.',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: AppColors.blueGray,
+                        fontSize: 11,
+                        fontStyle: FontStyle.italic,
+                      ),
+                    ),
+                    const SizedBox(height: 24),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _DetailRow extends StatelessWidget {
+  final String label;
+  final String value;
+  final Color valueColor;
+  const _DetailRow(this.label, this.value, {this.valueColor = AppColors.white});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          label,
+          style: const TextStyle(color: AppColors.blueGray, fontSize: 13),
+        ),
+        Text(
+          value,
+          style: TextStyle(
+            color: valueColor,
+            fontSize: 13,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ],
     );
   }
 }

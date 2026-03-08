@@ -69,7 +69,7 @@ class AchievementSection extends StatelessWidget {
               ),
             ),
             InkWell(
-              onTap: () => print("Ver todos los logros"),
+              onTap: () {},
               child: Text(
                 "Ver todos",
                 style: TextStyle(color: AppColors.primaryAmber, fontSize: 12),

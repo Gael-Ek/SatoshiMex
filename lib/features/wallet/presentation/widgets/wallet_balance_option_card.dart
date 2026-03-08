@@ -45,7 +45,7 @@ class WalletBalanceOptionCard extends StatelessWidget {
               width: 48,
               height: 48,
               decoration: BoxDecoration(
-                color: AppColors.charcoalBlack.withOpacity(0.5),
+                color: AppColors.charcoalBlack.withValues(alpha: .5),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Icon(
@@ -112,7 +112,7 @@ class WalletBalanceOptionCard extends StatelessWidget {
               isSelected ? Icons.check_circle : Icons.circle_outlined,
               color: isSelected
                   ? AppColors.primaryAmber
-                  : AppColors.blueGray.withOpacity(0.3),
+                  : AppColors.blueGray.withValues(alpha: .3),
             ),
           ],
         ),

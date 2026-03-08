@@ -29,7 +29,7 @@ class RecipientNameContent extends StatelessWidget {
         const Text(
           'Para enviar Bitcoin necesitas la dirección de la persona que recibirá la transacción.',
           style: TextStyle(
-            color: AppColors.blueGray,
+            color: AppColors.slateBlueGray,
             fontSize: 16,
             height: 1.4,
           ),
@@ -58,7 +58,7 @@ class RecipientNameContent extends StatelessWidget {
               const Text(
                 'Apodo o nombre',
                 style: TextStyle(
-                  color: AppColors.blueGray,
+                  color: AppColors.slateBlueGray,
                   fontSize: 12,
                   fontWeight: FontWeight.bold,
                 ),
@@ -88,7 +88,7 @@ class RecipientNameContent extends StatelessWidget {
               const Text(
                 'SUGERENCIAS',
                 style: TextStyle(
-                  color: AppColors.blueGray,
+                  color: AppColors.slateBlueGray,
                   fontSize: 12,
                   fontWeight: FontWeight.bold,
                   letterSpacing: 1.0,
@@ -137,7 +137,7 @@ class RecipientNameContent extends StatelessWidget {
                         'Este nombre solo te ayudará a identificar a quién envías Bitcoin.',
                         style: TextStyle(
                           color: AppColors.blueGray,
-                          fontSize: 13,
+                          fontSize: 15,
                           height: 1.4,
                         ),
                       ),
@@ -220,7 +220,10 @@ class _SuggestionAvatar extends StatelessWidget {
           const SizedBox(height: 8),
           Text(
             name,
-            style: const TextStyle(color: AppColors.blueGray, fontSize: 12),
+            style: const TextStyle(
+              color: AppColors.slateBlueGray,
+              fontSize: 14,
+            ),
           ),
         ],
       ),

@@ -34,7 +34,7 @@ final class WalletTransaction_Provider
 }
 
 String _$walletTransaction_Hash() =>
-    r'a5f5ac2afaea9461a383315150ed970adce552b3';
+    r'd5c93e39e7b95ad086c4dbde91ae985b507316ba';
 
 abstract class _$WalletTransaction_ extends $AsyncNotifier<WalletState> {
   FutureOr<WalletState> build();

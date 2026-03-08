@@ -16,11 +16,9 @@ class SatoshiWarningCard extends StatelessWidget {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
-        color: AppColors.charcoalBlack.withOpacity(
-          0.5,
-        ), // Fondo ligeramente oscuro
+        color: AppColors.charcoalBlack,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: AppColors.blueGray.withOpacity(0.1)),
+        border: Border.all(color: AppColors.blueGray.withValues(alpha: 0.1)),
       ),
       // ClipRRect asegura que la línea naranja no se salga de las curvas
       child: ClipRRect(

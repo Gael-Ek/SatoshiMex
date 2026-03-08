@@ -60,7 +60,7 @@ class WalletBalanceCard extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.all(6),
                     decoration: BoxDecoration(
-                      color: AppColors.charcoalBlack.withOpacity(0.5),
+                      color: AppColors.charcoalBlack.withValues(alpha: .5),
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: const Icon(
@@ -73,7 +73,7 @@ class WalletBalanceCard extends StatelessWidget {
                   const Text(
                     'Saldo de práctica',
                     style: TextStyle(
-                      color: AppColors.blueGray,
+                      color: AppColors.slateBlueGray,
                       fontSize: 14,
                       fontWeight: FontWeight.w500,
                     ),
@@ -110,7 +110,10 @@ class WalletBalanceCard extends StatelessWidget {
               // 2. ¡AQUÍ PINTAMOS LOS RESULTADOS MATEMÁTICOS REALES!
               Text(
                 '≈ \$${_formatWithCommas(mxnValue)} MXN | ≈ ${_formatWithCommas(satsValue)} SATS',
-                style: const TextStyle(color: AppColors.blueGray, fontSize: 14),
+                style: const TextStyle(
+                  color: AppColors.slateBlueGray,
+                  fontSize: 14,
+                ),
               ),
               const SizedBox(height: 24),
 
@@ -118,7 +121,7 @@ class WalletBalanceCard extends StatelessWidget {
                 width: double.infinity,
                 padding: const EdgeInsets.symmetric(vertical: 10),
                 decoration: BoxDecoration(
-                  color: AppColors.charcoalBlack.withOpacity(0.5),
+                  color: AppColors.charcoalBlack.withValues(alpha: .5),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Row(
@@ -126,14 +129,14 @@ class WalletBalanceCard extends StatelessWidget {
                   children: [
                     Icon(
                       Icons.info_outline,
-                      color: AppColors.primaryAmber.withOpacity(0.8),
+                      color: AppColors.primaryAmber.withValues(alpha: .8),
                       size: 14,
                     ),
                     const SizedBox(width: 8),
                     Text(
                       'SALDO EDUCATIVO. NO ES DINERO REAL.',
                       style: TextStyle(
-                        color: AppColors.primaryAmber.withOpacity(0.8),
+                        color: AppColors.primaryAmber.withValues(alpha: .8),
                         fontSize: 10,
                         fontWeight: FontWeight.bold,
                         letterSpacing: 0.5,

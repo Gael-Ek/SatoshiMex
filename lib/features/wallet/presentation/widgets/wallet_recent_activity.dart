@@ -82,7 +82,9 @@ class _WalletRecentActivityState extends State<WalletRecentActivity> {
             decoration: BoxDecoration(
               color: AppColors.deepNavy,
               borderRadius: BorderRadius.circular(16),
-              border: Border.all(color: AppColors.blueGray.withOpacity(0.1)),
+              border: Border.all(
+                color: AppColors.blueGray.withValues(alpha: .1),
+              ),
             ),
             child: const Center(
               child: Text(
@@ -113,7 +115,7 @@ class _WalletRecentActivityState extends State<WalletRecentActivity> {
       decoration: BoxDecoration(
         color: AppColors.deepNavy,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: AppColors.blueGray.withOpacity(0.1)),
+        border: Border.all(color: AppColors.blueGray.withValues(alpha: .1)),
       ),
       child: Row(
         children: [
