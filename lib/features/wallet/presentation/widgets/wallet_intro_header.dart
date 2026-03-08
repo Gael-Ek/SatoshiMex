@@ -9,10 +9,6 @@ class WalletIntroHeader extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        IconButton(
-          icon: const Icon(Icons.close, color: AppColors.white),
-          onPressed: () => Navigator.pop(context),
-        ),
         const Text(
           'SATOSHIMX',
           style: TextStyle(

@@ -59,4 +59,52 @@ class SharedPreferencesService {
   Future<void> clearStreak() async {
     await prefs.remove(_streakKey);
   }
+
+  //------- Billetera ------- //
+
+  //Para saber si ya vio el tutorial
+  static const _walletIntroKey = "has_seen_wallet_intro";
+
+  //Para saber si ya creo la billetera
+  static const _hasWalletKey = "has_wallet_created";
+
+  //para guardar los datos de la tarjeta
+  static const _walletDataKey = "wallet_data";
+
+  //Funcion para guardar la tarjeta
+  Future<void> saveWalletData(String balance, String address) async {
+    await prefs.setString(
+      _walletDataKey,
+      jsonEncode({'balance': balance, 'address': address}),
+    );
+  }
+
+  //Funcion para cargar la tarjeta
+  Map<String, dynamic>? loadWalletData() {
+    final raw = prefs.getString(_walletDataKey);
+    if (raw == null) return null;
+    return jsonDecode(raw) as Map<String, dynamic>;
+  }
+
+  // Verifica si el usuario ya vio el tutorial
+  bool hasSeenWalletIntro() => prefs.getBool(_walletIntroKey) ?? false;
+
+  // Establece que el usuario vio el tutorial
+  Future<void> setWalletIntroSeen() async {
+    await prefs.setBool(_walletIntroKey, true);
+  }
+
+  Future<void> clearIntro() async {
+    await prefs.remove(_walletIntroKey);
+    await prefs.remove(_walletDataKey);
+    await prefs.remove(_hasWalletKey);
+  }
+
+  // Verifica si el usuario ya creo la billetera
+  bool isWalletCreated() => prefs.getBool(_hasWalletKey) ?? false;
+
+  // Establece que el usuario creo la billetera
+  Future<void> setWalletCreated(bool value) async {
+    await prefs.setBool(_hasWalletKey, value);
+  }
 }

@@ -1,6 +1,8 @@
 import 'package:go_router/go_router.dart';
 import 'package:satoshimex/features/roadmap/presentation/screens/lesson_screen.dart';
 import 'package:satoshimex/features/screens.dart';
+import 'package:satoshimex/features/wallet/presentation/screens/onboarding_wallet.dart';
+import 'package:satoshimex/features/wallet/presentation/screens/wallet_create.dart';
 
 import '../../../shared/models/models.dart';
 
@@ -37,37 +39,13 @@ final GoRouter approuter = GoRouter(
     ),
 
     GoRoute(
-      path: '/wallet-intro-1',
-      builder: (context, state) => const WalletIntroPageOne(),
-    ),
-    GoRoute(
-      path: '/wallet-intro-2',
-      builder: (context, state) => const WalletIntroPageTwo(),
-    ),
-    GoRoute(
-      path: '/wallet-intro-3',
-      builder: (context, state) => const WalletIntroPageThree(),
-    ),
-    GoRoute(
-      path: '/wallet-setup-1',
-      builder: (context, state) => const WalletSetupPageOne(),
-    ),
-    GoRoute(
-      path: '/wallet-setup-2',
-      builder: (context, state) => const WalletSetupPageTwo(),
-    ),
-    GoRoute(
-      path: '/wallet-setup-3',
-      builder: (context, state) => const WalletSetupPageThree(),
+      path: '/onboarding_wallet',
+      builder: (context, state) => const OnboardingWallet(),
     ),
 
     GoRoute(
-      path: '/wallet-dashboard',
-      builder: (context, state) => const WalletDashboardScreen(),
-    ),
-    GoRoute(
-      path: '/wallet-receive',
-      builder: (context, state) => const WalletReceiveScreen(),
+      path: '/create_wallet',
+      builder: (context, state) => const WalletCreate(),
     ),
   ],
 );
