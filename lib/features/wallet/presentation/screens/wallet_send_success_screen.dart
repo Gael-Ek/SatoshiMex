@@ -110,7 +110,7 @@ class _WalletSendSuccessScreenState extends State<WalletSendSuccessScreen> {
                     shape: BoxShape.circle,
                     boxShadow: [
                       BoxShadow(
-                        color: AppColors.primaryAmber.withOpacity(0.3),
+                        color: AppColors.primaryAmber.withValues(alpha: .3),
                         blurRadius: 20,
                         spreadRadius: 5,
                       ),
@@ -227,7 +227,7 @@ class _WalletSendSuccessScreenState extends State<WalletSendSuccessScreen> {
                   text: 'Volver a la Billetera',
                   onPressed: () {
                     // Limpiamos el historial de navegación y vamos al Dashboard
-                    context.go('/wallet-dashboard');
+                    context.go('/wallet_dashboard');
                   },
                 ),
                 const SizedBox(height: 16),

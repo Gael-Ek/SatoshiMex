@@ -113,7 +113,7 @@ class SuggestionCard extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(bottom: 12),
       child: Material(
-        color: const Color(0xFF16202B),
+        color: AppColors.deepNavy,
         borderRadius: BorderRadius.circular(12),
         child: InkWell(
           borderRadius: BorderRadius.circular(12),
@@ -258,7 +258,6 @@ class ChatInputArea extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(left: 16, right: 16, top: 12, bottom: 24),
-      decoration: BoxDecoration(color: AppColors.blueDark),
       child: Row(
         children: [
           Expanded(
@@ -269,7 +268,7 @@ class ChatInputArea extends StatelessWidget {
                 hintText: 'Escribe un mensaje...',
                 hintStyle: TextStyle(color: Colors.grey.shade500, fontSize: 14),
                 filled: true,
-                fillColor: const Color(0xFF16202B),
+                fillColor: AppColors.deepNavy,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(30),
                   borderSide: BorderSide.none,
@@ -317,16 +316,14 @@ class UserMessageBubble extends StatelessWidget {
               padding: const EdgeInsets.all(16),
               margin: const EdgeInsets.only(left: 40),
               decoration: BoxDecoration(
-                color: AppColors.primaryAmber.withValues(alpha: 0.1),
+                color: AppColors.deepNavy,
                 borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(16),
                   bottomLeft: Radius.circular(16),
                   bottomRight: Radius.circular(16),
                   topRight: Radius.circular(4),
                 ),
-                border: Border.all(
-                  color: AppColors.primaryAmber.withValues(alpha: 0.3),
-                ),
+                border: Border.all(color: AppColors.slateBlueGray),
               ),
               child: Text(
                 text,
@@ -342,11 +339,9 @@ class UserMessageBubble extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
-              color: AppColors.blueDark,
+              color: AppColors.deepNavy,
               borderRadius: BorderRadius.circular(8),
-              border: Border.all(
-                color: AppColors.primaryAmber.withValues(alpha: 0.5),
-              ),
+              border: Border.all(color: AppColors.slateBlueGray),
             ),
             child: const Icon(
               Icons.person,

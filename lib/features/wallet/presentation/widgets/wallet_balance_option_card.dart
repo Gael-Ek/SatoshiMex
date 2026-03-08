@@ -32,7 +32,9 @@ class WalletBalanceOptionCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
           border: Border.all(
             // Si está seleccionado, borde naranja. Si no, borde transparente.
-            color: isSelected ? AppColors.primaryAmber : Colors.transparent,
+            color: isSelected
+                ? AppColors.primaryAmber
+                : AppColors.slateBlueGray,
             width: 1.5,
           ),
         ),

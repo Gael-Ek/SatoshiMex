@@ -1,6 +1,8 @@
 import 'package:go_router/go_router.dart';
 import 'package:satoshimex/features/roadmap/presentation/screens/lesson_screen.dart';
 import 'package:satoshimex/features/screens.dart';
+import 'package:satoshimex/features/wallet/presentation/screens/carousel_add_recipient.dart';
+import 'package:satoshimex/features/wallet/presentation/screens/carruse_send_step.dart';
 import 'package:satoshimex/features/wallet/presentation/screens/onboarding_wallet.dart';
 import 'package:satoshimex/features/wallet/presentation/screens/wallet_create.dart';
 
@@ -49,62 +51,19 @@ final GoRouter approuter = GoRouter(
     ),
 
     GoRoute(
-      path: '/add-recipient-1',
-      builder: (context, state) => const WalletAddRecipientNameScreen(),
-    ),
-    GoRoute(
-      path: '/add-recipient-2',
-      builder: (context, state) {
-        // Atrapamos el nombre que mandó la pantalla 1
-        final name = state.extra as String? ?? 'Desconocido';
-        return WalletAddRecipientAddressScreen(recipientName: name);
-      },
+      path: '/wallet_dashboard',
+      builder: (context, state) => const WalletDashboardScreen(),
     ),
 
     GoRoute(
-      path: '/wallet-send-step-1',
-      builder: (context, state) => const WalletSendStepOneScreen(),
+      path: '/add-recipient',
+      builder: (context, state) => const CarouselAddRecipient(),
     ),
 
     GoRoute(
-      path: '/wallet-send-step-2',
-      builder: (context, state) {
-        // Atrapamos la dirección que nos mandó el Paso 1
-        final address = state.extra as String? ?? 'Dirección desconocida';
-        return WalletSendStepTwoScreen(recipientAddress: address);
-      },
+      path: '/wallet-send',
+      builder: (context, state) => const CarruseSendStep(),
     ),
-
-    GoRoute(
-      path: '/wallet-send-step-3',
-      builder: (context, state) {
-        // Atrapamos la mochila que mandó el Paso 2 (un Mapa con datos)
-        final extraData = state.extra as Map<String, dynamic>? ?? {};
-        final address = extraData['address'] as String? ?? 'Desconocida';
-        final amount = extraData['amount'] as double? ?? 0.0;
-
-        return WalletSendStepThreeScreen(
-          recipientAddress: address,
-          amountToSend: amount,
-        );
-      },
-    ),
-
-    GoRoute(
-      path: '/wallet-send-step-4',
-      builder: (context, state) {
-        // Atrapamos la mochila completa
-        final extraData = state.extra as Map<String, dynamic>? ?? {};
-
-        return WalletSendStepFourScreen(
-          address: extraData['address'] as String? ?? '',
-          amount: extraData['amount'] as double? ?? 0.0,
-          feeSats: extraData['feeSats'] as int? ?? 0,
-          totalBtc: extraData['totalBtc'] as double? ?? 0.0,
-        );
-      },
-    ),
-
     GoRoute(
       path: '/wallet-send-success',
       builder: (context, state) {
@@ -115,6 +74,11 @@ final GoRouter approuter = GoRouter(
           feeSats: extraData['feeSats'] as int? ?? 0,
         );
       },
+    ),
+
+    GoRoute(
+      path: '/wallet-receive',
+      builder: (context, state) => const WalletReceiveScreen(),
     ),
   ],
 );

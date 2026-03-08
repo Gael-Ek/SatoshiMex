@@ -125,7 +125,6 @@ class _ChatbotScreenState extends State<ChatbotScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.blueDark,
       appBar: const ChatbotAppBar(),
       body: Column(
         children: [

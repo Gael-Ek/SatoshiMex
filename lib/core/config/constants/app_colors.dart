@@ -6,6 +6,7 @@ class AppColors {
 
   // Dark backgrounds
   static const Color deepNavy = Color(0xFF04233B);
+
   static const Color charcoalBlack = Color(0xFF0E0B0B);
 
   // Browns / earth tones

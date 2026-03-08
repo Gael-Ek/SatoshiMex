@@ -20,9 +20,9 @@ class ProfileHeader extends StatelessWidget {
                 shape: BoxShape.circle,
                 border: Border.all(color: AppColors.primaryAmber, width: 2),
               ),
-              child: const CircleAvatar(
+              child: CircleAvatar(
                 radius: 50,
-                backgroundColor: Color(0xFF16202B),
+                backgroundColor: AppColors.deepNavy,
                 child: Icon(Icons.person, size: 60, color: Colors.white54),
               ),
             ),
@@ -95,7 +95,7 @@ class AchievementSection extends StatelessWidget {
       width: 105,
       height: 100,
       decoration: BoxDecoration(
-        color: const Color(0xFF16202B),
+        color: AppColors.deepNavy,
         borderRadius: BorderRadius.circular(16),
       ),
       child: Column(
@@ -121,7 +121,7 @@ class SettingsSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xFF16202B),
+        color: AppColors.deepNavy,
         borderRadius: BorderRadius.circular(16),
       ),
       child: Column(
@@ -160,7 +160,7 @@ class LogoutTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xFF16202B),
+        color: AppColors.deepNavy,
         borderRadius: BorderRadius.circular(16),
       ),
       // ListTile ya maneja el efecto visual y el tap, no necesitas InkWell extra
@@ -172,7 +172,7 @@ class LogoutTile extends StatelessWidget {
           final bool? confirmar = await showDialog<bool>(
             context: context,
             builder: (context) => AlertDialog(
-              backgroundColor: const Color(0xFF16202B),
+              backgroundColor: AppColors.deepNavy,
               title: const Text(
                 "Cerrar Sesión",
                 style: TextStyle(color: Colors.white),
@@ -198,8 +198,10 @@ class LogoutTile extends StatelessWidget {
           );
 
           // Lógica de cierre: Aquí es donde conectas con tu estado de Auth
-          if (confirmar == true && context.mounted) {
+          if (confirmar == true) {
             await appAuth.logout();
+
+            if (!context.mounted) return;
             context.go('/login');
           }
         },

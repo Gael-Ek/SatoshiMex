@@ -1,88 +1,58 @@
+// send_step2_content.dart
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:satoshimex/core/config/constants/app_colors.dart';
-import 'package:satoshimex/core/widgets/app_widgets.dart';
-import 'package:satoshimex/core/services/bitcoin_api_service.dart';
-
-// ¡NUESTROS LEGOS!
-import 'package:satoshimex/features/wallet/presentation/widgets/wallet_learning_progress.dart';
 import 'package:satoshimex/features/wallet/presentation/widgets/satoshi_data_container.dart';
 import 'package:satoshimex/features/wallet/presentation/widgets/satoshi_warning_card.dart';
+import 'package:satoshimex/features/wallet/presentation/providers/wallet_transaction_provider.dart';
 
-class WalletSendStepTwoScreen extends StatefulWidget {
-  final String recipientAddress;
+class SendStep2Content extends ConsumerStatefulWidget {
+  final TextEditingController amountController;
+  // Notifica cambios de equivalentes al padre si los necesita
+  final ValueChanged<String> onMxnChanged;
+  final ValueChanged<String> onSatsChanged;
 
-  const WalletSendStepTwoScreen({super.key, required this.recipientAddress});
+  const SendStep2Content({
+    super.key,
+    required this.amountController,
+    required this.onMxnChanged,
+    required this.onSatsChanged,
+  });
 
   @override
-  State<WalletSendStepTwoScreen> createState() =>
-      _WalletSendStepTwoScreenState();
+  ConsumerState<SendStep2Content> createState() => _SendStep2ContentState();
 }
 
-class _WalletSendStepTwoScreenState extends State<WalletSendStepTwoScreen> {
-  final TextEditingController _amountController = TextEditingController();
-
-  double _availableBalanceBtc = 0.0;
-  double _currentBtcPriceMxn = 0.0;
-  bool _isLoading = true;
-
+class _SendStep2ContentState extends ConsumerState<SendStep2Content> {
   String _mxnEquivalent = '≈ \$0.00 MXN';
   String _satsEquivalent = '≈ 0 SATS';
-
   double? _selectedPercentage;
 
   @override
   void initState() {
     super.initState();
-    _loadData();
-    _amountController.addListener(_calculateEquivalents);
+    widget.amountController.addListener(_calculateEquivalents);
   }
 
   @override
   void dispose() {
-    _amountController.dispose();
+    widget.amountController.removeListener(_calculateEquivalents);
     super.dispose();
   }
 
-  Future<void> _loadData() async {
-    final prefs = await SharedPreferences.getInstance();
-    final savedBalance = prefs.getString('simulatedBalance') ?? '0.001 BTC';
-
-    final parsedBalance =
-        double.tryParse(savedBalance.replaceAll(' BTC', '').trim()) ?? 0.0;
-    final priceFromApi = await BitcoinApiService.getBitcoinPriceInMXN();
-
-    setState(() {
-      _availableBalanceBtc = parsedBalance;
-      _currentBtcPriceMxn = priceFromApi;
-      _isLoading = false;
-    });
-  }
-
-  String _formatNumber(double number, {bool isCurrency = false}) {
-    RegExp reg = RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))');
-    String mathFunc(Match match) => '${match[1]},';
-    if (isCurrency) {
-      return number.toStringAsFixed(2).replaceAllMapped(reg, mathFunc);
-    }
-    return number.truncate().toString().replaceAllMapped(reg, mathFunc);
-  }
-
   void _calculateEquivalents() {
-    final text = _amountController.text.trim();
+    final walletAsync = ref.read(walletTransaction_Provider);
+    final wallet = walletAsync.value;
+    if (wallet == null) return;
 
+    final text = widget.amountController.text.trim();
+
+    // Desseleccionar porcentaje si el usuario escribe manualmente
     if (_selectedPercentage != null) {
-      final expectedAmount = _availableBalanceBtc * _selectedPercentage!;
-      final expectedStr = expectedAmount
+      final expected = (wallet.balanceBtc * _selectedPercentage!)
           .toStringAsFixed(8)
           .replaceAll(RegExp(r'([.]*0+)(?!.*\d)'), '');
-      if (text != expectedStr) {
-        setState(() {
-          _selectedPercentage = null;
-        });
-      }
+      if (text != expected) setState(() => _selectedPercentage = null);
     }
 
     if (text.isEmpty) {
@@ -93,329 +63,279 @@ class _WalletSendStepTwoScreenState extends State<WalletSendStepTwoScreen> {
       return;
     }
 
-    final double? amountBtc = double.tryParse(text);
-    if (amountBtc != null) {
-      final mxn = amountBtc * _currentBtcPriceMxn;
-      final sats = amountBtc * 100000000;
-
+    final amount = double.tryParse(text);
+    if (amount != null) {
+      final mxn = amount * wallet.btcPriceMxn;
+      final sats = amount * 100000000;
+      final mxnStr = '≈ \$${_fmt(mxn, currency: true)} MXN';
+      final satsStr = '≈ ${_fmt(sats)} SATS';
       setState(() {
-        _mxnEquivalent = '≈ \$${_formatNumber(mxn, isCurrency: true)} MXN';
-        _satsEquivalent = '≈ ${_formatNumber(sats)} SATS';
+        _mxnEquivalent = mxnStr;
+        _satsEquivalent = satsStr;
       });
+      widget.onMxnChanged(mxnStr);
+      widget.onSatsChanged(satsStr);
     }
   }
 
-  void _setPercentage(double percent) {
-    setState(() {
-      _selectedPercentage = percent;
-    });
+  String _fmt(double n, {bool currency = false}) {
+    final reg = RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))');
+    final fn = (Match m) => '${m[1]},';
+    return currency
+        ? n.toStringAsFixed(2).replaceAllMapped(reg, fn)
+        : n.truncate().toString().replaceAllMapped(reg, fn);
+  }
 
-    final amount = _availableBalanceBtc * percent;
-    _amountController.text = amount
+  void _setPercentage(double percent, double balance) {
+    setState(() => _selectedPercentage = percent);
+    widget.amountController.text = (balance * percent)
         .toStringAsFixed(8)
         .replaceAll(RegExp(r'([.]*0+)(?!.*\d)'), '');
   }
 
-  void _validateAndContinue() {
-    final text = _amountController.text.trim();
-    final double? amountToDeduct = double.tryParse(text);
-
-    if (amountToDeduct == null || amountToDeduct <= 0) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Ingresa un monto mayor a 0'),
-          backgroundColor: Colors.red,
-        ),
-      );
-      return;
-    }
-
-    if (amountToDeduct > _availableBalanceBtc) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Fondos insuficientes en tu saldo de práctica'),
-          backgroundColor: Colors.red,
-        ),
-      );
-      return;
-    }
-
-    context.push(
-      '/wallet-send-step-3',
-      extra: {'address': widget.recipientAddress, 'amount': amountToDeduct},
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
-    if (_isLoading) {
-      return const Scaffold(
-        backgroundColor: AppColors.blueDark,
-        body: Center(
-          child: CircularProgressIndicator(color: AppColors.primaryAmber),
-        ),
-      );
-    }
+    final walletAsync = ref.watch(walletTransaction_Provider);
 
-    return Scaffold(
-      backgroundColor: AppColors.blueDark,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: AppColors.white),
-          onPressed: () => context.pop(),
-        ),
-        title: const Text(
-          'Billetera',
-          style: TextStyle(color: AppColors.white, fontWeight: FontWeight.bold),
-        ),
-        centerTitle: true,
+    return walletAsync.when(
+      loading: () => const Center(
+        child: CircularProgressIndicator(color: AppColors.primaryAmber),
       ),
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text(
-                'Simular envío de\nBitcoin',
-                style: TextStyle(
-                  color: AppColors.white,
-                  fontSize: 26,
-                  fontWeight: FontWeight.bold,
-                  height: 1.2,
-                ),
-              ),
-              const SizedBox(height: 16),
-              const WalletLearningProgress(currentStep: 2, totalSteps: 4),
-              const SizedBox(height: 32),
-
-              // ¡CÓDIGO REDUCIDO! Usamos nuestro SatoshiDataContainer
-              SatoshiDataContainer(
-                child: Column(
+      error: (e, _) => Center(
+        child: Text(
+          'Error: $e',
+          style: const TextStyle(color: AppColors.white),
+        ),
+      ),
+      data: (wallet) => Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SatoshiDataContainer(
+            child: Column(
+              children: [
+                // Header
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const Text(
-                          'Monto a enviar',
-                          style: TextStyle(
-                            color: AppColors.white,
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        Row(
-                          children: [
-                            Container(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 10,
-                                vertical: 4,
-                              ),
-                              decoration: BoxDecoration(
-                                color: AppColors.primaryAmber,
-                                borderRadius: BorderRadius.circular(4),
-                              ),
-                              child: const Text(
-                                'BTC',
-                                style: TextStyle(
-                                  color: AppColors.charcoalBlack,
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                            const SizedBox(width: 8),
-                            const Text(
-                              'MXN',
-                              style: TextStyle(
-                                color: AppColors.blueGray,
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            const SizedBox(width: 8),
-                            const Text(
-                              'SATS',
-                              style: TextStyle(
-                                color: AppColors.blueGray,
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 24),
-
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 16,
-                        vertical: 8,
-                      ),
-                      decoration: BoxDecoration(
-                        color: AppColors.charcoalBlack,
-                        borderRadius: BorderRadius.circular(12),
-                        border: Border.all(
-                          color: AppColors.blueGray.withOpacity(0.2),
-                        ),
-                      ),
-                      child: Row(
-                        children: [
-                          Expanded(
-                            child: TextField(
-                              controller: _amountController,
-                              keyboardType:
-                                  const TextInputType.numberWithOptions(
-                                    decimal: true,
-                                  ),
-                              style: const TextStyle(
-                                color: AppColors.white,
-                                fontSize: 32,
-                                fontWeight: FontWeight.bold,
-                              ),
-                              decoration: const InputDecoration(
-                                hintText: '0.00',
-                                hintStyle: TextStyle(color: AppColors.blueGray),
-                                border: InputBorder.none,
-                              ),
-                            ),
-                          ),
-                          const Text(
-                            'BTC',
-                            style: TextStyle(
-                              color: AppColors.blueGray,
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
+                    const Text(
+                      'Monto a enviar',
+                      style: TextStyle(
+                        color: AppColors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
-                    const SizedBox(height: 16),
-
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          _mxnEquivalent,
-                          style: const TextStyle(
-                            color: AppColors.blueGray,
-                            fontSize: 13,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        Text(
-                          _satsEquivalent,
-                          style: const TextStyle(
-                            color: AppColors.blueGray,
-                            fontSize: 13,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ],
-                    ),
-
-                    const Padding(
-                      padding: EdgeInsets.symmetric(vertical: 16),
-                      child: Divider(
-                        color: AppColors.charcoalBlack,
-                        thickness: 2,
-                      ),
-                    ),
-
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const Text(
-                          'Saldo disponible:',
-                          style: TextStyle(
-                            color: AppColors.blueGray,
-                            fontSize: 13,
-                          ),
-                        ),
-                        Text(
-                          '$_availableBalanceBtc BTC',
-                          style: const TextStyle(
-                            color: AppColors.white,
-                            fontSize: 13,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 16),
                     Row(
                       children: [
-                        Expanded(child: _buildPercentageButton('25%', 0.25)),
+                        _CurrencyTag(label: 'BTC', active: true),
                         const SizedBox(width: 8),
-                        Expanded(child: _buildPercentageButton('50%', 0.50)),
+                        _CurrencyTag(label: 'MXN'),
                         const SizedBox(width: 8),
-                        Expanded(child: _buildPercentageButton('100%', 1.0)),
+                        _CurrencyTag(label: 'SATS'),
                       ],
                     ),
                   ],
                 ),
-              ),
-              const SizedBox(height: 24),
+                const SizedBox(height: 24),
 
-              // ¡CÓDIGO REDUCIDO! Usamos SatoshiWarningCard adaptada a modo informativo
-              const SatoshiWarningCard(
-                title: 'Fracciones de Bitcoin',
-                description:
-                    'Puedes enviar una fracción de Bitcoin. Un Bitcoin se divide en 100 millones de Satoshis (SATS).',
-              ),
-
-              const Spacer(),
-
-              SatoshiButton(
-                text: 'Continuar',
-                icon: Icons.arrow_forward_ios,
-                onPressed: _validateAndContinue,
-              ),
-              const SizedBox(height: 16),
-              const Center(
-                child: Text(
-                  'En el siguiente paso elegirás la comisión de red.',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: AppColors.blueGray,
-                    fontSize: 11,
-                    fontStyle: FontStyle.italic,
+                // Input
+                Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 8,
+                  ),
+                  decoration: BoxDecoration(
+                    color: AppColors.charcoalBlack,
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(
+                      color: AppColors.blueGray.withValues(alpha: .2),
+                    ),
+                  ),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: TextField(
+                          controller: widget.amountController,
+                          keyboardType: const TextInputType.numberWithOptions(
+                            decimal: true,
+                          ),
+                          style: const TextStyle(
+                            color: AppColors.white,
+                            fontSize: 32,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          decoration: const InputDecoration(
+                            hintText: '0.00',
+                            hintStyle: TextStyle(color: AppColors.blueGray),
+                            border: InputBorder.none,
+                          ),
+                        ),
+                      ),
+                      const Text(
+                        'BTC',
+                        style: TextStyle(
+                          color: AppColors.blueGray,
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-              ),
-              const SizedBox(height: 24),
-            ],
+                const SizedBox(height: 16),
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      _mxnEquivalent,
+                      style: const TextStyle(
+                        color: AppColors.blueGray,
+                        fontSize: 13,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    Text(
+                      _satsEquivalent,
+                      style: const TextStyle(
+                        color: AppColors.blueGray,
+                        fontSize: 13,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
+                ),
+
+                const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 16),
+                  child: Divider(color: AppColors.charcoalBlack, thickness: 2),
+                ),
+
+                // Balance y porcentajes
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      'Saldo disponible:',
+                      style: TextStyle(color: AppColors.blueGray, fontSize: 13),
+                    ),
+                    Text(
+                      '${wallet.balanceBtc} BTC',
+                      style: const TextStyle(
+                        color: AppColors.white,
+                        fontSize: 13,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 16),
+                Row(
+                  children: [
+                    Expanded(
+                      child: _PctButton(
+                        label: '25%',
+                        selected: _selectedPercentage == 0.25,
+                        onTap: () => _setPercentage(0.25, wallet.balanceBtc),
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    Expanded(
+                      child: _PctButton(
+                        label: '50%',
+                        selected: _selectedPercentage == 0.50,
+                        onTap: () => _setPercentage(0.50, wallet.balanceBtc),
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    Expanded(
+                      child: _PctButton(
+                        label: '100%',
+                        selected: _selectedPercentage == 1.0,
+                        onTap: () => _setPercentage(1.0, wallet.balanceBtc),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
-        ),
+          const SizedBox(height: 24),
+          const SatoshiWarningCard(
+            title: 'Fracciones de Bitcoin',
+            description:
+                'Puedes enviar una fracción de Bitcoin. Un Bitcoin se divide en 100 millones de Satoshis (SATS).',
+          ),
+        ],
       ),
     );
   }
+}
 
-  Widget _buildPercentageButton(String text, double percent) {
-    final isSelected = _selectedPercentage == percent;
+class _CurrencyTag extends StatelessWidget {
+  final String label;
+  final bool active;
+  const _CurrencyTag({required this.label, this.active = false});
 
+  @override
+  Widget build(BuildContext context) {
+    return active
+        ? Container(
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+            decoration: BoxDecoration(
+              color: AppColors.primaryAmber,
+              borderRadius: BorderRadius.circular(4),
+            ),
+            child: Text(
+              label,
+              style: const TextStyle(
+                color: AppColors.charcoalBlack,
+                fontSize: 12,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          )
+        : Text(
+            label,
+            style: const TextStyle(
+              color: AppColors.blueGray,
+              fontSize: 12,
+              fontWeight: FontWeight.bold,
+            ),
+          );
+  }
+}
+
+class _PctButton extends StatelessWidget {
+  final String label;
+  final bool selected;
+  final VoidCallback onTap;
+  const _PctButton({
+    required this.label,
+    required this.selected,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => _setPercentage(percent),
+      onTap: onTap,
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 12),
         decoration: BoxDecoration(
           color: AppColors.charcoalBlack,
           borderRadius: BorderRadius.circular(8),
           border: Border.all(
-            color: isSelected
-                ? AppColors.primaryAmber.withOpacity(0.5)
+            color: selected
+                ? AppColors.primaryAmber.withValues(alpha: .5)
                 : Colors.transparent,
           ),
         ),
         child: Center(
           child: Text(
-            text,
+            label,
             style: TextStyle(
-              color: isSelected ? AppColors.primaryAmber : AppColors.blueGray,
+              color: selected ? AppColors.primaryAmber : AppColors.blueGray,
               fontWeight: FontWeight.bold,
               fontSize: 14,
             ),

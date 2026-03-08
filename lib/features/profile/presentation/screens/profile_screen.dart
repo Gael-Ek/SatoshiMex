@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:satoshimex/core/config/constants/app_colors.dart';
 import 'package:satoshimex/features/profile/presentation/widgets/profile_widgets.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -9,7 +7,6 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF0F172A),
       appBar: _buildAppBar(),
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),

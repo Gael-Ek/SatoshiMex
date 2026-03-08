@@ -107,4 +107,32 @@ class SharedPreferencesService {
   Future<void> setWalletCreated(bool value) async {
     await prefs.setBool(_hasWalletKey, value);
   }
+
+  // ----- Billetera saber si hay un destinatario creado o agregado ---- //
+
+  static const _walletRecipientsKey = 'hascreatedRecipients';
+
+  // Guarda la lista de contactos
+  Future<void> saveWalletRecipients(List<String> recipients) async {
+    await prefs.setStringList(_walletRecipientsKey, recipients);
+  }
+
+  // Carga la lista de contactos
+  List<String> loadWalletRecipients() {
+    return prefs.getStringList(_walletRecipientsKey) ?? [];
+  }
+
+  // Agrega un nuevo contacto
+  Future<void> addWalletRecipient(String recipient) async {
+    final current = loadWalletRecipients();
+    if (!current.contains(recipient)) {
+      current.add(recipient);
+      await saveWalletRecipients(current);
+    }
+  }
+
+  // Borra la lista de contactos
+  Future<void> clearWalletRecipients() async {
+    await prefs.remove(_walletRecipientsKey);
+  }
 }
