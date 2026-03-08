@@ -5,6 +5,7 @@ import 'package:satoshimex/features/auth/services/auth_service.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:satoshimex/features/onboarding/presentation/providers/onboarding_provider.dart';
+import 'package:satoshimex/features/profile/presentation/widgets/profile_widgets.dart';
 
 class LoginScreen extends ConsumerStatefulWidget {
   const LoginScreen({super.key});
@@ -37,6 +38,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
       _isLoading = true;
     });
 
+    final username = _usernameController.text.trim();
     final token = await AuthService.login(
       _usernameController.text.trim(),
       _passwordController.text.trim(),
@@ -49,6 +51,8 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
     });
 
     if (token != null) {
+      await appAuth.login(username);
+
       ref.read(onboardginShowProvider.notifier).completeOnboarding();
       context.go('/home');
     } else {

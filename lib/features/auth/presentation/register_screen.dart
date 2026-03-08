@@ -28,7 +28,6 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
     super.dispose();
   }
 
-  // 3. LA FUNCIÓN QUE SE EJECUTA AL PRESIONAR EL BOTÓN
   Future<void> _handleRegister() async {
     // Validamos que los campos no estén vacíos
     if (_nameController.text.trim().isEmpty ||
@@ -59,7 +58,7 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
     // 5. Procesar respuesta
     if (result == true) {
       ref.read(onboardginShowProvider.notifier).completeOnboarding();
-      context.go('/home');
+      context.go('/login');
     } else {
       // Error: Mostrar mensaje del backend
       _showSnackBar('Error al registrarse', isError: true);
@@ -138,11 +137,10 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
                 CustomTextField(
                   hintText: 'Tu nombre',
                   prefixIcon: Icons.person_outline,
-                  controller: _nameController, // <-- ASIGNAMOS EL CONTROLADOR
+                  controller: _nameController,
                 ),
                 const SizedBox(height: 20),
 
-                // --- CAMPO 2 ---
                 const Text(
                   'Nombre de usuario',
                   style: TextStyle(
@@ -155,12 +153,10 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
                 CustomTextField(
                   hintText: 'Tu nombre de usuario',
                   prefixIcon: Icons.account_circle_outlined,
-                  controller:
-                      _usernameController, // <-- ASIGNAMOS EL CONTROLADOR
+                  controller: _usernameController,
                 ),
                 const SizedBox(height: 20),
 
-                // --- CAMPO 3 ---
                 const Text(
                   'Contraseña',
                   style: TextStyle(
@@ -174,17 +170,13 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
                   hintText: 'Crea una contraseña',
                   prefixIcon: Icons.lock_outline,
                   isPassword: true,
-                  controller:
-                      _passwordController, // <-- ASIGNAMOS EL CONTROLADOR
+                  controller: _passwordController,
                   suffixIcon: Icon(
                     Icons.visibility_off_outlined,
                     color: AppColors.slateBlueGray,
                   ),
                 ),
                 const SizedBox(height: 32),
-
-                // --- BOTÓN REGISTRARSE ---
-                // Si está cargando, mostramos un CircularProgressIndicator, si no, el botón normal
                 _isLoading
                     ? const Center(
                         child: CircularProgressIndicator(
@@ -193,8 +185,7 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
                       )
                     : CustomButton(
                         text: 'Registrarse',
-                        onPressed:
-                            _handleRegister, // <-- LLAMAMOS A LA FUNCIÓN AL PRESIONAR
+                        onPressed: _handleRegister,
                       ),
                 const SizedBox(height: 24),
 
