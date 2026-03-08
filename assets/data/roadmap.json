@@ -629,7 +629,7 @@
     {
       "id": 5,
       "title": "Comprar, Vender y Guardar Bitcoin",
-      "image_unit_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Bitcoin_Euro.jpg/640px-Bitcoin_Euro.jpg",
+      "image_unit_url": "https://public.bnbstatic.com/image/cms/blog/20210409/0a1a7674-76a4-4b7d-a017-7d510ad7045b.png",
       "lessons": [
         {
           "id": 13,
@@ -639,14 +639,14 @@
               "type": "explanation",
               "title": "Dónde y cómo adquirir tu primer Bitcoin",
               "subtitle": "Exchanges, P2P y cajeros automáticos",
-              "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Bitcoin_ATM.jpg/640px-Bitcoin_ATM.jpg",
+              "image_url": "https://http2.mlstatic.com/storage/pog-cm-admin/calm-assets/moneda-bitcoin-con-graficos-atras--d93df7d3.jpg",
               "content": "Existen varias formas de comprar Bitcoin: (1) Exchanges centralizados (CEX) como Coinbase, Binance o Kraken: rápidos, con muchos métodos de pago, pero requieren KYC (verificación de identidad). (2) Exchanges descentralizados (DEX): sin KYC, pero más complejos. (3) P2P (peer-to-peer) como Bisq o Hodl Hodl: compras directamente a otras personas. (4) Cajeros automáticos de Bitcoin: físicos, convenientes, pero con altas comisiones. Para principiantes, los exchanges centralizados son la opción más accesible."
             },
             {
               "type": "example",
               "title": "Comprar Bitcoin en un exchange paso a paso",
               "subtitle": "Tu primera compra de Bitcoin",
-              "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Coinbase_Logo.png/640px-Coinbase_Logo.png",
+              "image_url": "https://www.bitcoin.com/static/7e2e4d9a028a9ac426b67ca8ea0e30eb/how-to-buy-bitcoin_new.png",
               "content": "1. Crea una cuenta en Coinbase/Binance. 2. Verifica tu identidad (KYC: DNI/pasaporte). 3. Añade un método de pago (tarjeta, transferencia bancaria). 4. Compra la cantidad deseada. 5. IMPORTANTE: retira los bitcoins a tu propia wallet no-custodial para tener el control real. Recuerda: los bitcoins en el exchange no son completamente tuyos hasta que los retiras a tu wallet."
             },
             {
@@ -686,7 +686,7 @@
               "type": "explanation",
               "title": "Protege tus Bitcoin",
               "subtitle": "Seed phrase, 2FA y amenazas comunes",
-              "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Trezor_one_bitcoin_hardware_wallet.jpg/480px-Trezor_one_bitcoin_hardware_wallet.jpg",
+              "image_url": "https://assets.bitdegree.org/images/crypto-wallet-security-enable-2fa.jpg",
               "content": "La seguridad en Bitcoin es tu responsabilidad. Las mejores prácticas incluyen: (1) Seed phrase (frase semilla): 12-24 palabras que respaldo tu wallet completa. Escríbela en papel, nunca digitalmente. Guárdala en un lugar seguro. (2) Autenticación en dos factores (2FA) en todos tus exchanges. (3) Nunca compartas tu clave privada o seed phrase con nadie. (4) Desconfía de promesas de altos rendimientos. (5) Verifica siempre las direcciones antes de enviar (los malware pueden cambiarlas al copiar/pegar)."
             },
             {
@@ -740,7 +740,7 @@
     {
       "id": 6,
       "title": "Bitcoin como Activo Financiero",
-      "image_unit_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Bitcoin_price_chart.png/640px-Bitcoin_price_chart.png",
+      "image_unit_url": "https://conecta.tec.mx/sites/default/files/inline-images/bitcoin-fondos-indexados.jpg",
       "lessons": [
         {
           "id": 15,
@@ -750,14 +750,14 @@
               "type": "explanation",
               "title": "¿Es Bitcoin el 'oro digital'?",
               "subtitle": "Escasez, durabilidad y descentralización",
-              "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Gold_and_bitcoin.jpg/640px-Gold_and_bitcoin.jpg",
+              "image_url": "https://elceo.com/wp-content/uploads/2023/07/insuficiencia.jpg",
               "content": "Bitcoin comparte muchas características con el oro: escasez (21M máximo), durabilidad (inmune al deterioro), divisibilidad (hasta 8 decimales), portabilidad (envíable a cualquier lugar en minutos) y verificabilidad (cualquiera puede verificar la autenticidad). Pero supera al oro en portabilidad y verificabilidad. A diferencia del oro, la escasez de Bitcoin es absolutamente verificable y no puede aumentarse. Muchos inversores institucionales lo consideran una cobertura contra la inflación."
             },
             {
               "type": "example",
               "title": "Bitcoin vs Inflación",
               "subtitle": "Por qué algunos lo llaman el seguro contra la devaluación",
-              "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Inflation_chart.png/640px-Inflation_chart.png",
+              "image_url": "https://www.binance.com/bapi/fe/resource/image?image=aHR0cHM6Ly9wdWJsaWMuYm5ic3RhdGljLmNvbS9pbWFnZS9jbXMvYmxvZy8yMDIxMDgyNi9mNGRhYTliMS04ZDU0LTRkNDYtYmNiMS1lMmU5Mzg3MDc0MDYucG5n&w=890&h=500",
               "content": "En países con alta inflación como Argentina, Venezuela o Turquía, muchos ciudadanos han recurrido a Bitcoin para preservar su poder adquisitivo. Mientras sus monedas locales perdían el 50-90% de su valor en años, quienes guardaron Bitcoin mantuvieron o incrementaron su capacidad de compra en el largo plazo. Sin embargo, Bitcoin también tiene alta volatilidad a corto plazo."
             },
             {
@@ -803,7 +803,7 @@
               "type": "explanation",
               "title": "Cómo gestionar la volatilidad de Bitcoin",
               "subtitle": "DCA, HODL y gestión del riesgo",
-              "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Bitcoin_historical_prices.png/640px-Bitcoin_historical_prices.png",
+              "image_url": "https://cdn.prod.website-files.com/65c2a227fbeeb0ab1e4550dd/66957daf655c8ebd70e9f77b_DCA-Blog.png",
               "content": "Bitcoin es conocido por su alta volatilidad. Estrategias comunes: (1) HODL (Hold On for Dear Life): comprar y mantener a largo plazo sin importar las caídas. (2) DCA (Dollar Cost Averaging): comprar una cantidad fija periódicamente (ej: 100€ cada mes) independientemente del precio. Esto promedia el precio de entrada y reduce el riesgo de comprar en el peor momento. (3) Nunca invertir más de lo que puedes permitirte perder. (4) Estudiar los ciclos de mercado: bear market, bull market, acumulación."
             },
             {
@@ -849,7 +849,7 @@
               "type": "explanation",
               "title": "Impuestos y aspectos legales de Bitcoin",
               "subtitle": "Qué debes saber en tu país",
-              "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Taxes_concept.jpg/640px-Taxes_concept.jpg",
+              "image_url": "https://es.coingape.com/wp-content/uploads/2023/02/mexico-criptomonedas-actividad-vulnerable-lavado.jpg",
               "content": "En la mayoría de países, Bitcoin está sujeto a tributación. Las ganancias al vender Bitcoin (si el precio de venta es mayor al de compra) generan una ganancia de capital que debes declarar. Cada país tiene su propio régimen: en España, las ganancias tributan en el IRPF (entre 19-26%). En México, como ingreso. En El Salvador, Bitcoin es moneda de curso legal (no hay impuesto a las ganancias). Es fundamental llevar un registro de todas tus operaciones con fecha, precio de compra, precio de venta y comisiones."
             },
             {
@@ -892,7 +892,7 @@
     {
       "id": 7,
       "title": "La Red Lightning y Escalabilidad",
-      "image_unit_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Lightning_Network_graph.png/640px-Lightning_Network_graph.png",
+      "image_unit_url": "https://www.bitcoin.com/images/uploads/articles/what-is-lightning-network_new.png",
       "lessons": [
         {
           "id": 18,
@@ -902,7 +902,7 @@
               "type": "explanation",
               "title": "¿Por qué Bitcoin no puede ser Visa?",
               "subtitle": "Limitaciones del diseño base de Bitcoin",
-              "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Bitcoin_Block_Data.svg/640px-Bitcoin_Block_Data.svg.png",
+              "image_url": "https://i.blogs.es/d16099/halving/450_1000.jpg",
               "content": "La blockchain de Bitcoin procesa aproximadamente 7 transacciones por segundo (TPS), mientras que Visa puede manejar hasta 24,000 TPS. Esto se debe a que los bloques tienen un límite de tamaño (1-4 MB) y se producen cada ~10 minutos. Aumentar el tamaño de los bloques comprometería la descentralización (nodos necesitarían más recursos). Este es el famoso 'trilemma de la blockchain': no puedes tener simultáneamente descentralización, seguridad y escalabilidad máximas."
             },
             {
@@ -943,14 +943,14 @@
               "type": "explanation",
               "title": "¿Qué es la Lightning Network?",
               "subtitle": "Una capa 2 para pagos rápidos y baratos",
-              "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Lightning_Network_graph.png/640px-Lightning_Network_graph.png",
+              "image_url": "https://public.bnbstatic.com/image/pgc/202601/c448073a8bda07e2c24496891ff47366.png",
               "content": "Lightning Network (LN) es una 'capa 2' construida sobre Bitcoin que permite transacciones instantáneas y con fees casi nulas. Funciona abriendo canales de pago entre usuarios: dos partes bloquean Bitcoin en un contrato en la blockchain y luego pueden enviarse pagos infinitos entre sí fuera de la blockchain, liquidando solo el saldo final. Los pagos se enrutan a través de la red de canales, permitiendo pagar a cualquiera aunque no tengas un canal directo con ellos."
             },
             {
               "type": "example",
               "title": "Pagar un café con Lightning",
               "subtitle": "Cómo funciona un pago LN en la práctica",
-              "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Bitcoin_lightning_network.jpg/640px-Bitcoin_lightning_network.jpg",
+              "image_url": "https://media.licdn.com/dms/image/v2/D4D12AQGWUwKiwlGQEA/article-cover_image-shrink_423_752/B4DZdgfh.gHMAU-/0/1749670568981?e=2147483647&v=beta&t=0Z25d4ym97cI4ZbZ1LLtbkyXW3IHFy60oYAeH4WReNc",
               "content": "Ana y su cafetería favorita abren un canal Lightning con 0.01 BTC cada uno. Ana paga su café de 500 sats (0.000005 BTC): el canal se actualiza instantáneamente, sin publicar nada en la blockchain. Después de 100 cafés, cierran el canal y solo entonces se registra el saldo final en la blockchain. Costo total de fees: centavos. Tiempo: milisegundos."
             },
             {
@@ -998,7 +998,7 @@
     {
       "id": 8,
       "title": "Privacidad y Bitcoin",
-      "image_unit_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Incognito_Mode_Icon_from_Google_Chrome.svg/480px-Incognito_Mode_Icon_from_Google_Chrome.svg.png",
+      "image_unit_url": "https://www.criptonoticias.com/wp-content/uploads/2018/07/privacidad-bitcoin-criptomonedas-coinjoin-coinjoinxt.jpg",
       "lessons": [
         {
           "id": 20,
@@ -1008,7 +1008,7 @@
               "type": "explanation",
               "title": "La privacidad real de Bitcoin",
               "subtitle": "Por qué Bitcoin no es totalmente anónimo",
-              "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Blockchain_privacy.png/640px-Blockchain_privacy.png",
+              "image_url": "https://storage.cryptomus.com/FMEoT5UbAiLm7wrPSut7bZVbiLIg9HoQO5AMmbec.webp",
               "content": "Bitcoin es pseudónimo, no anónimo. Todas las transacciones son públicas en la blockchain, visibles para cualquiera. Las direcciones no muestran tu nombre, pero si alguien asocia una dirección a tu identidad (por ejemplo, comprando en un exchange con KYC), puede rastrear todas tus transacciones pasadas y futuras. Empresas como Chainalysis se especializan en analizar la blockchain para rastrear el flujo de fondos."
             },
             {
@@ -1049,7 +1049,7 @@
               "type": "explanation",
               "title": "CoinJoin, Taproot y mejoras de privacidad",
               "subtitle": "Cómo mejorar tu privacidad financiera",
-              "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/CoinJoin_example.png/640px-CoinJoin_example.png",
+              "image_url": "https://atrevus.mx/wp-content/uploads/2021/03/Tips-para-mejorar-finanzas-01-1024x602.png",
               "content": "Técnicas para mejorar la privacidad en Bitcoin: (1) CoinJoin: combina múltiples transacciones de diferentes usuarios en una sola, dificultando el rastreo. Implementado en wallets como Wasabi o JoinMarket. (2) Usar una dirección nueva para cada transacción (las wallets HD lo hacen automáticamente). (3) Comprar Bitcoin en P2P sin KYC. (4) Taproot (actualización de 2021): hace que las transacciones más complejas parezcan simples, mejorando la privacidad. (5) Lightning Network también mejora la privacidad al mantener transacciones off-chain."
             },
             {
@@ -1087,7 +1087,7 @@
     {
       "id": 9,
       "title": "Bitcoin Avanzado: Protocolo y Desarrollo",
-      "image_unit_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Bitcoin_Core_2023.png/640px-Bitcoin_Core_2023.png",
+      "image_unit_url": "https://cdn.prod.website-files.com/6407fd8f51729d7c7c524b5f/65a457397a94950c7e4be397_Logros-2023-V2.jpg",
       "lessons": [
         {
           "id": 22,
@@ -1097,7 +1097,7 @@
               "type": "explanation",
               "title": "Script de Bitcoin y contratos básicos",
               "subtitle": "El lenguaje de programación de Bitcoin",
-              "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Bitcoin_Core_screenshot.png/640px-Bitcoin_Core_screenshot.png",
+              "image_url": "https://www.criptonoticias.com/wp-content/uploads/2021/12/nuevo-lenguaje-programacion-lightnign-bitcoin.jpg",
               "content": "Bitcoin tiene su propio lenguaje de programación llamado Script, un lenguaje de pila (stack-based) deliberadamente limitado (no es Turing completo) para maximizar la seguridad. Permite crear condiciones para gastar bitcoins: (1) P2PKH (Pay to Public Key Hash): la forma estándar de enviar a una dirección. (2) Multisig: requiere múltiples firmas para gastar (ej: 2 de 3). (3) Timelocks: fondos que no pueden gastarse hasta cierta fecha. (4) P2SH / P2WSH: contratos más complejos. SegWit (Segregated Witness) separó las firmas de los datos de transacción, aumentando la capacidad de la red."
             },
             {
@@ -1154,7 +1154,7 @@
               "type": "explanation",
               "title": "¿Quién decide el futuro de Bitcoin?",
               "subtitle": "BIPs, consenso y la guerra de los bloques",
-              "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Bitcoin_Improvement_Proposals.png/640px-Bitcoin_Improvement_Proposals.png",
+              "image_url": "https://www.criptonoticias.com/wp-content/uploads/2023/08/bitcoin-independence-day-SEGWIT-750x375.jpg",
               "content": "Bitcoin no tiene un CEO ni una empresa que decida su futuro. Los cambios se proponen a través de BIPs (Bitcoin Improvement Proposals). Para que un cambio se adopte, necesita consenso de la comunidad: desarrolladores (Bitcoin Core), mineros, exchanges y usuarios. Los soft forks son cambios compatibles hacia atrás (como SegWit y Taproot). Los hard forks son cambios incompatibles que dividen la red (como Bitcoin Cash en 2017). La resistencia al cambio es una característica de seguridad, no un bug."
             },
             {
@@ -1200,7 +1200,7 @@
               "type": "explanation",
               "title": "Los nuevos casos de uso de Bitcoin",
               "subtitle": "NFTs, tokens y datos en la blockchain de Bitcoin",
-              "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/480px-Bitcoin.svg.png",
+              "image_url": "https://im2.uva.es/wp-content/uploads/2024/05/NTF_istockphoto-1367699775-612x612-1.jpg",
               "content": "Con la actualización Taproot y el protocolo Ordinals (2023), fue posible inscribir datos arbitrarios directamente en satoshis individuales de la blockchain de Bitcoin. Esto habilitó: (1) Bitcoin NFTs (imágenes, texto, código inscrito en sats). (2) BRC-20 tokens: estándar experimental para crear tokens fungibles en Bitcoin. (3) Runes (2024): protocolo mejorado para tokens en Bitcoin. Estos desarrollos han generado debate: ¿son spam que satura la red o una expansión legítima del ecosistema de Bitcoin?"
             },
             {
@@ -1243,7 +1243,7 @@
     {
       "id": 10,
       "title": "Bitcoin a Nivel Experto: Macro, Custodia Institucional y el Futuro",
-      "image_unit_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Bitcoin_Price_History.jpg/640px-Bitcoin_Price_History.jpg",
+      "image_unit_url": "https://news.bit2me.com/wp-content/uploads/2025/04/ETF-Bitcoin-696x398.jpg",
       "lessons": [
         {
           "id": 25,
@@ -1253,7 +1253,7 @@
               "type": "explanation",
               "title": "Bitcoin en el sistema financiero mundial",
               "subtitle": "Inflación, deuda y el papel de Bitcoin",
-              "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Federal_Reserve.jpg/640px-Federal_Reserve.jpg",
+              "image_url": "https://www.criptonoticias.com/wp-content/uploads/2026/02/bitcoin-inflacion-precio-tasas.jpg",
               "content": "Los bancos centrales del mundo han impreso cantidades masivas de dinero en la última década, especialmente post-2020. Esto ha generado inflación y devaluación de monedas fiat. Bitcoin, con su oferta fija de 21 millones y su política monetaria inmutable, se posiciona como alternativa al dinero inflacionario. Análisis como el 'Stock-to-Flow' modelan el precio de Bitcoin basándose en su escasez relativa. El debate económico entre bitcoiners keynesianos y austriacos refleja visiones opuestas sobre el dinero y la economía."
             },
             {
@@ -1310,7 +1310,7 @@
               "type": "explanation",
               "title": "Wall Street y Bitcoin",
               "subtitle": "ETFs, empresas con Bitcoin en balance y custodia institucional",
-              "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Bitcoin_ETF.jpg/640px-Bitcoin_ETF.jpg",
+              "image_url": "https://img.bgstatic.com/multiLang/image/social/d3a2fa878b477898f56ba24fac81fae61765539544237.webp",
               "content": "En enero de 2024, la SEC aprobó los primeros ETFs de Bitcoin al contado en EE.UU. (BlackRock, Fidelity, etc.), abriendo Bitcoin a millones de inversores institucionales y minoristas que no quieren gestionar claves privadas. Empresas como MicroStrategy, Tesla y Square tienen Bitcoin en su balance corporativo. La custodia institucional requiere soluciones especiales: custodios regulados (Coinbase Custody, BitGo), seguros, auditorías y wallets multi-firma con procedimientos de seguridad estrictos."
             },
             {
@@ -1362,7 +1362,7 @@
               "type": "explanation",
               "title": "¿Hacia dónde va Bitcoin?",
               "subtitle": "Desafíos técnicos, regulatorios y el largo plazo",
-              "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/480px-Bitcoin.svg.png",
+              "image_url": "https://img.innovaciondigital360.com/wp-content/uploads/2025/05/19110021/Leyes-de-Inteligencia-Artificial.jpg",
               "content": "El futuro de Bitcoin enfrenta varios desafíos y oportunidades: (1) Seguridad post-halving: cuando la recompensa sea mínima, ¿serán suficientes las comisiones para incentivar a los mineros? (2) Computación cuántica: ¿podrían los ordenadores cuánticos romper la criptografía de Bitcoin? (3) Regulación global: distintos países tienen enfoques muy diferentes. (4) Adopción masiva: Lightning Network y mejoras de UX pueden hacer Bitcoin accesible a miles de millones. (5) Bitcoin como activo de reserva estatal: cada vez más países estudian tener Bitcoin en sus reservas, como propuso EE.UU. en 2024."
             },
             {
