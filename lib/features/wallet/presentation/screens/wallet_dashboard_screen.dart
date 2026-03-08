@@ -127,12 +127,12 @@ class _WalletDashboardScreenState extends State<WalletDashboardScreen> {
 
               const SizedBox(height: 32),
 
-              // 4️⃣ Misiones de aprendizaje
+              // 4️ Misiones de aprendizaje
               const WalletLearningMissions(),
 
               const SizedBox(height: 32),
 
-              // 5️⃣ Actividad reciente
+              // 5️ Actividad reciente
               const WalletRecentActivity(),
 
               const SizedBox(height: 32),

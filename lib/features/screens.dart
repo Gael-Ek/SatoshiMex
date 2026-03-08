@@ -40,3 +40,14 @@ export 'wallet/presentation/screens/wallet_dashboard_screen.dart';
 
 //pantalla de billetera_recibir
 export 'wallet/presentation/screens/wallet_receive_screen.dart';
+
+//pantalla de billetera_tutorial_destinatario
+export 'wallet/presentation/screens/wallet_add_recipient_name_screen.dart';
+export 'wallet/presentation/screens/wallet_add_recipient_address_screen.dart';
+
+//pantalla de billetera_envio
+export 'wallet/presentation/screens/wallet_send_step_one_screen.dart';
+export 'wallet/presentation/screens/wallet_send_step_two_screen.dart';
+export 'wallet/presentation/screens/wallet_send_step_three_screen.dart';
+export 'wallet/presentation/screens/wallet_send_step_four_screen.dart';
+export 'wallet/presentation/screens/wallet_send_success_screen.dart';
