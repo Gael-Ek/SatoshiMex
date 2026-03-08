@@ -89,7 +89,7 @@ class RoadmapBody extends ConsumerWidget {
 
                 return Padding(
                   padding: const EdgeInsets.symmetric(
-                    horizontal: 24,
+                    horizontal: 10,
                     vertical: 8,
                   ),
                   child: LessonNodeTile(
