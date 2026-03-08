@@ -1,3 +1,5 @@
+// lesson_screen.dart
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -7,6 +9,22 @@ import 'package:satoshimex/features/roadmap/presentation/screens/lesson_example.
 import 'package:satoshimex/features/roadmap/presentation/screens/lesson_explication_screen.dart';
 import 'package:satoshimex/features/roadmap/presentation/screens/lesson_quiz_screen.dart';
 import 'package:satoshimex/shared/models/models.dart';
+
+// Representa un paso "aplanado": puede ser una sección entera (explanation/example)
+// o una sola pregunta de quiz con su índice dentro de la sección.
+class _FlatStep {
+  final SectionModel section;
+  final int sectionIndex;
+  final int? questionIndex; // null si no es quiz
+
+  const _FlatStep({
+    required this.section,
+    required this.sectionIndex,
+    this.questionIndex,
+  });
+
+  bool get isQuiz => questionIndex != null;
+}
 
 class LessonScreen extends ConsumerStatefulWidget {
   final LessonModel lesson;
@@ -25,12 +43,41 @@ class LessonScreen extends ConsumerStatefulWidget {
 }
 
 class _LessonScreenState extends ConsumerState<LessonScreen> {
+  late final List<_FlatStep> _flatSteps;
   int currentIndex = 0;
-  // Controlador para manejar el scroll manualmente
   final ScrollController _scrollController = ScrollController();
 
-  final Map<int, String> _selectedOptions = {};
-  final Map<int, bool> _results = {};
+  // Key: "sectionIndex_questionIndex" → opción seleccionada
+  final Map<String, String> _selectedOptions = {};
+  // Key: "sectionIndex_questionIndex" → resultado
+  final Map<String, bool> _results = {};
+
+  @override
+  void initState() {
+    super.initState();
+    _flatSteps = _buildFlatSteps();
+  }
+
+  List<_FlatStep> _buildFlatSteps() {
+    final steps = <_FlatStep>[];
+    for (var i = 0; i < widget.lesson.sections.length; i++) {
+      final section = widget.lesson.sections[i];
+      if (section.type == SectionType.quiz && section.questions != null) {
+        // Una entrada por cada pregunta del quiz
+        for (var q = 0; q < section.questions!.length; q++) {
+          steps.add(
+            _FlatStep(section: section, sectionIndex: i, questionIndex: q),
+          );
+        }
+      } else {
+        steps.add(_FlatStep(section: section, sectionIndex: i));
+      }
+    }
+    return steps;
+  }
+
+  String _quizKey(int sectionIndex, int questionIndex) =>
+      '${sectionIndex}_$questionIndex';
 
   @override
   void dispose() {
@@ -38,7 +85,6 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
     super.dispose();
   }
 
-  // Método para asegurar que el contenido empiece desde arriba al cambiar sección
   void _resetScroll() {
     if (_scrollController.hasClients) {
       _scrollController.jumpTo(0);
@@ -48,21 +94,31 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
   void _onPreviousStep() {
     if (currentIndex > 0) {
       _resetScroll();
-      setState(() {
-        currentIndex--;
-      });
+      setState(() => currentIndex--);
     }
   }
 
   void _onNextStep() {
+    final step = _flatSteps[currentIndex];
     final notifier = ref.read(progressProvider(widget.roadmap).notifier);
-    notifier.completeSection(widget.unitId, widget.lesson.id, currentIndex);
 
-    if (currentIndex < widget.lesson.sections.length - 1) {
+    // Solo notifica progreso al pasar la última pregunta de una sección quiz
+    // o al pasar secciones normales.
+    final isLastQuestionOfSection =
+        step.isQuiz &&
+        step.questionIndex == (step.section.questions!.length - 1);
+
+    if (!step.isQuiz || isLastQuestionOfSection) {
+      notifier.completeSection(
+        widget.unitId,
+        widget.lesson.id,
+        step.sectionIndex,
+      );
+    }
+
+    if (currentIndex < _flatSteps.length - 1) {
       _resetScroll();
-      setState(() {
-        currentIndex++;
-      });
+      setState(() => currentIndex++);
     } else {
       context.pop();
       ScaffoldMessenger.of(context).showSnackBar(
@@ -76,14 +132,21 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final section = widget.lesson.sections[currentIndex];
-    final progress = (currentIndex + 1) / widget.lesson.sections.length;
+    final step = _flatSteps[currentIndex];
+    final section = step.section;
+    final progress = (currentIndex + 1) / _flatSteps.length;
+
+    // Título dinámico: si es quiz muestra "Pregunta X de Y"
+    String appBarTitle;
+    if (step.isQuiz) {
+      final totalQuestions = section.questions!.length;
+      appBarTitle = 'Pregunta ${step.questionIndex! + 1} de $totalQuestions';
+    } else {
+      appBarTitle = section.title ?? widget.lesson.title;
+    }
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(section.title ?? widget.lesson.title),
-        centerTitle: true,
-      ),
+      appBar: AppBar(title: Text(appBarTitle), centerTitle: true),
       body: SafeArea(
         child: Column(
           children: [
@@ -94,7 +157,7 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Sección ${currentIndex + 1} de ${widget.lesson.sections.length}',
+                    'Paso ${currentIndex + 1} de ${_flatSteps.length}',
                     style: const TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w600,
@@ -119,42 +182,31 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
             Expanded(
               child: AnimatedSwitcher(
                 duration: const Duration(milliseconds: 300),
-                // El layoutBuilder evita saltos de altura durante la transición
-                layoutBuilder:
-                    (Widget? currentChild, List<Widget> previousChildren) {
-                      return Stack(
-                        alignment: Alignment.topCenter,
-                        children: <Widget>[...previousChildren, ?currentChild],
-                      );
-                    },
-                transitionBuilder: (Widget child, Animation<double> animation) {
-                  return FadeTransition(
-                    opacity: animation,
-                    child: SlideTransition(
-                      position:
-                          Tween<Offset>(
-                            begin: const Offset(
-                              0.1,
-                              0,
-                            ), // Desplazamiento sutil lateral
-                            end: Offset.zero,
-                          ).animate(
-                            CurvedAnimation(
-                              parent: animation,
-                              curve: Curves.easeOutCubic,
-                            ),
+                layoutBuilder: (currentChild, previousChildren) => Stack(
+                  alignment: Alignment.topCenter,
+                  children: [...previousChildren, ?currentChild],
+                ),
+                transitionBuilder: (child, animation) => FadeTransition(
+                  opacity: animation,
+                  child: SlideTransition(
+                    position:
+                        Tween<Offset>(
+                          begin: const Offset(0.1, 0),
+                          end: Offset.zero,
+                        ).animate(
+                          CurvedAnimation(
+                            parent: animation,
+                            curve: Curves.easeOutCubic,
                           ),
-                      child: child,
-                    ),
-                  );
-                },
-                // El ScrollView va DENTRO del switcher para que cada página
-                // tenga su propia instancia de scroll independiente visualmente
+                        ),
+                    child: child,
+                  ),
+                ),
                 child: SingleChildScrollView(
-                  key: ValueKey('scroll_section_$currentIndex'),
+                  key: ValueKey('scroll_step_$currentIndex'),
                   controller: _scrollController,
                   padding: const EdgeInsets.all(16),
-                  child: _buildSectionContent(section),
+                  child: _buildStepContent(step),
                 ),
               ),
             ),
@@ -189,7 +241,7 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
                     ),
                     const SizedBox(width: 12),
                   ],
-                  Expanded(child: _buildActionButton(section)),
+                  Expanded(child: _buildActionButton(step)),
                 ],
               ),
             ),
@@ -199,9 +251,13 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
     );
   }
 
-  Widget _buildActionButton(SectionModel section) {
-    final bool isQuiz = section.type == SectionType.quiz;
-    final bool canContinue = !isQuiz || (_results.containsKey(currentIndex));
+  Widget _buildActionButton(_FlatStep step) {
+    bool canContinue = true;
+
+    if (step.isQuiz) {
+      final key = _quizKey(step.sectionIndex, step.questionIndex!);
+      canContinue = _results.containsKey(key);
+    }
 
     return SizedBox(
       height: 55,
@@ -217,19 +273,18 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
           ),
         ),
         child: Text(
-          currentIndex < widget.lesson.sections.length - 1
-              ? 'CONTINUAR'
-              : 'FINALIZAR',
+          currentIndex < _flatSteps.length - 1 ? 'CONTINUAR' : 'FINALIZAR',
           style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
         ),
       ),
     );
   }
 
-  Widget _buildSectionContent(SectionModel section) {
-    // Es vital usar el currentIndex en la key para que el AnimatedSwitcher
-    // reconozca que el contenido ha cambiado.
-    final key = ValueKey('content_${section.type}_$currentIndex');
+  Widget _buildStepContent(_FlatStep step) {
+    final section = step.section;
+    final key = ValueKey(
+      'content_${step.sectionIndex}_${step.questionIndex ?? "none"}',
+    );
 
     switch (section.type) {
       case SectionType.explanation:
@@ -251,15 +306,19 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
         );
 
       case SectionType.quiz:
+        final qIndex = step.questionIndex!;
+        final question = section.questions![qIndex];
+        final mapKey = _quizKey(step.sectionIndex, qIndex);
+
         return LessonQuiz(
           key: key,
-          question: section.questions![0],
-          selectedOption: _selectedOptions[currentIndex],
-          isCorrect: _results[currentIndex],
+          question: question,
+          selectedOption: _selectedOptions[mapKey],
+          isCorrect: _results[mapKey],
           onAnswered: (option, correct) {
             setState(() {
-              _selectedOptions[currentIndex] = option;
-              _results[currentIndex] = correct;
+              _selectedOptions[mapKey] = option;
+              _results[mapKey] = correct;
             });
           },
         );
