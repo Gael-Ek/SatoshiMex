@@ -54,6 +54,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
       await appAuth.login(username);
 
       ref.read(onboardginShowProvider.notifier).completeOnboarding();
+
       context.go('/home');
     } else {
       _showSnackBar('Usuario o contraseña incorrectos', isError: true);

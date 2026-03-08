@@ -49,7 +49,7 @@ class _SendStep1ContentState extends ConsumerState<SendStep1Content> {
   @override
   Widget build(BuildContext context) {
     // Refrescamos si cambia el provider
-    ref.listen(walletRecipientsProvider, (_, __) => _parseRecipients());
+    ref.listen(walletRecipientsProvider, (_, _) => _parseRecipients());
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,

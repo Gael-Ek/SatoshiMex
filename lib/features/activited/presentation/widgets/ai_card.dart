@@ -59,7 +59,7 @@ class ActivityAiCard extends StatelessWidget {
                       "Resuelve tus dudas sobre Bitcoin",
                       style: GoogleFonts.lexend(
                         fontSize: 12,
-                        color: Colors.blueGrey,
+                        color: Colors.white,
                       ),
                     ),
                   ],

@@ -36,7 +36,7 @@ class _CarouselAddRecipientState extends ConsumerState<CarouselAddRecipient> {
     super.dispose();
   }
 
-  // ── Navegación ──────────────────────────────────────────────
+  // ── Navegación
 
   void _goNext() {
     if (_currentPage == 0) {
@@ -76,7 +76,6 @@ class _CarouselAddRecipientState extends ConsumerState<CarouselAddRecipient> {
 
     try {
       final name = _nameController.text.trim();
-      // Guardamos el contacto como JSON string (igual que antes)
       final recipientJson = '{"name":"$name","address":"$_generatedAddress"}';
 
       await ref
@@ -159,6 +158,7 @@ class _CarouselAddRecipientState extends ConsumerState<CarouselAddRecipient> {
                 children: [
                   // Página 1
                   SingleChildScrollView(
+                    physics: const NeverScrollableScrollPhysics(),
                     padding: const EdgeInsets.symmetric(horizontal: 24),
                     child: RecipientNameContent(
                       nameController: _nameController,
@@ -166,6 +166,7 @@ class _CarouselAddRecipientState extends ConsumerState<CarouselAddRecipient> {
                   ),
                   // Página 2
                   SingleChildScrollView(
+                    physics: const NeverScrollableScrollPhysics(),
                     padding: const EdgeInsets.symmetric(horizontal: 24),
                     child: RecipientAddressContent(
                       recipientName: _nameController.text.trim(),

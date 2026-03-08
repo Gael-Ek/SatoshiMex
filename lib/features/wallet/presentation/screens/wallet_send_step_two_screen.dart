@@ -80,7 +80,7 @@ class _SendStep2ContentState extends ConsumerState<SendStep2Content> {
 
   String _fmt(double n, {bool currency = false}) {
     final reg = RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))');
-    final fn = (Match m) => '${m[1]},';
+    String fn(Match m) => '${m[1]},';
     return currency
         ? n.toStringAsFixed(2).replaceAllMapped(reg, fn)
         : n.truncate().toString().replaceAllMapped(reg, fn);

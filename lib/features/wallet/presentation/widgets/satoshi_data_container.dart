@@ -19,7 +19,7 @@ class SatoshiDataContainer extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.deepNavy, // El color consistente de tus tarjetas
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: AppColors.blueGray.withOpacity(0.1)),
+        border: Border.all(color: AppColors.blueGray.withValues(alpha: .1)),
       ),
       child: child,
     );

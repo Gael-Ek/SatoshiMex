@@ -229,8 +229,8 @@ class _WalletQuickConversionState extends State<WalletQuickConversion> {
           child: Text(
             'Tasa de cambio actualizada en tiempo real',
             style: TextStyle(
-              color: AppColors.blueGray,
-              fontSize: 10,
+              color: AppColors.slateBlueGray,
+              fontSize: 14,
               fontStyle: FontStyle.italic,
             ),
           ),

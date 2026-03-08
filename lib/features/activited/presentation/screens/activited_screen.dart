@@ -2,14 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:satoshimex/core/config/constants/app_colors.dart';
-import 'package:satoshimex/core/widgets/button.dart';
 import 'package:satoshimex/features/activited/presentation/widgets/ai_card.dart';
 import 'package:satoshimex/features/activited/presentation/widgets/progress_card.dart';
 import 'package:satoshimex/features/activited/presentation/widgets/streak_card.dart';
 import 'package:satoshimex/features/roadmap/presentation/providers/roadmap_providers.dart';
 import 'package:satoshimex/features/roadmap/presentation/providers/roadmap_summary_provider.dart';
 import 'package:satoshimex/features/roadmap/presentation/providers/streak_provider.dart';
-import 'package:satoshimex/features/wallet/presentation/providers/wallet_provider.dart';
 
 class ActivitedScreen extends ConsumerWidget {
   final void Function(int)? onNavigate;
@@ -84,14 +82,6 @@ class ActivitedScreen extends ConsumerWidget {
               ActivityAiCard(
                 onTap: () {
                   onNavigate?.call(3);
-                },
-              ),
-
-              const SizedBox(height: 16),
-              CustomButton(
-                text: "Eliminar datos de onboarding wallet",
-                onPressed: () {
-                  ref.read(walletStateProvider.notifier).clearIntro();
                 },
               ),
             ],

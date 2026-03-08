@@ -26,7 +26,7 @@ class WalletLearningMissions extends StatelessWidget {
           decoration: BoxDecoration(
             color: AppColors.deepNavy,
             borderRadius: BorderRadius.circular(16),
-            border: Border.all(color: AppColors.blueGray.withOpacity(0.1)),
+            border: Border.all(color: AppColors.blueGray.withValues(alpha: .1)),
           ),
           child: Column(
             children: [
@@ -72,7 +72,7 @@ class WalletLearningMissions extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 12.0),
             child: Divider(
-              color: AppColors.charcoalBlack.withOpacity(0.5),
+              color: AppColors.charcoalBlack.withValues(alpha: .5),
               thickness: 1,
             ),
           ),
