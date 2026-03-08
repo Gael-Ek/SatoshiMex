@@ -63,14 +63,14 @@
               "type": "explanation",
               "title": "¿Cómo ha evolucionado el dinero?",
               "subtitle": "Desde el trueque hasta las criptomonedas",
-              "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Silk_route.jpg/640px-Silk_route.jpg",
+              "image_url": "https://imgs.search.brave.com/zkzkjP70xw5VdsxszaA0al286u9LxZqPFCCu36C3fAE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9iaWxs/ZXRlcy1lbi1wYXBl/bC1kZS1kaXN0aW50/b3MtcGElQzMlQURz/ZXMtY29tby1hbnRl/Y2VkZW50ZXMtY29t/ZXJjaWFsZXMtZGlu/ZXJvLXktZWZlY3Rp/dm8tdmFyaWFzLWRl/bm9taW5hY2lvbmVz/LWZvbmRvLW9wZXJh/Y2lvbmVzLTQwOTUx/NjYwMC5qcGc",
               "content": "El dinero ha pasado por diversas etapas a lo largo de la historia. Inicialmente existió el trueque, donde se intercambiaban bienes y servicios directamente. Más tarde surgieron las monedas metálicas y billetes respaldados por gobiernos, conocidos como dinero fiat. Con la llegada de la era digital, se crearon las criptomonedas como Bitcoin, que permiten transferencias directas entre personas sin necesidad de bancos, con un registro público seguro y transparente mediante blockchain."
             },
             {
               "type": "example",
               "title": "Comparación de métodos de intercambio",
               "subtitle": "De trueque a dinero digital",
-              "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Gold_Bars.jpg/640px-Gold_Bars.jpg",
+              "image_url": "https://imgs.search.brave.com/QkEMdtKtA5Z7PyOfT-f9vxsLq9WhR0-uo261C_MZuqU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/Y2FpeGFiYW5rcmVz/ZWFyY2guY29tL3Np/dGVzL2RlZmF1bHQv/ZmlsZXMvc3R5bGVz/L2Rlc3RhY2Fkby9w/dWJsaWMvY29udGVu/dC9pbWFnZS8yMDE5/LzEyLzAzLzM0NDU0/L2RpbmVyby0xLmpw/Zz9pdG9rPVQ4UU4y/bU1z",
               "content": "Antes, para conseguir harina necesitabas ofrecer leche a alguien que la necesitara (trueque). Luego, usabas monedas o billetes (dinero fiat). Ahora puedes enviar Bitcoin digitalmente a cualquier persona en el mundo con tu móvil, mostrando cómo ha evolucionado la facilidad de intercambio a lo largo de los siglos."
             },
             {
@@ -110,14 +110,14 @@
               "type": "explanation",
               "title": "¿Por qué nació Bitcoin?",
               "subtitle": "La crisis de 2008 y la necesidad de un sistema alternativo",
-              "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/2008_financial_crisis.jpg/640px-2008_financial_crisis.jpg",
+              "image_url": "https://imgs.search.brave.com/7VubK9xesMy9uWFhAVBXp6EWSV534-b5ECafL9HrJgI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9lbGNl/by5jb20vd3AtY29u/dGVudC91cGxvYWRz/LzIwMjQvMDEvYml0/Y29pbl9oaXN0b3Jp/YV8uanBn",
               "content": "Bitcoin nació en plena crisis financiera global de 2008, cuando los bancos quebraron y millones de personas perdieron sus ahorros. Satoshi Nakamoto publicó el whitepaper de Bitcoin proponiendo un sistema de pagos electrónicos de persona a persona (peer-to-peer) que no requiriera confianza en terceros. El problema central que resuelve es el llamado 'doble gasto': cómo evitar que alguien gaste el mismo dinero digital dos veces sin necesidad de un banco que lo valide."
             },
             {
               "type": "example",
               "title": "El problema del doble gasto",
               "subtitle": "Por qué el dinero digital necesitaba una solución nueva",
-              "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Bitcoin_network_scheme.svg/640px-Bitcoin_network_scheme.svg.png",
+              "image_url": "https://imgs.search.brave.com/Wk3uTe03QnNaFhB4kCbhJI0TbLJM683YN-fxUOvPatc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9sYW1v/bmVkYXZpcnR1YWwu/Y29tL3dwLWNvbnRl/bnQvdXBsb2Fkcy9k/b2JsZS1nYXN0by5q/cGc",
               "content": "Imagina que tienes un archivo de imagen en tu computadora. Puedes copiar ese archivo miles de veces. Si el dinero digital funcionara igual, podrías 'copiar' tus bitcoins y gastarlos múltiples veces. Bitcoin resuelve esto con la blockchain: una vez que una transacción se confirma, queda registrada públicamente y no puede repetirse."
             },
             {
@@ -164,14 +164,14 @@
               "type": "explanation",
               "title": "¿Qué es la blockchain?",
               "subtitle": "Un registro público, inmutable y distribuido",
-              "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Bitcoin_Block_Data.svg/640px-Bitcoin_Block_Data.svg.png",
+              "image_url": "https://imgs.search.brave.com/B2BJsdUkLnxZ58DsL9_DLNxedeKm5hE3uNJ3MyVOy9Q/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9vYnNl/cnZhdG9yaW8udGVj/Lm14L3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDIyLzA1L2JpZ3N0/b2NrLTIwNzA2MTYx/Mi5qcGVn",
               "content": "La blockchain es una tecnología que funciona como un libro de contabilidad digital distribuido y público. Cada transacción realizada con Bitcoin se agrupa en bloques que se validan mediante nodos de la red. Una vez validados, los bloques se enlazan de manera cronológica formando la cadena de bloques. Esto garantiza que las transacciones sean inmutables, transparentes y seguras."
             },
             {
               "type": "example",
               "title": "Estructura de un bloque",
               "subtitle": "Cómo se asegura la cadena de bloques",
-              "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Blockchain.svg/640px-Blockchain.svg.png",
+              "image_url": "https://imgs.search.brave.com/nYZhmit9c0sO5vRAwIn0HRBYd7whrHWcRk0K0RNu2sA/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9ibG9j/a2FuZGNhcGl0YWwu/Y29tL3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDI0LzAzL0RBTEwl/QzIlQjdFLTIwMjQt/MDMtMTAtMTYuMTMu/MjAtSW1hZ2luZS10/aGUtQml0Y29pbi1i/bG9ja2NoYWluLWFz/LWFuLWludHJpY2F0/ZS1uZXR3b3JrLW9m/LXN0b25lLWJsb2Nr/cy1pbnN0ZWFkLW9m/LW1ldGFsbGljLXBs/YWNlZC13aXRoaW4t/YS1kaW1seS1saXQt/Y2F2ZS10by1yZWR1/Y2UtdGhlLWJyaWdo/dG5lc3MuLUUud2Vi/cA",
               "content": "Cada bloque contiene: un conjunto de transacciones verificadas, un timestamp (marca de tiempo), el hash del bloque anterior y su propio hash. Este encadenamiento asegura que nadie pueda alterar información en un bloque sin que toda la red lo detecte, ya que cambiaría todos los bloques posteriores."
             },
             {
@@ -222,14 +222,14 @@
               "type": "explanation",
               "title": "¿Qué es un nodo?",
               "subtitle": "Los guardianes de la red Bitcoin",
-              "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Bitcoin_P2P_en.svg/640px-Bitcoin_P2P_en.svg.png",
+              "image_url": "https://imgs.search.brave.com/bEy4EDk9ZrjKwW4GRK6zmSn3Rq4DFRDyY89ZsC3jhYM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/dGVjbmljYXNkZXRy/YWRpbmcuY29tL3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDI0LzAy/LzYxZTk1N2QyNTEx/MTUtOTA1eDYxMy5q/cGc",
               "content": "Un nodo es cualquier computadora que participa en la red Bitcoin descargando y validando la blockchain completa. Los nodos verifican que todas las transacciones cumplen las reglas del protocolo, sin necesidad de confiar en una autoridad central. Cualquier persona puede correr un nodo completo, contribuyendo a la descentralización de la red. Actualmente existen miles de nodos activos en todo el mundo."
             },
             {
               "type": "example",
               "title": "La red P2P de Bitcoin",
               "subtitle": "Por qué no hay un punto central de control",
-              "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/P2P-network.svg/640px-P2P-network.svg.png",
+              "image_url": "https://imgs.search.brave.com/rAFTWagtJLDU9kplUlJEbCnS-szydpTXy2ZvidYgvbU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9hY2Fk/ZW15LmJpdDJtZS5j/b20vd3AtY29udGVu/dC91cGxvYWRzLzIw/MjAvMDYvcmVkLXAy/cC1hbGNhbmNlLWds/b2JhbC53ZWJw",
               "content": "Imagina una red de nodos distribuidos por todo el mundo. Si un gobierno intenta apagar la red Bitcoin en su país, los demás nodos continúan operando. No existe un 'servidor central' que pueda ser apagado. Esta arquitectura hace a Bitcoin extremadamente resistente a la censura y los ataques."
             },
             {
@@ -269,7 +269,7 @@
               "type": "explanation",
               "title": "¿Qué es un hash?",
               "subtitle": "La huella digital de los datos",
-              "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Cryptographic_Hash_Function.svg/640px-Cryptographic_Hash_Function.svg.png",
+              "image_url": "https://imgs.search.brave.com/89FyRaL-BDHSab0xFVNEpv5f0J1LtGSTTrNGY1J6HTs/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdDQu/ZGVwb3NpdHBob3Rv/cy5jb20vMzk5MjI0/Ny8zMTA3NC9pLzQ1/MC9kZXBvc2l0cGhv/dG9zXzMxMDc0MzQw/Ni1zdG9jay1waG90/by1kaWdpdGFsLWZp/bmdlcnByaW50LWRh/dGEtcHJvdGVjdGlv/bi11c2Vycy5qcGc",
               "content": "Un hash es una función matemática que convierte cualquier cantidad de datos en una cadena de caracteres de longitud fija. Bitcoin usa el algoritmo SHA-256. Lo importante del hash es que: (1) el mismo input siempre produce el mismo output, (2) cualquier cambio mínimo en el input produce un hash completamente diferente, (3) es imposible reconstruir el input a partir del output. Esto hace los hashes perfectos para asegurar la integridad de los datos en la blockchain."
             },
             {
@@ -317,14 +317,14 @@
               "type": "explanation",
               "title": "Cómo se crean los nuevos Bitcoin",
               "subtitle": "El proceso de validación y recompensa",
-              "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Bitcoin_Mining_Hardware.jpg/640px-Bitcoin_Mining_Hardware.jpg",
+              "image_url": "https://imgs.search.brave.com/3HnFK0GwaV_YWqDKG7CuaTXfQ9WT9EALB3umkw9H8rY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9rb25m/aW8ubXgvYmxvZy93/cC1jb250ZW50L3Vw/bG9hZHMvMjAxOS8w/Ni8wNDE0MzA1Ny9x/dWUtc29uLWxhcy1j/cmlwdG9tb25lZGFz/LXktY29tby1wdWVk/ZW4tdXNhcnNlLWlu/dGVybmV0LmpwZw",
               "content": "La minería de Bitcoin es el proceso mediante el cual se validan nuevas transacciones y se añaden a la blockchain. Los mineros son computadoras que compiten entre sí para resolver un problema matemático complejo (Proof of Work). El primero que lo resuelve añade el nuevo bloque a la cadena y recibe como recompensa nuevos bitcoins recién creados, más las comisiones de las transacciones incluidas en el bloque."
             },
             {
               "type": "example",
               "title": "La carrera de los mineros",
               "subtitle": "Cómo compiten miles de computadoras",
-              "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Antminer_S9_2.jpg/640px-Antminer_S9_2.jpg",
+              "image_url": "https://imgs.search.brave.com/gg_ZAF3f20D48pZhjPW9b2cr3fctDcpprTGPjuHEd9M/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9kMzFk/bjduZnB1d2pubS5j/bG91ZGZyb250Lm5l/dC9pbWFnZXMvdmFs/b3JhY2lvbmVzLzAw/NjcvODU4MC9GT1RP/U19NWF8oUHJlc2Vu/dGFjaW8lQ0MlODFu/Xyg0MykpXygzNSlf/Y29sLmpwZz8xNzQ3/MzAzNTk0",
               "content": "Miles de mineros en todo el mundo calculan billones de hashes por segundo intentando encontrar uno que cumpla con la dificultad requerida por la red. Es como buscar un número que, al lanzar un dado de millones de caras, salga menor que un número específico. El ganador propaga su bloque a la red, los nodos lo verifican y la carrera comienza de nuevo."
             },
             {
@@ -375,7 +375,7 @@
               "type": "explanation",
               "title": "¿Cómo regula la red su propia dificultad?",
               "subtitle": "El mecanismo de ajuste cada 2016 bloques",
-              "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Bitcoin_Difficulty.png/640px-Bitcoin_Difficulty.png",
+              "image_url": "https://imgs.search.brave.com/zQrJkg7xFmEUpMu84YLvcc1zcxqolzuXilDiUtE7urE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vY3JpcHRv/dGVuZGVuY2lhLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAy/MC8wMS9kaWZpY3Vs/dGFkLWRlLXJlZC1k/ZS1iaXRjb2luLmpw/Zz9yZXNpemU9Njk2/LDQ2NCZzc2w9MQ",
               "content": "La red Bitcoin ajusta automáticamente la dificultad de minería cada 2016 bloques (aproximadamente cada dos semanas). Si hay más mineros, la dificultad sube para mantener el tiempo de bloque en ~10 minutos. Si hay menos mineros, baja. Este mecanismo garantiza que el ritmo de emisión de nuevos bitcoins sea predecible y estable, independientemente de cuánto poder computacional se conecte a la red."
             },
             {
@@ -421,14 +421,14 @@
               "type": "explanation",
               "title": "¿Qué es el halving?",
               "subtitle": "La escasez programada de Bitcoin",
-              "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Bitcoin_block_reward_halving.png/640px-Bitcoin_block_reward_halving.png",
+              "image_url": "https://imgs.search.brave.com/ZpITbxKEDtMX6LBWr90JWNC1WXP2TrVSeJW6YeWkh_M/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/YWx0b25pdmVsLmNv/bS5teC93cC1jb250/ZW50L3VwbG9hZHMv/MjAyNC8wMy9oYWx2/aW5nLTkwMHg2MDgu/anBn",
               "content": "El halving (o reducción a la mitad) es un evento programado en el código de Bitcoin que ocurre cada 210,000 bloques (~4 años). En cada halving, la recompensa que reciben los mineros por cada bloque se reduce a la mitad. Empezó en 50 BTC, luego 25, 12.5, 6.25 y actualmente 3.125 BTC. Esto controla la inflación de Bitcoin y garantiza que nunca existirán más de 21 millones de bitcoins."
             },
             {
               "type": "example",
               "title": "Historia de los halvings",
               "subtitle": "El impacto en el precio y la oferta",
-              "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Bitcoin_Price_History.jpg/640px-Bitcoin_Price_History.jpg",
+              "image_url": "https://imgs.search.brave.com/PsphryERMqNi4Bl0ONgOVGxo3MnLgRaC91kdMvEhvMI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vY3JpcHRv/dGVuZGVuY2lhLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAy/NC8wNC9IYWx2aW5n/LWRlLUJpdGNvaW4u/anBnP3Jlc2l6ZT02/OTYsMzk3JnNzbD0x",
               "content": "Los halvings históricos: 2012 (50→25 BTC, precio subió de $12 a $1,000), 2016 (25→12.5 BTC, precio llegó a $20,000 en 2017), 2020 (12.5→6.25 BTC, precio superó $60,000 en 2021), 2024 (6.25→3.125 BTC). Históricamente, los halvings han precedido grandes rallys en el precio de Bitcoin al reducir la nueva oferta disponible."
             },
             {
@@ -476,14 +476,14 @@
               "type": "explanation",
               "title": "Tu llave al mundo de Bitcoin",
               "subtitle": "Diferencia entre custodial y no-custodial",
-              "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Ledger_Nano_S_hardware_wallet.jpg/640px-Ledger_Nano_S_hardware_wallet.jpg",
+              "image_url": "https://imgs.search.brave.com/b1G3SmIMpJXSz4XkMdC2pSddjVmUcx5-p7hcyRJgdj0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9saXF1/aWRpdHktcHJvdmlk/ZXIuY29tL2FwcC91/cGxvYWRzLzIwMjQv/MDMvY3VzdG9kaWFs/LXZzLi1ub24tY3Vz/dG9kaWFsLWNyeXB0/by13YWxsZXRzLTgw/MHg1NDAucG5n",
               "content": "Una wallet (billetera) de Bitcoin es un software o dispositivo que almacena tus claves criptográficas, no tus bitcoins directamente. Los bitcoins existen en la blockchain; la wallet guarda las claves privadas que te dan derecho a gastarlos. Existen wallets custodiales (un tercero guarda tus claves, como un exchange) y no-custodiales (tú controlas tus propias claves). El famoso dicho en Bitcoin es: 'Not your keys, not your coins'."
             },
             {
               "type": "example",
               "title": "Tipos de wallets",
               "subtitle": "Cuál elegir según tus necesidades",
-              "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Electrum_Bitcoin_Wallet.png/640px-Electrum_Bitcoin_Wallet.png",
+              "image_url": "https://imgs.search.brave.com/4sVybMi9oVrbSZ4x6avjk0D2okMO6be7t887PUeSw9w/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aGVi/bHVlbWFuYWtpbi5j/b20vd3AtY29udGVu/dC91cGxvYWRzLzIw/MjIvMDkvY3JpcHRv/d2FsbGV0cy0xMDI0/eDQ1MC5qcGc",
               "content": "Hardware wallets (Ledger, Trezor): máxima seguridad, almacenamiento offline. Software wallets (Electrum, BlueWallet): convenientes, para uso diario. Exchange wallets (Coinbase, Binance): fáciles pero custodiales, no tienes tus claves. Paper wallets: tus claves impresas en papel, seguras si se guardan bien. Para grandes cantidades, siempre se recomienda una hardware wallet."
             },
             {
@@ -534,7 +534,7 @@
               "type": "explanation",
               "title": "Criptografía de clave pública",
               "subtitle": "El sistema que protege tus fondos",
-              "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Public_key_encryption.svg/640px-Public_key_encryption.svg.png",
+              "image_url": "https://imgs.search.brave.com/3aA0VKiunjjt9Rb7IrrJijMPQN0S7Ln9MlnyuPd6C4M/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9naW1n/LnN0YXRpY2ltZ3Mu/Y29tL2xlYXJuL2Y3/MDM2ODBkMjI5YThl/MDVkY2NhZTJlYTcw/NDljZDRiMjhhZGY3/MmQucG5n",
               "content": "Bitcoin usa criptografía asimétrica. Tienes una clave privada (número secreto enorme, nunca la compartas) y una clave pública (derivada matemáticamente de la privada, puedes compartirla). Tu dirección de Bitcoin es un hash de tu clave pública. Con tu clave privada puedes firmar transacciones, demostrando que eres el dueño sin revelar la clave. Con la clave pública, cualquiera puede verificar tu firma pero no puede gastar tus fondos."
             },
             {
@@ -580,7 +580,7 @@
               "type": "explanation",
               "title": "Anatomía de una transacción Bitcoin",
               "subtitle": "Inputs, outputs, fees y confirmaciones",
-              "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Bitcoin_network_scheme.svg/640px-Bitcoin_network_scheme.svg.png",
+              "image_url": "https://imgs.search.brave.com/mWH3xmle_2exjSftGERPba8se9qPNdd4C1poIstI1Og/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9hY2Fk/ZW15LmJpdDJtZS5j/b20vd3AtY29udGVu/dC91cGxvYWRzLzIw/MjIvMDcvUG9ydGFk/YS1jdXJzby1pbnRl/cm1lZGlvLWJpdGNv/aW4tQml0Mk1lQWNh/ZGVteS53ZWJw",
               "content": "Una transacción Bitcoin tiene: Inputs (referencias a bitcoins que recibes anteriormente), Outputs (a dónde van los bitcoins: destinatario y cambio de vuelta a ti), y Fee (comisión para los mineros = total inputs - total outputs). La transacción se firma con tu clave privada y se difunde a la red. Los mineros la incluyen en un bloque. Cada bloque adicional encima es una 'confirmación'. Con 6 confirmaciones, una transacción se considera irreversible."
             },
             {
