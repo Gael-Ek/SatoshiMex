@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
 import 'package:satoshimex/core/providers/bitcoin_price_provider.dart';
 import 'package:satoshimex/features/wallet/presentation/providers/wallet_provider.dart';
 
@@ -52,12 +51,6 @@ class _WalletDashboardScreenState extends ConsumerState<WalletDashboardScreen> {
         return Scaffold(
           appBar: AppBar(
             elevation: 0,
-
-            leading: IconButton(
-              icon: const Icon(Icons.arrow_back, color: AppColors.white),
-
-              onPressed: () => context.pop(),
-            ),
 
             title: const Text(
               'Billetera',
