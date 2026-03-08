@@ -22,15 +22,14 @@ class WalletBalanceCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // 1. Matemáticas Nivel Ingeniero
-    // Extraemos el número puro (ej. "0.1 BTC" -> 0.1)
+    // Extraemos el número puro
     final double btcAmount =
         double.tryParse(balance.replaceAll(' BTC', '').trim()) ?? 0.0;
 
-    // Calculamos el valor en Pesos Mexicanos (BTC * Precio API)
+    // Calculamos el valor en Pesos Mexicanos
     final double mxnValue = btcAmount * btcPriceInMxn;
 
-    // Calculamos los Satoshis (BTC * 100 millones)
+    // Calculamos los Satoshis
     final double satsValue = btcAmount * 100000000;
 
     return Container(
@@ -39,7 +38,7 @@ class WalletBalanceCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.deepNavy,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: AppColors.blueGray.withOpacity(0.1)),
+        border: Border.all(color: AppColors.slateBlueGray),
       ),
       child: Stack(
         children: [
@@ -49,7 +48,7 @@ class WalletBalanceCard extends StatelessWidget {
             child: Icon(
               Icons.currency_bitcoin,
               size: 120,
-              color: AppColors.blueGray.withOpacity(0.05),
+              color: AppColors.blueGray.withValues(alpha: .05),
             ),
           ),
 

@@ -23,7 +23,7 @@ class CustomButton extends StatelessWidget {
         ? Colors.grey.withValues(alpha: 0.5)
         : Colors.transparent;
 
-    final textColor = isSecondary ? Colors.grey.shade400 : Colors.white;
+    final textColor = isSecondary ? Colors.grey.shade400 : Colors.black;
 
     return SizedBox(
       width: double.infinity,

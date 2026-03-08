@@ -28,11 +28,16 @@ class WalletState extends _$WalletState {
     return WalletStatus.ready;
   }
 
+  Future<Map<String, dynamic>?> getWalletData() async {
+    final service = await ref.read(sharedPreferencesServiceProvider.future);
+    return service.loadWalletData();
+  }
+
   // Método para cuando termina el tutorial
   Future<void> markIntroAsSeen() async {
     final service = await ref.read(sharedPreferencesServiceProvider.future);
     await service.setWalletIntroSeen();
-    ref.invalidateSelf(); // Esto refresca el build() y pasará a 'needsCreation'
+    state = const AsyncData(WalletStatus.needsCreation);
   }
 
   // Método para cuando termina de crear la billetera
@@ -48,4 +53,13 @@ class WalletState extends _$WalletState {
     final service = await ref.read(sharedPreferencesServiceProvider.future);
     await service.clearIntro();
   }
+}
+
+@riverpod
+Future<Map<String, dynamic>?> walletData(Ref ref) async {
+  final status = await ref.watch(walletStateProvider.future);
+  if (status != WalletStatus.ready) return null;
+
+  final service = await ref.watch(sharedPreferencesServiceProvider.future);
+  return service.loadWalletData();
 }

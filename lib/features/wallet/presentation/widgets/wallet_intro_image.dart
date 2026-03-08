@@ -19,7 +19,8 @@ class WalletIntroImage extends StatelessWidget {
             width: 220,
             height: 220,
             decoration: BoxDecoration(
-              color: AppColors.white.withValues(alpha: 0.2),
+              color: AppColors.deepNavy,
+              border: Border.all(color: AppColors.slateBlueGray, width: 2),
               borderRadius: BorderRadius.circular(
                 32,
               ), // Bordes bien redondeados

@@ -14,7 +14,8 @@ class WalletChecklistItem extends StatelessWidget {
       ), // Separación entre cada tarjeta
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
       decoration: BoxDecoration(
-        color: AppColors.white.withValues(alpha: 0.2), // Fondo de la tarjeta
+        color: AppColors.deepNavy,
+        border: Border.all(color: AppColors.slateBlueGray),
         borderRadius: BorderRadius.circular(16),
       ),
       child: Row(

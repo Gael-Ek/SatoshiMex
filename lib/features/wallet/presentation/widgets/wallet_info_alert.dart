@@ -11,10 +11,10 @@ class WalletInfoAlert extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: AppColors.charcoalBlack, // Fondo oscuro
+        color: AppColors.charcoalBlack,
         borderRadius: BorderRadius.circular(12),
         // Un borde sutil para enmarcarlo
-        border: Border.all(color: AppColors.blueGray.withOpacity(0.2)),
+        border: Border.all(color: AppColors.blueGray.withValues(alpha: .2)),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -29,7 +29,7 @@ class WalletInfoAlert extends StatelessWidget {
             child: Text(
               text,
               style: const TextStyle(
-                color: AppColors.blueGray,
+                color: AppColors.white,
                 fontSize: 13,
                 height: 1.4,
               ),

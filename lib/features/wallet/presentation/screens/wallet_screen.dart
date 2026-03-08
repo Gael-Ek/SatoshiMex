@@ -65,9 +65,10 @@ class WalletScreen extends ConsumerWidget {
         children: [
           Container(
             width: double.infinity,
-            padding: const EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(32.0),
             decoration: BoxDecoration(
-              color: AppColors.white.withValues(alpha: 0.2),
+              color: AppColors.deepNavy,
+              border: Border.all(color: AppColors.slateBlueGray),
               borderRadius: BorderRadius.circular(20),
             ),
             child: Column(
@@ -88,11 +89,9 @@ class WalletScreen extends ConsumerWidget {
                   ),
                 ),
                 const SizedBox(height: 24),
-                Text(
-                  status == WalletStatus.needsCreation
-                      ? 'Crea tu billetera de simulación para comenzar a aprender comó funcuionan las transacciones de Bitcoin.'
-                      : 'Accede a tu billetera para comenzar a aprender comó funcuionan las transacciones de Bitcoin.',
-                  textAlign: TextAlign.start,
+                const Text(
+                  'Crea tu billetera de simulación para comenzar a aprender...',
+                  textAlign: TextAlign.center,
                   style: TextStyle(
                     color: AppColors.white,
                     fontSize: 20,
@@ -101,17 +100,13 @@ class WalletScreen extends ConsumerWidget {
                 ),
                 const SizedBox(height: 32),
                 SatoshiButton(
-                  text: status == WalletStatus.needsCreation
-                      ? 'Crear mi billetera'
-                      : 'Ir a mi billetera',
-                  icon: status == WalletStatus.needsCreation
-                      ? Icons.add_circle_outline
-                      : Icons.wallet,
+                  text: 'Crear mi billetera',
+                  icon: Icons.add_circle_outline,
                   onPressed: () {
                     if (status == WalletStatus.needsCreation) {
                       context.push('/create_wallet');
                     } else if (status == WalletStatus.ready) {
-                      context.push('/wallet');
+                      context.push('/wallet_dashboard');
                     }
                   },
                 ),

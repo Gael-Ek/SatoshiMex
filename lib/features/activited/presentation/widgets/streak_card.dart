@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:satoshimex/core/config/constants/app_colors.dart';
 
 class StreakCard extends StatelessWidget {
   final int streak;
@@ -10,7 +11,7 @@ class StreakCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: const Color(0xFF04233B),
+        color: AppColors.deepNavy,
         borderRadius: BorderRadius.circular(16),
       ),
       child: Row(

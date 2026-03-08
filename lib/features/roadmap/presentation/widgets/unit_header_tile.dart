@@ -14,11 +14,9 @@ class UnitHeaderTile extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
         decoration: BoxDecoration(
-          color: AppColors.primaryAmber.withValues(alpha: 0.08),
+          color: AppColors.deepNavy,
           borderRadius: BorderRadius.circular(12),
-          border: Border.all(
-            color: AppColors.primaryAmber.withValues(alpha: 0.3),
-          ),
+          border: Border.all(color: AppColors.slateBlueGray),
         ),
         child: Row(
           children: [

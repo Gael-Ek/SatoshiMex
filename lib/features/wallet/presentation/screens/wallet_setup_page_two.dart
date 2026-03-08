@@ -68,9 +68,7 @@ class _WalletSetupPageTwoState extends State<WalletSetupPageTwo> {
               decoration: BoxDecoration(
                 color: AppColors.deepNavy,
                 borderRadius: BorderRadius.circular(20),
-                border: Border.all(
-                  color: AppColors.blueGray.withValues(alpha: .2),
-                ),
+                border: Border.all(color: AppColors.slateBlueGray),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

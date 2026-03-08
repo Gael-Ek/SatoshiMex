@@ -33,8 +33,7 @@ class SatoshiButton extends StatelessWidget {
             Text(
               text,
               style: const TextStyle(
-                color: AppColors
-                    .charcoalBlack, // Letra oscura para contrastar con el naranja
+                color: AppColors.charcoalBlack,
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),

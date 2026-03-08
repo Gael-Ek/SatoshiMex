@@ -1,34 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-
+import 'package:satoshimex/features/wallet/presentation/providers/wallet_recipients_provider.dart';
 import 'package:satoshimex/core/config/constants/app_colors.dart';
 
-class WalletActionButtons extends StatelessWidget {
+class WalletActionButtons extends ConsumerWidget {
   const WalletActionButtons({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Row(
       children: [
         // 1. Botón Simular Envío (Ámbar) - ¡AHORA ES INTELIGENTE!
         Expanded(
           child: ElevatedButton(
             onPressed: () async {
-              // LÓGICA DEL INTERCEPTOR
-              final prefs = await SharedPreferences.getInstance();
-              final recipientsList =
-                  prefs.getStringList('walletRecipients') ?? [];
-
-              if (context.mounted) {
-                if (recipientsList.isEmpty) {
-                  // Camino A: No tiene a quién enviarle, lo mandamos a crear uno
-                  context.push('/add-recipient-1');
-                } else {
-                  // Camino B: Ya tiene contactos, lo mandamos a su agenda
-                  // (Esta ruta la crearemos en el siguiente paso)
-                  context.push('/wallet-send-step-1');
-                }
+              final hasRecipients = ref
+                  .read(walletRecipientsProvider.notifier)
+                  .hasRecipients;
+              if (hasRecipients) {
+                context.push('/wallet-send');
+              } else {
+                context.push('/add-recipient');
               }
             },
             style: ElevatedButton.styleFrom(

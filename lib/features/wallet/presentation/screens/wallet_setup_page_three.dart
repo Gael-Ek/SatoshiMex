@@ -38,7 +38,7 @@ class WalletSetupPageThree extends StatelessWidget {
           decoration: BoxDecoration(
             color: AppColors.deepNavy,
             borderRadius: BorderRadius.circular(20),
-            border: Border.all(color: AppColors.blueGray.withValues(alpha: .2)),
+            border: Border.all(color: AppColors.slateBlueGray),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -113,7 +113,7 @@ class WalletSetupPageThree extends StatelessWidget {
                   vertical: 12,
                 ),
                 decoration: BoxDecoration(
-                  color: AppColors.charcoalBlack,
+                  color: AppColors.white,
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(
                     color: AppColors.blueGray.withValues(alpha: .3),
@@ -121,19 +121,27 @@ class WalletSetupPageThree extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    const Icon(Icons.key, color: AppColors.blueGray, size: 16),
+                    const Icon(
+                      Icons.key,
+                      color: AppColors.charcoalBlack,
+                      size: 16,
+                    ),
                     const SizedBox(width: 8),
                     Expanded(
                       child: Text(
                         address,
                         style: const TextStyle(
-                          color: AppColors.blueGray,
+                          color: AppColors.charcoalBlack,
                           fontSize: 14,
                         ),
                         overflow: TextOverflow.ellipsis,
                       ),
                     ), // <-- Aquí pinta la dirección
-                    const Icon(Icons.copy, color: AppColors.blueGray, size: 16),
+                    const Icon(
+                      Icons.copy,
+                      color: AppColors.charcoalBlack,
+                      size: 16,
+                    ),
                   ],
                 ),
               ),

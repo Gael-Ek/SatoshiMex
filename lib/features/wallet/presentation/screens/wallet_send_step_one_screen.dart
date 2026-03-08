@@ -1,308 +1,197 @@
-import 'dart:convert';
+// send_step1_content.dart
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:satoshimex/core/config/constants/app_colors.dart';
-import 'package:satoshimex/core/widgets/app_widgets.dart';
+import 'package:satoshimex/features/wallet/presentation/providers/wallet_recipients_provider.dart';
+import 'dart:convert';
 
-// Importamos nuestros Legos
-import 'package:satoshimex/features/wallet/presentation/widgets/wallet_learning_progress.dart';
-import 'package:satoshimex/features/wallet/presentation/widgets/satoshi_warning_card.dart';
-
-// Modelo de datos para los contactos (JSON Parsing)
 class Recipient {
   final String name;
   final String address;
   Recipient({required this.name, required this.address});
 }
 
-class WalletSendStepOneScreen extends StatefulWidget {
-  const WalletSendStepOneScreen({super.key});
+class SendStep1Content extends ConsumerStatefulWidget {
+  final TextEditingController addressController;
+  final VoidCallback onAddRecipientTap;
+
+  const SendStep1Content({
+    super.key,
+    required this.addressController,
+    required this.onAddRecipientTap,
+  });
 
   @override
-  State<WalletSendStepOneScreen> createState() =>
-      _WalletSendStepOneScreenState();
+  ConsumerState<SendStep1Content> createState() => _SendStep1ContentState();
 }
 
-class _WalletSendStepOneScreenState extends State<WalletSendStepOneScreen> {
-  final TextEditingController _addressController = TextEditingController();
+class _SendStep1ContentState extends ConsumerState<SendStep1Content> {
   List<Recipient> _recipients = [];
-  bool _isLoading = true;
 
   @override
   void initState() {
     super.initState();
-    _loadRecipients();
+    _parseRecipients();
   }
 
-  @override
-  void dispose() {
-    _addressController.dispose();
-    super.dispose();
-  }
-
-  // Leer base de datos local JSON
-  Future<void> _loadRecipients() async {
-    final prefs = await SharedPreferences.getInstance();
-    final listStr = prefs.getStringList('walletRecipients') ?? [];
-
-    final List<Recipient> loaded = [];
-    for (var item in listStr) {
+  void _parseRecipients() {
+    final raw = ref.read(walletRecipientsProvider);
+    final parsed = <Recipient>[];
+    for (final item in raw) {
       try {
-        final map = jsonDecode(item);
-        loaded.add(Recipient(name: map['name'], address: map['address']));
-      } catch (e) {
-        debugPrint('Error al decodificar contacto: $e');
-      }
+        final map = jsonDecode(item) as Map<String, dynamic>;
+        parsed.add(Recipient(name: map['name'], address: map['address']));
+      } catch (_) {}
     }
-
-    setState(() {
-      _recipients = loaded;
-      _isLoading = false;
-    });
-  }
-
-  // Lógica Reactiva: Pegar dirección
-  void _selectRecipient(String address) {
-    setState(() {
-      _addressController.text = address;
-    });
+    setState(() => _recipients = parsed);
   }
 
   @override
   Widget build(BuildContext context) {
-    if (_isLoading) {
-      return const Scaffold(
-        backgroundColor: AppColors.blueDark,
-        body: Center(
-          child: CircularProgressIndicator(color: AppColors.primaryAmber),
-        ),
-      );
-    }
+    // Refrescamos si cambia el provider
+    ref.listen(walletRecipientsProvider, (_, __) => _parseRecipients());
 
-    return Scaffold(
-      backgroundColor: AppColors.blueDark, // REGLA DE ORO
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: AppColors.white),
-          onPressed: () => context.pop(),
-        ),
-        title: const Text(
-          'Billetera',
-          style: TextStyle(color: AppColors.white, fontWeight: FontWeight.bold),
-        ),
-        centerTitle: true,
-      ),
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24.0),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        // Input de dirección
+        Container(
+          padding: const EdgeInsets.all(20),
+          decoration: BoxDecoration(
+            color: AppColors.deepNavy,
+            borderRadius: BorderRadius.circular(16),
+            border: Border.all(color: AppColors.blueGray.withValues(alpha: .1)),
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // CORRECCIÓN 1: Eliminado el texto redundante y el Row.
-              // Usamos Column para que el título baje de línea naturalmente.
               const Text(
-                'Simular envío de\nBitcoin',
+                'Dirección del destinatario',
                 style: TextStyle(
                   color: AppColors.white,
-                  fontSize: 26,
+                  fontSize: 14,
                   fontWeight: FontWeight.bold,
-                  height: 1.2,
                 ),
               ),
-              const SizedBox(height: 16),
-              const WalletLearningProgress(currentStep: 1, totalSteps: 4),
-              const SizedBox(height: 32),
-
-              // Contenedor del Input de Dirección
+              const SizedBox(height: 12),
               Container(
-                padding: const EdgeInsets.all(20),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 4,
+                ),
                 decoration: BoxDecoration(
-                  color: AppColors.deepNavy,
-                  borderRadius: BorderRadius.circular(16),
+                  color: AppColors.charcoalBlack,
+                  borderRadius: BorderRadius.circular(8),
                   border: Border.all(
-                    color: AppColors.blueGray.withOpacity(0.1),
+                    color: AppColors.blueGray.withValues(alpha: .2),
                   ),
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                child: Row(
                   children: [
-                    const Text(
-                      'Dirección del destinatario',
-                      style: TextStyle(
-                        color: AppColors.white,
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    const SizedBox(height: 12),
-
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 16,
-                        vertical: 4,
-                      ),
-                      decoration: BoxDecoration(
-                        color: AppColors.charcoalBlack,
-                        borderRadius: BorderRadius.circular(8),
-                        border: Border.all(
-                          color: AppColors.blueGray.withOpacity(0.2),
+                    Expanded(
+                      child: TextField(
+                        controller: widget.addressController,
+                        style: const TextStyle(
+                          color: AppColors.white,
+                          fontSize: 13,
+                          letterSpacing: 1.0,
+                        ),
+                        decoration: const InputDecoration(
+                          hintText: 'bc1q...',
+                          hintStyle: TextStyle(color: AppColors.blueGray),
+                          border: InputBorder.none,
                         ),
                       ),
-                      child: Row(
-                        children: [
-                          Expanded(
-                            child: TextField(
-                              controller: _addressController,
-                              style: const TextStyle(
-                                color: AppColors.white,
-                                fontSize: 13,
-                                letterSpacing: 1.0,
-                              ),
-                              decoration: const InputDecoration(
-                                hintText: 'bc1q...',
-                                hintStyle: TextStyle(color: AppColors.blueGray),
-                                border: InputBorder.none,
-                              ),
-                            ),
-                          ),
-                          const Icon(
-                            Icons.qr_code_scanner,
-                            color: AppColors.primaryAmber,
-                            size: 24,
-                          ),
-                        ],
-                      ),
                     ),
-                    const SizedBox(height: 12),
-                    const Text(
-                      'Las direcciones de Bitcoin son únicas para cada usuario.',
-                      style: TextStyle(
-                        color: AppColors.blueGray,
-                        fontSize: 12,
-                        fontStyle: FontStyle.italic,
-                      ),
+                    const Icon(
+                      Icons.qr_code_scanner,
+                      color: AppColors.primaryAmber,
+                      size: 24,
                     ),
                   ],
                 ),
               ),
-              const SizedBox(height: 32),
-
-              // Lista de Contactos
+              const SizedBox(height: 12),
               const Text(
-                'DESTINATARIOS GUARDADOS',
+                'Las direcciones de Bitcoin son únicas para cada usuario.',
                 style: TextStyle(
-                  color: AppColors.white,
+                  color: AppColors.blueGray,
                   fontSize: 12,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 1.0,
+                  fontStyle: FontStyle.italic,
                 ),
               ),
-              const SizedBox(height: 16),
-
-              // CORRECCIÓN 2: Eliminado el SizedBox(height: 80) hardcodeado.
-              // Usamos IntrinsicHeight para que la lista calcule su propio alto perfecto y no haya overflow.
-              IntrinsicHeight(
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  physics: const BouncingScrollPhysics(),
-                  child: Row(
-                    children: [
-                      // Mapeamos nuestra lista de contactos a Avatares
-                      ..._recipients.map(
-                        (recipient) => Padding(
-                          padding: const EdgeInsets.only(right: 24.0),
-                          child: _buildAvatar(
-                            name: recipient.name,
-                            initial: recipient.name.isNotEmpty
-                                ? recipient.name[0].toUpperCase()
-                                : '?',
-                            onTap: () => _selectRecipient(recipient.address),
-                          ),
-                        ),
-                      ),
-
-                      // Botón para crear uno Nuevo
-                      _buildAvatar(
-                        name: 'Nuevo',
-                        icon: Icons.add,
-                        isDashed: true,
-                        // Al volver recargamos la lista
-                        onTap: () => context
-                            .push('/add-recipient-1')
-                            .then((_) => _loadRecipients()),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              const SizedBox(height: 32),
-
-              // Reutilizamos el Warning Card (Consistencia al 100%)
-              const SatoshiWarningCard(
-                title: 'Siempre verifica los caracteres',
-                description:
-                    'Verifica los primeros 4 y últimos 4 caracteres antes de enviar. Ej: bc1q...3f8a',
-              ),
-
-              const Spacer(),
-
-              // Botón Continuar
-              SatoshiButton(
-                text: 'Continuar',
-                onPressed: () {
-                  if (_addressController.text.trim().isNotEmpty) {
-                    // Si hay dirección, avanzamos al Paso 2 (Monto)
-                    context.push(
-                      '/wallet-send-step-2',
-                      extra: _addressController.text.trim(),
-                    );
-                  } else {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                        content: Text('Ingresa o selecciona una dirección'),
-                        backgroundColor: Colors.red,
-                      ),
-                    );
-                  }
-                },
-              ),
-              const SizedBox(height: 16),
-              const Center(
-                child: Text(
-                  'En el siguiente paso elegirás la cantidad de Bitcoin\nque deseas enviar.',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: AppColors.blueGray,
-                    fontSize: 11,
-                    fontStyle: FontStyle.italic,
-                    height: 1.4,
-                  ),
-                ),
-              ),
-              const SizedBox(height: 24),
             ],
           ),
         ),
-      ),
+        const SizedBox(height: 32),
+
+        // Contactos guardados
+        const Text(
+          'DESTINATARIOS GUARDADOS',
+          style: TextStyle(
+            color: AppColors.white,
+            fontSize: 12,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 1.0,
+          ),
+        ),
+        const SizedBox(height: 16),
+
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          physics: const BouncingScrollPhysics(),
+          child: Row(
+            children: [
+              ..._recipients.map(
+                (r) => Padding(
+                  padding: const EdgeInsets.only(right: 24),
+                  child: _Avatar(
+                    name: r.name,
+                    initial: r.name.isNotEmpty ? r.name[0].toUpperCase() : '?',
+                    onTap: () => widget.addressController.text = r.address,
+                  ),
+                ),
+              ),
+              _Avatar(
+                name: 'Nuevo',
+                icon: Icons.add,
+                onTap: widget.onAddRecipientTap,
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(height: 32),
+
+        // Warning
+        _InfoCard(
+          title: 'Siempre verifica los caracteres',
+          description:
+              'Verifica los primeros 4 y últimos 4 caracteres antes de enviar. Ej: bc1q...3f8a',
+        ),
+      ],
     );
   }
+}
 
-  // Widget de apoyo para los Avatares
-  Widget _buildAvatar({
-    required String name,
-    String? initial,
-    IconData? icon,
-    bool isDashed = false,
-    required VoidCallback onTap,
-  }) {
+class _Avatar extends StatelessWidget {
+  final String name;
+  final String? initial;
+  final IconData? icon;
+  final VoidCallback onTap;
+
+  const _Avatar({
+    required this.name,
+    this.initial,
+    this.icon,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
       child: Column(
-        mainAxisSize: MainAxisSize.min, // Importante para IntrinsicHeight
+        mainAxisSize: MainAxisSize.min,
         children: [
           Container(
             width: 56,
@@ -311,8 +200,7 @@ class _WalletSendStepOneScreenState extends State<WalletSendStepOneScreen> {
               color: AppColors.charcoalBlack,
               shape: BoxShape.circle,
               border: Border.all(
-                color: AppColors.primaryAmber.withOpacity(0.5),
-                style: BorderStyle.solid,
+                color: AppColors.primaryAmber.withValues(alpha: .5),
                 width: 2,
               ),
             ),
@@ -330,17 +218,63 @@ class _WalletSendStepOneScreenState extends State<WalletSendStepOneScreen> {
             ),
           ),
           const SizedBox(height: 8),
-          // Usamos Flexible para asegurar que el texto no empuje el diseño hacia abajo
-          Flexible(
-            child: Text(
-              name,
-              style: const TextStyle(
-                color: AppColors.white,
-                fontSize: 12,
-                fontWeight: FontWeight.w500,
+          Text(
+            name,
+            style: const TextStyle(
+              color: AppColors.white,
+              fontSize: 12,
+              fontWeight: FontWeight.w500,
+            ),
+            overflow: TextOverflow.ellipsis,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _InfoCard extends StatelessWidget {
+  final String title;
+  final String description;
+  const _InfoCard({required this.title, required this.description});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: AppColors.deepNavy,
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: AppColors.primaryAmber.withValues(alpha: .3)),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              const Icon(
+                Icons.warning_amber_rounded,
+                color: AppColors.primaryAmber,
+                size: 18,
               ),
-              overflow:
-                  TextOverflow.ellipsis, // Si el nombre es largo, pone "..."
+              const SizedBox(width: 8),
+              Text(
+                title,
+                style: const TextStyle(
+                  color: AppColors.primaryAmber,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 13,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 8),
+          Text(
+            description,
+            style: const TextStyle(
+              color: AppColors.blueGray,
+              fontSize: 12,
+              height: 1.4,
             ),
           ),
         ],
