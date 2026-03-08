@@ -6,85 +6,76 @@ class WalletLearningMissions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.all(24),
-      decoration: BoxDecoration(
-        color: AppColors.deepNavy, // Fondo de la tarjeta
-        borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: AppColors.blueGray.withOpacity(0.1)),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // Título de la sección
-          const Text(
-            'MISIONES DE APRENDIZAJE',
-            style: TextStyle(
-              color: AppColors.blueGray,
-              fontSize: 12,
-              fontWeight: FontWeight.bold,
-              letterSpacing: 1.0,
-            ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Text(
+          'MISIONES DE APRENDIZAJE',
+          style: TextStyle(
+            color: AppColors.blueGray,
+            fontSize: 12,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 1.0,
           ),
-          const SizedBox(height: 16),
+        ),
+        const SizedBox(height: 16),
 
-          // Misión 1
-          _buildMissionTile(title: 'Simula tu primer envío'),
-
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 8.0),
-            child: Divider(color: AppColors.charcoalBlack, thickness: 1),
+        // Contenedor oscuro principal
+        Container(
+          padding: const EdgeInsets.all(20),
+          decoration: BoxDecoration(
+            color: AppColors.deepNavy,
+            borderRadius: BorderRadius.circular(16),
+            border: Border.all(color: AppColors.blueGray.withOpacity(0.1)),
           ),
-
-          // Misión 2
-          _buildMissionTile(title: 'Primera conversión BTC a MXN'),
-        ],
-      ),
+          child: Column(
+            children: [
+              _buildMissionItem('Simula tu primer envío', isLast: false),
+              _buildMissionItem('Primera conversión BTC a MXN', isLast: true),
+            ],
+          ),
+        ),
+      ],
     );
   }
 
-  // Pequeño sub-widget para no repetir código
-  Widget _buildMissionTile({required String title}) {
-    return Row(
+  // Widget para construir cada misión sin la etiqueta de XP
+  Widget _buildMissionItem(String title, {required bool isLast}) {
+    return Column(
       children: [
-        // Indicador de "Pendiente" (Círculo vacío)
-        Container(
-          width: 20,
-          height: 20,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            border: Border.all(color: AppColors.blueGray, width: 2),
-          ),
+        Row(
+          children: [
+            // Círculo indicador de estado
+            const Icon(
+              Icons.circle_outlined,
+              color: AppColors.blueGray,
+              size: 22,
+            ),
+            const SizedBox(width: 16),
+            // Título de la misión
+            Expanded(
+              child: Text(
+                title,
+                style: const TextStyle(
+                  color: AppColors.white,
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            // ¡Se eliminó el contenedor del +50 XP aquí!
+          ],
         ),
-        const SizedBox(width: 16),
-        // Texto de la misión
-        Expanded(
-          child: Text(
-            title,
-            style: const TextStyle(
-              color: AppColors.white,
-              fontSize: 15,
-              fontWeight: FontWeight.w600,
+
+        // Línea divisoria si no es el último elemento
+        if (!isLast)
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 12.0),
+            child: Divider(
+              color: AppColors.charcoalBlack.withOpacity(0.5),
+              thickness: 1,
             ),
           ),
-        ),
-        // Recompensa en XP (Plano por ahora)
-        Container(
-          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-          decoration: BoxDecoration(
-            color: AppColors.charcoalBlack,
-            borderRadius: BorderRadius.circular(8),
-          ),
-          child: const Text(
-            '+50 XP',
-            style: TextStyle(
-              color: AppColors.primaryAmber,
-              fontSize: 12,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
       ],
     );
   }
