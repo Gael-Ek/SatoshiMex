@@ -139,12 +139,12 @@ class _CarruseSendStepState extends ConsumerState<CarruseSendStep> {
           recipientName: name,
           amount: _amount,
           feeSats: _feeSats,
+          onClose: () {
+            Navigator.of(context).pop(); // cierra el modal
+            context.pop(); // regresa al dashboard
+          },
         ),
       );
-
-      // Cuando cierra el modal, regresamos al dashboard (que ya está en stack)
-      if (!mounted) return;
-      context.pop();
     } finally {
       if (mounted) setState(() => _isSending = false);
     }
@@ -365,11 +365,13 @@ class _SendSuccessModal extends StatefulWidget {
   final String recipientName;
   final double amount;
   final int feeSats;
+  final VoidCallback onClose;
 
   const _SendSuccessModal({
     required this.recipientName,
     required this.amount,
     required this.feeSats,
+    required this.onClose,
   });
 
   @override
@@ -567,7 +569,7 @@ class _SendSuccessModalState extends State<_SendSuccessModal> {
                     // Botón cerrar
                     SatoshiButton(
                       text: 'Volver a la Billetera',
-                      onPressed: () => Navigator.of(context).pop(),
+                      onPressed: widget.onClose,
                     ),
                     const SizedBox(height: 12),
                     const Text(

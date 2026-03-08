@@ -100,7 +100,9 @@ class WalletScreen extends ConsumerWidget {
                 ),
                 const SizedBox(height: 32),
                 SatoshiButton(
-                  text: 'Crear mi billetera',
+                  text: status == WalletStatus.needsCreation
+                      ? 'Crear billetera'
+                      : 'Ir a mi billetera',
                   icon: Icons.add_circle_outline,
                   onPressed: () {
                     if (status == WalletStatus.needsCreation) {
