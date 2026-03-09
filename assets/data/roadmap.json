@@ -1,0 +1,1423 @@
+{
+  "id": 1,
+  "roadmap_title": "Aprende Bitcoin de 0 a Experto",
+  "units": [
+    {
+      "id": 1,
+      "title": "Introducción a Bitcoin",
+      "image_unit_url": "https://imgs.search.brave.com/DDNbTH3BDUiSln2FPc2S0MXkfuc4emNT4PXHo3l74zY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/Yml0Y29pbi5jb20v/c3RhdGljLzhiYzlj/NmQ3NmJiYzgwZWQw/OTY2Zjk5NWIwMTk4/OWM3L3doYXQtaXMt/Yml0Y29pbl9uZXcu/c3Zn",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Qué es Bitcoin",
+          "sections": [
+            {
+              "type": "explanation",
+              "title": "¿Qué es Bitcoin?",
+              "subtitle": "Una moneda digital sin intermediarios",
+              "image_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuCF5fjI08f4rTlNCeKAjxc2zfkWb69M9C3UpoFsT0D95pBM1q9z9f_U5HFKdmDF3-T5UofN1bVAMLMTc6WnVWzaF65s2avVk3d7pePQlEZn0zpFxahEw5qWigXcslltwd1Tzt6Y4G28SSPOOLQ8RUdkXvKynRxwvWR8xO61PUbX1AyyClUwArbXaLYcQtvQSuFsArHur0O-aTo032p9vMthLSpEjEiyTVz_OT5Sz23lCPuqGbbsP_O9vjjbGpMZbvdtUFHTFIjbWmU",
+              "content": "Bitcoin es una moneda digital descentralizada creada en 2009 por una persona o grupo bajo el seudónimo de Satoshi Nakamoto. Permite realizar transferencias de valor entre personas en cualquier parte del mundo sin necesidad de bancos ni intermediarios. A diferencia del dinero tradicional, Bitcoin no está controlado por ningún gobierno ni institución financiera."
+            },
+            {
+              "type": "example",
+              "title": "Enviar Bitcoin a un amigo",
+              "subtitle": "Transferencia rápida y sin comisiones altas",
+              "image_url": "https://imgs.search.brave.com/Ddytkl4v62TR93bNpS2D7FFlP9DXPAK3nKI7B-2ZKsU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wMjAv/ODQwLzIzMS9zbWFs/bC9tYW4tYW5kLXdv/bWFuLXRyYW5zZmVy/LWJpdGNvaW4tdXNp/bmctYXBwbGljYXRp/b24tb24tc21hcnRw/aG9uZS1wZW9wbGUt/bWluZS13b3JrLXdp/dGgtY3J5cHRvY3Vy/cmVuY3ktb24tc3Rv/Y2stZXhjaGFuZ2Ut/bWFya2V0LW9uLWNl/bGxwaG9uZS1jcnlw/dG8tdmlydHVhbC1t/b25leS1mbGF0LWls/bHVzdHJhdGlvbi12/ZWN0b3IuanBn",
+              "content": "Supongamos que quieres enviar 0.01 BTC a un amigo que vive en otro país. Con Bitcoin, solo necesitas su dirección de billetera digital. La transacción se verifica en la blockchain y llega en minutos, sin comisiones bancarias elevadas ni intermediarios que puedan bloquear la operación."
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "¿Bitcoin tiene un banco central?",
+                  "options": ["Sí", "No"],
+                  "answer": "No",
+                  "feedback": "Bitcoin es descentralizado y no tiene un banco central ni ninguna autoridad que lo controle."
+                },
+                {
+                  "q": "¿En qué año fue creado Bitcoin?",
+                  "options": ["2005", "2009", "2013", "2017"],
+                  "answer": "2009",
+                  "feedback": "Bitcoin fue creado en 2009 por Satoshi Nakamoto."
+                },
+                {
+                  "q": "¿Quién creó Bitcoin?",
+                  "options": [
+                    "Elon Musk",
+                    "Mark Zuckerberg",
+                    "Satoshi Nakamoto",
+                    "Bill Gates"
+                  ],
+                  "answer": "Satoshi Nakamoto",
+                  "feedback": "Satoshi Nakamoto es el seudónimo del creador o creadores de Bitcoin, cuya identidad real sigue siendo desconocida."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Historia del dinero",
+          "sections": [
+            {
+              "type": "explanation",
+              "title": "¿Cómo ha evolucionado el dinero?",
+              "subtitle": "Desde el trueque hasta las criptomonedas",
+              "image_url": "https://imgs.search.brave.com/zkzkjP70xw5VdsxszaA0al286u9LxZqPFCCu36C3fAE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9iaWxs/ZXRlcy1lbi1wYXBl/bC1kZS1kaXN0aW50/b3MtcGElQzMlQURz/ZXMtY29tby1hbnRl/Y2VkZW50ZXMtY29t/ZXJjaWFsZXMtZGlu/ZXJvLXktZWZlY3Rp/dm8tdmFyaWFzLWRl/bm9taW5hY2lvbmVz/LWZvbmRvLW9wZXJh/Y2lvbmVzLTQwOTUx/NjYwMC5qcGc",
+              "content": "El dinero ha pasado por diversas etapas a lo largo de la historia. Inicialmente existió el trueque, donde se intercambiaban bienes y servicios directamente. Más tarde surgieron las monedas metálicas y billetes respaldados por gobiernos, conocidos como dinero fiat. Con la llegada de la era digital, se crearon las criptomonedas como Bitcoin, que permiten transferencias directas entre personas sin necesidad de bancos, con un registro público seguro y transparente mediante blockchain."
+            },
+            {
+              "type": "example",
+              "title": "Comparación de métodos de intercambio",
+              "subtitle": "De trueque a dinero digital",
+              "image_url": "https://imgs.search.brave.com/QkEMdtKtA5Z7PyOfT-f9vxsLq9WhR0-uo261C_MZuqU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/Y2FpeGFiYW5rcmVz/ZWFyY2guY29tL3Np/dGVzL2RlZmF1bHQv/ZmlsZXMvc3R5bGVz/L2Rlc3RhY2Fkby9w/dWJsaWMvY29udGVu/dC9pbWFnZS8yMDE5/LzEyLzAzLzM0NDU0/L2RpbmVyby0xLmpw/Zz9pdG9rPVQ4UU4y/bU1z",
+              "content": "Antes, para conseguir harina necesitabas ofrecer leche a alguien que la necesitara (trueque). Luego, usabas monedas o billetes (dinero fiat). Ahora puedes enviar Bitcoin digitalmente a cualquier persona en el mundo con tu móvil, mostrando cómo ha evolucionado la facilidad de intercambio a lo largo de los siglos."
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "¿Qué se usaba antes del dinero?",
+                  "options": [
+                    "Trueque",
+                    "Criptomonedas",
+                    "Tarjetas de crédito",
+                    "Cheques"
+                  ],
+                  "answer": "Trueque",
+                  "feedback": "Antes del dinero se utilizaba el trueque para intercambiar bienes y servicios directamente."
+                },
+                {
+                  "q": "¿Qué es el dinero fiat?",
+                  "options": [
+                    "Dinero respaldado por oro",
+                    "Dinero emitido por gobiernos sin respaldo físico",
+                    "Criptomonedas",
+                    "Monedas de metal puro"
+                  ],
+                  "answer": "Dinero emitido por gobiernos sin respaldo físico",
+                  "feedback": "El dinero fiat es aquel emitido por los gobiernos y que no está respaldado directamente por un bien físico como el oro."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "title": "El problema que resuelve Bitcoin",
+          "sections": [
+            {
+              "type": "explanation",
+              "title": "¿Por qué nació Bitcoin?",
+              "subtitle": "La crisis de 2008 y la necesidad de un sistema alternativo",
+              "image_url": "https://imgs.search.brave.com/7VubK9xesMy9uWFhAVBXp6EWSV534-b5ECafL9HrJgI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9lbGNl/by5jb20vd3AtY29u/dGVudC91cGxvYWRz/LzIwMjQvMDEvYml0/Y29pbl9oaXN0b3Jp/YV8uanBn",
+              "content": "Bitcoin nació en plena crisis financiera global de 2008, cuando los bancos quebraron y millones de personas perdieron sus ahorros. Satoshi Nakamoto publicó el whitepaper de Bitcoin proponiendo un sistema de pagos electrónicos de persona a persona (peer-to-peer) que no requiriera confianza en terceros. El problema central que resuelve es el llamado 'doble gasto': cómo evitar que alguien gaste el mismo dinero digital dos veces sin necesidad de un banco que lo valide."
+            },
+            {
+              "type": "example",
+              "title": "El problema del doble gasto",
+              "subtitle": "Por qué el dinero digital necesitaba una solución nueva",
+              "image_url": "https://imgs.search.brave.com/Wk3uTe03QnNaFhB4kCbhJI0TbLJM683YN-fxUOvPatc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9sYW1v/bmVkYXZpcnR1YWwu/Y29tL3dwLWNvbnRl/bnQvdXBsb2Fkcy9k/b2JsZS1nYXN0by5q/cGc",
+              "content": "Imagina que tienes un archivo de imagen en tu computadora. Puedes copiar ese archivo miles de veces. Si el dinero digital funcionara igual, podrías 'copiar' tus bitcoins y gastarlos múltiples veces. Bitcoin resuelve esto con la blockchain: una vez que una transacción se confirma, queda registrada públicamente y no puede repetirse."
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "¿Cuál es el problema del 'doble gasto'?",
+                  "options": [
+                    "Pagar dos veces por el mismo producto",
+                    "Gastar el mismo dinero digital más de una vez",
+                    "Tener dos billeteras digitales",
+                    "Pagar comisiones dobles"
+                  ],
+                  "answer": "Gastar el mismo dinero digital más de una vez",
+                  "feedback": "El doble gasto es el riesgo de que alguien use el mismo dinero digital dos veces. Bitcoin lo soluciona con la blockchain."
+                },
+                {
+                  "q": "¿En qué contexto nació Bitcoin?",
+                  "options": [
+                    "Boom tecnológico de los 90",
+                    "Crisis financiera de 2008",
+                    "Pandemia de 2020",
+                    "Guerra fría"
+                  ],
+                  "answer": "Crisis financiera de 2008",
+                  "feedback": "Bitcoin nació en 2008-2009, en plena crisis financiera global, como respuesta a los fallos del sistema bancario tradicional."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Blockchain: La tecnología base",
+      "image_unit_url": "https://imgs.search.brave.com/z6mXjNbGhLXdD58eAszuXZ-0xyrASjFRTh7Y3wrGE5Q/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTI5/NzQ2NTc5Mi9waG90/by9iaXRjb2luLW5l/dHdvcmstY29uY2Vw/dC1vbi1kaWdpdGFs/LXNjcmVlbi5qcGc_/cz02MTJ4NjEyJnc9/MCZrPTIwJmM9aG9G/bUxsbzlaUTlmTldR/dm93OGlrRHBXZXFo/RWEyQTlSN1NJaDNQ/ZzNCRT0",
+      "lessons": [
+        {
+          "id": 4,
+          "title": "Cómo funciona la blockchain",
+          "sections": [
+            {
+              "type": "explanation",
+              "title": "¿Qué es la blockchain?",
+              "subtitle": "Un registro público, inmutable y distribuido",
+              "image_url": "https://imgs.search.brave.com/B2BJsdUkLnxZ58DsL9_DLNxedeKm5hE3uNJ3MyVOy9Q/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9vYnNl/cnZhdG9yaW8udGVj/Lm14L3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDIyLzA1L2JpZ3N0/b2NrLTIwNzA2MTYx/Mi5qcGVn",
+              "content": "La blockchain es una tecnología que funciona como un libro de contabilidad digital distribuido y público. Cada transacción realizada con Bitcoin se agrupa en bloques que se validan mediante nodos de la red. Una vez validados, los bloques se enlazan de manera cronológica formando la cadena de bloques. Esto garantiza que las transacciones sean inmutables, transparentes y seguras."
+            },
+            {
+              "type": "example",
+              "title": "Estructura de un bloque",
+              "subtitle": "Cómo se asegura la cadena de bloques",
+              "image_url": "https://imgs.search.brave.com/nYZhmit9c0sO5vRAwIn0HRBYd7whrHWcRk0K0RNu2sA/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9ibG9j/a2FuZGNhcGl0YWwu/Y29tL3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDI0LzAzL0RBTEwl/QzIlQjdFLTIwMjQt/MDMtMTAtMTYuMTMu/MjAtSW1hZ2luZS10/aGUtQml0Y29pbi1i/bG9ja2NoYWluLWFz/LWFuLWludHJpY2F0/ZS1uZXR3b3JrLW9m/LXN0b25lLWJsb2Nr/cy1pbnN0ZWFkLW9m/LW1ldGFsbGljLXBs/YWNlZC13aXRoaW4t/YS1kaW1seS1saXQt/Y2F2ZS10by1yZWR1/Y2UtdGhlLWJyaWdo/dG5lc3MuLUUud2Vi/cA",
+              "content": "Cada bloque contiene: un conjunto de transacciones verificadas, un timestamp (marca de tiempo), el hash del bloque anterior y su propio hash. Este encadenamiento asegura que nadie pueda alterar información en un bloque sin que toda la red lo detecte, ya que cambiaría todos los bloques posteriores."
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "¿Todos pueden ver la blockchain?",
+                  "options": [
+                    "Sí",
+                    "No",
+                    "Solo los mineros",
+                    "Solo los bancos"
+                  ],
+                  "answer": "Sí",
+                  "feedback": "La blockchain es pública y cualquier persona puede consultarla utilizando un explorador de bloques."
+                },
+                {
+                  "q": "¿Qué contiene cada bloque de la blockchain?",
+                  "options": [
+                    "Solo el saldo de cada usuario",
+                    "Transacciones, timestamp y hash del bloque anterior",
+                    "Contraseñas de los usuarios",
+                    "Información bancaria"
+                  ],
+                  "answer": "Transacciones, timestamp y hash del bloque anterior",
+                  "feedback": "Cada bloque contiene transacciones verificadas, una marca de tiempo y el hash del bloque anterior, formando la cadena."
+                },
+                {
+                  "q": "¿Qué pasa si alguien intenta alterar un bloque ya confirmado?",
+                  "options": [
+                    "No pasa nada",
+                    "Solo el minero se da cuenta",
+                    "Toda la red lo detecta porque cambian todos los hashes posteriores",
+                    "El bloque se borra automáticamente"
+                  ],
+                  "answer": "Toda la red lo detecta porque cambian todos los hashes posteriores",
+                  "feedback": "Alterar un bloque cambiaría su hash, lo que invalidaría todos los bloques siguientes. La red detectaría inmediatamente la inconsistencia."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "title": "Nodos y la red descentralizada",
+          "sections": [
+            {
+              "type": "explanation",
+              "title": "¿Qué es un nodo?",
+              "subtitle": "Los guardianes de la red Bitcoin",
+              "image_url": "https://imgs.search.brave.com/bEy4EDk9ZrjKwW4GRK6zmSn3Rq4DFRDyY89ZsC3jhYM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/dGVjbmljYXNkZXRy/YWRpbmcuY29tL3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDI0LzAy/LzYxZTk1N2QyNTEx/MTUtOTA1eDYxMy5q/cGc",
+              "content": "Un nodo es cualquier computadora que participa en la red Bitcoin descargando y validando la blockchain completa. Los nodos verifican que todas las transacciones cumplen las reglas del protocolo, sin necesidad de confiar en una autoridad central. Cualquier persona puede correr un nodo completo, contribuyendo a la descentralización de la red. Actualmente existen miles de nodos activos en todo el mundo."
+            },
+            {
+              "type": "example",
+              "title": "La red P2P de Bitcoin",
+              "subtitle": "Por qué no hay un punto central de control",
+              "image_url": "https://imgs.search.brave.com/rAFTWagtJLDU9kplUlJEbCnS-szydpTXy2ZvidYgvbU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9hY2Fk/ZW15LmJpdDJtZS5j/b20vd3AtY29udGVu/dC91cGxvYWRzLzIw/MjAvMDYvcmVkLXAy/cC1hbGNhbmNlLWds/b2JhbC53ZWJw",
+              "content": "Imagina una red de nodos distribuidos por todo el mundo. Si un gobierno intenta apagar la red Bitcoin en su país, los demás nodos continúan operando. No existe un 'servidor central' que pueda ser apagado. Esta arquitectura hace a Bitcoin extremadamente resistente a la censura y los ataques."
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "¿Qué es un nodo en Bitcoin?",
+                  "options": [
+                    "Una moneda física de Bitcoin",
+                    "Una computadora que participa y valida la red Bitcoin",
+                    "El creador de un bloque",
+                    "Una cuenta bancaria digital"
+                  ],
+                  "answer": "Una computadora que participa y valida la red Bitcoin",
+                  "feedback": "Un nodo es cualquier computadora que descarga y valida la blockchain completa, contribuyendo a la red."
+                },
+                {
+                  "q": "¿Quién puede correr un nodo de Bitcoin?",
+                  "options": [
+                    "Solo empresas certificadas",
+                    "Solo el gobierno",
+                    "Solo Satoshi Nakamoto",
+                    "Cualquier persona"
+                  ],
+                  "answer": "Cualquier persona",
+                  "feedback": "Cualquier persona con una computadora y conexión a internet puede correr un nodo completo de Bitcoin."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "title": "Hashes y criptografía básica",
+          "sections": [
+            {
+              "type": "explanation",
+              "title": "¿Qué es un hash?",
+              "subtitle": "La huella digital de los datos",
+              "image_url": "https://imgs.search.brave.com/89FyRaL-BDHSab0xFVNEpv5f0J1LtGSTTrNGY1J6HTs/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdDQu/ZGVwb3NpdHBob3Rv/cy5jb20vMzk5MjI0/Ny8zMTA3NC9pLzQ1/MC9kZXBvc2l0cGhv/dG9zXzMxMDc0MzQw/Ni1zdG9jay1waG90/by1kaWdpdGFsLWZp/bmdlcnByaW50LWRh/dGEtcHJvdGVjdGlv/bi11c2Vycy5qcGc",
+              "content": "Un hash es una función matemática que convierte cualquier cantidad de datos en una cadena de caracteres de longitud fija. Bitcoin usa el algoritmo SHA-256. Lo importante del hash es que: (1) el mismo input siempre produce el mismo output, (2) cualquier cambio mínimo en el input produce un hash completamente diferente, (3) es imposible reconstruir el input a partir del output. Esto hace los hashes perfectos para asegurar la integridad de los datos en la blockchain."
+            },
+            {
+              "type": "example",
+              "title": "SHA-256 en acción",
+              "subtitle": "Cómo un pequeño cambio transforma completamente el hash",
+              "content": "La palabra 'Bitcoin' tiene el hash SHA-256: b4056df6691f8dc72e56302ddad345d65fead3ead9299609a826e2344eb63aa4. Si cambias solo una letra a 'bitcoin' (minúscula), el hash es completamente diferente: 6b88c087247aa2f07ee1c5956b8e1a9f4c7f892a70e324f1bb3d161e05ca107b. Este comportamiento garantiza que no puedas modificar datos sin que se detecte."
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "¿Qué algoritmo de hash usa Bitcoin?",
+                  "options": ["MD5", "SHA-1", "SHA-256", "AES-128"],
+                  "answer": "SHA-256",
+                  "feedback": "Bitcoin utiliza el algoritmo SHA-256 para generar los hashes de los bloques y las transacciones."
+                },
+                {
+                  "q": "¿Qué pasa si cambias un solo carácter del input de un hash SHA-256?",
+                  "options": [
+                    "El hash cambia ligeramente",
+                    "El hash permanece igual",
+                    "El hash cambia completamente",
+                    "El sistema falla"
+                  ],
+                  "answer": "El hash cambia completamente",
+                  "feedback": "Esta propiedad, llamada 'efecto avalancha', garantiza que cualquier cambio en los datos sea inmediatamente detectable."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Minería y Proof of Work",
+      "image_unit_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Bitcoin_mining_illustration.jpg/640px-Bitcoin_mining_illustration.jpg",
+      "lessons": [
+        {
+          "id": 7,
+          "title": "¿Qué es la minería de Bitcoin?",
+          "sections": [
+            {
+              "type": "explanation",
+              "title": "Cómo se crean los nuevos Bitcoin",
+              "subtitle": "El proceso de validación y recompensa",
+              "image_url": "https://imgs.search.brave.com/3HnFK0GwaV_YWqDKG7CuaTXfQ9WT9EALB3umkw9H8rY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9rb25m/aW8ubXgvYmxvZy93/cC1jb250ZW50L3Vw/bG9hZHMvMjAxOS8w/Ni8wNDE0MzA1Ny9x/dWUtc29uLWxhcy1j/cmlwdG9tb25lZGFz/LXktY29tby1wdWVk/ZW4tdXNhcnNlLWlu/dGVybmV0LmpwZw",
+              "content": "La minería de Bitcoin es el proceso mediante el cual se validan nuevas transacciones y se añaden a la blockchain. Los mineros son computadoras que compiten entre sí para resolver un problema matemático complejo (Proof of Work). El primero que lo resuelve añade el nuevo bloque a la cadena y recibe como recompensa nuevos bitcoins recién creados, más las comisiones de las transacciones incluidas en el bloque."
+            },
+            {
+              "type": "example",
+              "title": "La carrera de los mineros",
+              "subtitle": "Cómo compiten miles de computadoras",
+              "image_url": "https://imgs.search.brave.com/gg_ZAF3f20D48pZhjPW9b2cr3fctDcpprTGPjuHEd9M/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9kMzFk/bjduZnB1d2pubS5j/bG91ZGZyb250Lm5l/dC9pbWFnZXMvdmFs/b3JhY2lvbmVzLzAw/NjcvODU4MC9GT1RP/U19NWF8oUHJlc2Vu/dGFjaW8lQ0MlODFu/Xyg0MykpXygzNSlf/Y29sLmpwZz8xNzQ3/MzAzNTk0",
+              "content": "Miles de mineros en todo el mundo calculan billones de hashes por segundo intentando encontrar uno que cumpla con la dificultad requerida por la red. Es como buscar un número que, al lanzar un dado de millones de caras, salga menor que un número específico. El ganador propaga su bloque a la red, los nodos lo verifican y la carrera comienza de nuevo."
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "¿Qué obtiene un minero al resolver el Proof of Work?",
+                  "options": [
+                    "Acceso a las cuentas de usuarios",
+                    "Una recompensa en Bitcoin y comisiones de transacciones",
+                    "El control de la red",
+                    "Acciones de una empresa"
+                  ],
+                  "answer": "Una recompensa en Bitcoin y comisiones de transacciones",
+                  "feedback": "El minero que resuelve el bloque recibe bitcoins recién creados (block reward) más las comisiones de las transacciones incluidas."
+                },
+                {
+                  "q": "¿Cada cuánto tiempo aproximadamente se mina un nuevo bloque?",
+                  "options": [
+                    "Cada segundo",
+                    "Cada minuto",
+                    "Cada 10 minutos",
+                    "Cada hora"
+                  ],
+                  "answer": "Cada 10 minutos",
+                  "feedback": "La red Bitcoin ajusta automáticamente la dificultad para que se mine un bloque aproximadamente cada 10 minutos."
+                },
+                {
+                  "q": "¿Qué es el Proof of Work?",
+                  "options": [
+                    "Una prueba de identidad",
+                    "Un problema matemático que los mineros deben resolver",
+                    "Un contrato inteligente",
+                    "Un tipo de billetera"
+                  ],
+                  "answer": "Un problema matemático que los mineros deben resolver",
+                  "feedback": "Proof of Work es el mecanismo de consenso de Bitcoin: los mineros compiten resolviendo un problema matemático para validar bloques."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 8,
+          "title": "Dificultad y ajuste de la red",
+          "sections": [
+            {
+              "type": "explanation",
+              "title": "¿Cómo regula la red su propia dificultad?",
+              "subtitle": "El mecanismo de ajuste cada 2016 bloques",
+              "image_url": "https://imgs.search.brave.com/zQrJkg7xFmEUpMu84YLvcc1zcxqolzuXilDiUtE7urE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vY3JpcHRv/dGVuZGVuY2lhLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAy/MC8wMS9kaWZpY3Vs/dGFkLWRlLXJlZC1k/ZS1iaXRjb2luLmpw/Zz9yZXNpemU9Njk2/LDQ2NCZzc2w9MQ",
+              "content": "La red Bitcoin ajusta automáticamente la dificultad de minería cada 2016 bloques (aproximadamente cada dos semanas). Si hay más mineros, la dificultad sube para mantener el tiempo de bloque en ~10 minutos. Si hay menos mineros, baja. Este mecanismo garantiza que el ritmo de emisión de nuevos bitcoins sea predecible y estable, independientemente de cuánto poder computacional se conecte a la red."
+            },
+            {
+              "type": "example",
+              "title": "Ajuste de dificultad en práctica",
+              "subtitle": "Por qué el tiempo de bloque siempre es ~10 minutos",
+              "content": "En 2021, China prohibió la minería de Bitcoin. De la noche a la mañana, más del 50% del poder de hashing desapareció de la red. En lugar de colapsar, Bitcoin simplemente redujo su dificultad en el siguiente ajuste, y los bloques volvieron a producirse cada ~10 minutos. Esto demuestra la resiliencia del sistema."
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "¿Cada cuántos bloques se ajusta la dificultad de Bitcoin?",
+                  "options": [
+                    "100 bloques",
+                    "1000 bloques",
+                    "2016 bloques",
+                    "10000 bloques"
+                  ],
+                  "answer": "2016 bloques",
+                  "feedback": "La dificultad se ajusta cada 2016 bloques, lo que equivale aproximadamente a cada dos semanas."
+                },
+                {
+                  "q": "Si se conectan más mineros a la red, ¿qué pasa con la dificultad?",
+                  "options": [
+                    "Baja",
+                    "Sube",
+                    "Se mantiene igual",
+                    "Se reinicia a cero"
+                  ],
+                  "answer": "Sube",
+                  "feedback": "Si hay más poder computacional en la red, la dificultad aumenta para mantener el tiempo de bloque en ~10 minutos."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 9,
+          "title": "El halving de Bitcoin",
+          "sections": [
+            {
+              "type": "explanation",
+              "title": "¿Qué es el halving?",
+              "subtitle": "La escasez programada de Bitcoin",
+              "image_url": "https://imgs.search.brave.com/ZpITbxKEDtMX6LBWr90JWNC1WXP2TrVSeJW6YeWkh_M/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/YWx0b25pdmVsLmNv/bS5teC93cC1jb250/ZW50L3VwbG9hZHMv/MjAyNC8wMy9oYWx2/aW5nLTkwMHg2MDgu/anBn",
+              "content": "El halving (o reducción a la mitad) es un evento programado en el código de Bitcoin que ocurre cada 210,000 bloques (~4 años). En cada halving, la recompensa que reciben los mineros por cada bloque se reduce a la mitad. Empezó en 50 BTC, luego 25, 12.5, 6.25 y actualmente 3.125 BTC. Esto controla la inflación de Bitcoin y garantiza que nunca existirán más de 21 millones de bitcoins."
+            },
+            {
+              "type": "example",
+              "title": "Historia de los halvings",
+              "subtitle": "El impacto en el precio y la oferta",
+              "image_url": "https://imgs.search.brave.com/PsphryERMqNi4Bl0ONgOVGxo3MnLgRaC91kdMvEhvMI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vY3JpcHRv/dGVuZGVuY2lhLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAy/NC8wNC9IYWx2aW5n/LWRlLUJpdGNvaW4u/anBnP3Jlc2l6ZT02/OTYsMzk3JnNzbD0x",
+              "content": "Los halvings históricos: 2012 (50→25 BTC, precio subió de $12 a $1,000), 2016 (25→12.5 BTC, precio llegó a $20,000 en 2017), 2020 (12.5→6.25 BTC, precio superó $60,000 en 2021), 2024 (6.25→3.125 BTC). Históricamente, los halvings han precedido grandes rallys en el precio de Bitcoin al reducir la nueva oferta disponible."
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "¿Cada cuántos bloques ocurre un halving?",
+                  "options": ["100,000", "210,000", "500,000", "1,000,000"],
+                  "answer": "210,000",
+                  "feedback": "El halving ocurre cada 210,000 bloques, lo que equivale aproximadamente a cada 4 años."
+                },
+                {
+                  "q": "¿Cuántos Bitcoin existirán como máximo?",
+                  "options": [
+                    "18 millones",
+                    "21 millones",
+                    "100 millones",
+                    "Ilimitados"
+                  ],
+                  "answer": "21 millones",
+                  "feedback": "El protocolo de Bitcoin limita la oferta total a 21 millones de bitcoins, haciendo que sea un activo con escasez programada."
+                },
+                {
+                  "q": "¿Cuál era la recompensa inicial por bloque en 2009?",
+                  "options": ["100 BTC", "50 BTC", "25 BTC", "10 BTC"],
+                  "answer": "50 BTC",
+                  "feedback": "En 2009, cuando Satoshi minó el bloque génesis, la recompensa por bloque era de 50 BTC."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Wallets y Transacciones",
+      "image_unit_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Bitcoin_and_gold_coins.jpg/640px-Bitcoin_and_gold_coins.jpg",
+      "lessons": [
+        {
+          "id": 10,
+          "title": "¿Qué es una wallet de Bitcoin?",
+          "sections": [
+            {
+              "type": "explanation",
+              "title": "Tu llave al mundo de Bitcoin",
+              "subtitle": "Diferencia entre custodial y no-custodial",
+              "image_url": "https://imgs.search.brave.com/b1G3SmIMpJXSz4XkMdC2pSddjVmUcx5-p7hcyRJgdj0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9saXF1/aWRpdHktcHJvdmlk/ZXIuY29tL2FwcC91/cGxvYWRzLzIwMjQv/MDMvY3VzdG9kaWFs/LXZzLi1ub24tY3Vz/dG9kaWFsLWNyeXB0/by13YWxsZXRzLTgw/MHg1NDAucG5n",
+              "content": "Una wallet (billetera) de Bitcoin es un software o dispositivo que almacena tus claves criptográficas, no tus bitcoins directamente. Los bitcoins existen en la blockchain; la wallet guarda las claves privadas que te dan derecho a gastarlos. Existen wallets custodiales (un tercero guarda tus claves, como un exchange) y no-custodiales (tú controlas tus propias claves). El famoso dicho en Bitcoin es: 'Not your keys, not your coins'."
+            },
+            {
+              "type": "example",
+              "title": "Tipos de wallets",
+              "subtitle": "Cuál elegir según tus necesidades",
+              "image_url": "https://imgs.search.brave.com/4sVybMi9oVrbSZ4x6avjk0D2okMO6be7t887PUeSw9w/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aGVi/bHVlbWFuYWtpbi5j/b20vd3AtY29udGVu/dC91cGxvYWRzLzIw/MjIvMDkvY3JpcHRv/d2FsbGV0cy0xMDI0/eDQ1MC5qcGc",
+              "content": "Hardware wallets (Ledger, Trezor): máxima seguridad, almacenamiento offline. Software wallets (Electrum, BlueWallet): convenientes, para uso diario. Exchange wallets (Coinbase, Binance): fáciles pero custodiales, no tienes tus claves. Paper wallets: tus claves impresas en papel, seguras si se guardan bien. Para grandes cantidades, siempre se recomienda una hardware wallet."
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "¿Qué guarda realmente una wallet de Bitcoin?",
+                  "options": [
+                    "Los bitcoins directamente",
+                    "Las claves criptográficas para acceder a los bitcoins",
+                    "El historial de precios",
+                    "Información bancaria"
+                  ],
+                  "answer": "Las claves criptográficas para acceder a los bitcoins",
+                  "feedback": "Una wallet guarda tus claves privadas. Los bitcoins existen en la blockchain; la wallet te permite acceder a ellos."
+                },
+                {
+                  "q": "¿Qué significa 'Not your keys, not your coins'?",
+                  "options": [
+                    "Debes guardar tus bitcoins en efectivo",
+                    "Si no controlas tus claves privadas, no controlas realmente tus bitcoins",
+                    "Necesitas una llave física para tener Bitcoin",
+                    "Los exchanges son más seguros que las wallets"
+                  ],
+                  "answer": "Si no controlas tus claves privadas, no controlas realmente tus bitcoins",
+                  "feedback": "Si usas un exchange custodial, ellos controlan tus claves. Si el exchange quiebra (como FTX), podrías perder tus fondos."
+                },
+                {
+                  "q": "¿Cuál es el tipo de wallet más seguro para grandes cantidades?",
+                  "options": [
+                    "Wallet de exchange",
+                    "Wallet de papel guardada en casa",
+                    "Hardware wallet (Ledger, Trezor)",
+                    "Wallet móvil"
+                  ],
+                  "answer": "Hardware wallet (Ledger, Trezor)",
+                  "feedback": "Las hardware wallets almacenan las claves offline, protegiéndolas de hackers y malware. Son la opción más segura para cantidades importantes."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 11,
+          "title": "Claves públicas y privadas",
+          "sections": [
+            {
+              "type": "explanation",
+              "title": "Criptografía de clave pública",
+              "subtitle": "El sistema que protege tus fondos",
+              "image_url": "https://imgs.search.brave.com/3aA0VKiunjjt9Rb7IrrJijMPQN0S7Ln9MlnyuPd6C4M/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9naW1n/LnN0YXRpY2ltZ3Mu/Y29tL2xlYXJuL2Y3/MDM2ODBkMjI5YThl/MDVkY2NhZTJlYTcw/NDljZDRiMjhhZGY3/MmQucG5n",
+              "content": "Bitcoin usa criptografía asimétrica. Tienes una clave privada (número secreto enorme, nunca la compartas) y una clave pública (derivada matemáticamente de la privada, puedes compartirla). Tu dirección de Bitcoin es un hash de tu clave pública. Con tu clave privada puedes firmar transacciones, demostrando que eres el dueño sin revelar la clave. Con la clave pública, cualquiera puede verificar tu firma pero no puede gastar tus fondos."
+            },
+            {
+              "type": "example",
+              "title": "Clave privada, pública y dirección",
+              "subtitle": "El flujo de generación de una billetera",
+              "content": "Clave privada: 5HueCGU8rMjxECyDialwujzZAxHPwMjJ7Jh87eFKHuDg (256 bits aleatorios). → Clave pública: 04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb6... (calculada con curva elíptica secp256k1). → Dirección Bitcoin: 1LoVGDgRs9hTfTNJNuXKSpywcbdvwRXpmK (hash de la clave pública). La generación es unidireccional: no puedes recuperar la privada desde la pública o la dirección."
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "¿Qué nunca debes compartir?",
+                  "options": [
+                    "Tu dirección Bitcoin",
+                    "Tu clave pública",
+                    "Tu clave privada",
+                    "El nombre de tu wallet"
+                  ],
+                  "answer": "Tu clave privada",
+                  "feedback": "La clave privada es lo que da acceso a tus fondos. Quien tenga tu clave privada puede gastar todos tus bitcoins."
+                },
+                {
+                  "q": "¿Puedes derivar la clave privada a partir de la clave pública?",
+                  "options": [
+                    "Sí, fácilmente",
+                    "Sí, pero es difícil",
+                    "No, es matemáticamente inviable",
+                    "Solo con software especial"
+                  ],
+                  "answer": "No, es matemáticamente inviable",
+                  "feedback": "La criptografía de curva elíptica hace matemáticamente imposible calcular la clave privada a partir de la clave pública."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 12,
+          "title": "Cómo funciona una transacción",
+          "sections": [
+            {
+              "type": "explanation",
+              "title": "Anatomía de una transacción Bitcoin",
+              "subtitle": "Inputs, outputs, fees y confirmaciones",
+              "image_url": "https://imgs.search.brave.com/mWH3xmle_2exjSftGERPba8se9qPNdd4C1poIstI1Og/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9hY2Fk/ZW15LmJpdDJtZS5j/b20vd3AtY29udGVu/dC91cGxvYWRzLzIw/MjIvMDcvUG9ydGFk/YS1jdXJzby1pbnRl/cm1lZGlvLWJpdGNv/aW4tQml0Mk1lQWNh/ZGVteS53ZWJw",
+              "content": "Una transacción Bitcoin tiene: Inputs (referencias a bitcoins que recibes anteriormente), Outputs (a dónde van los bitcoins: destinatario y cambio de vuelta a ti), y Fee (comisión para los mineros = total inputs - total outputs). La transacción se firma con tu clave privada y se difunde a la red. Los mineros la incluyen en un bloque. Cada bloque adicional encima es una 'confirmación'. Con 6 confirmaciones, una transacción se considera irreversible."
+            },
+            {
+              "type": "example",
+              "title": "Ejemplo de transacción paso a paso",
+              "subtitle": "De la firma a la confirmación",
+              "content": "Tienes un UTXO (Unspent Transaction Output) de 0.5 BTC. Quieres enviar 0.3 BTC a Ana. Tu wallet crea: Input: tu UTXO de 0.5 BTC. Output 1: 0.3 BTC para Ana. Output 2: 0.199 BTC de vuelta a ti (cambio). Fee: 0.001 BTC para el minero. La firmas con tu clave privada, la difundes a la red, y un minero la incluye en el siguiente bloque."
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "¿Qué es un UTXO?",
+                  "options": [
+                    "Un tipo de exchange",
+                    "Un Unspent Transaction Output: un bitcoin que recibiste y aún no has gastado",
+                    "Una unidad de medida de velocidad",
+                    "Un nodo especial de la red"
+                  ],
+                  "answer": "Un Unspent Transaction Output: un bitcoin que recibiste y aún no has gastado",
+                  "feedback": "UTXO significa Unspent Transaction Output. Son los 'saldos' en Bitcoin: monedas que recibiste y que puedes gastar como input de una nueva transacción."
+                },
+                {
+                  "q": "¿Cuántas confirmaciones se necesitan para considerar una transacción irreversible?",
+                  "options": ["1", "3", "6", "100"],
+                  "answer": "6",
+                  "feedback": "Con 6 confirmaciones (6 bloques encima de la transacción), se considera prácticamente imposible revertirla. Para grandes cantidades, algunos esperan más."
+                },
+                {
+                  "q": "¿A quién van las comisiones (fees) de las transacciones?",
+                  "options": [
+                    "A Satoshi Nakamoto",
+                    "A los mineros",
+                    "A los nodos",
+                    "A los exchanges"
+                  ],
+                  "answer": "A los mineros",
+                  "feedback": "Las comisiones son el incentivo económico para que los mineros incluyan tu transacción en el próximo bloque."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Comprar, Vender y Guardar Bitcoin",
+      "image_unit_url": "https://public.bnbstatic.com/image/cms/blog/20210409/0a1a7674-76a4-4b7d-a017-7d510ad7045b.png",
+      "lessons": [
+        {
+          "id": 13,
+          "title": "Cómo comprar Bitcoin",
+          "sections": [
+            {
+              "type": "explanation",
+              "title": "Dónde y cómo adquirir tu primer Bitcoin",
+              "subtitle": "Exchanges, P2P y cajeros automáticos",
+              "image_url": "https://http2.mlstatic.com/storage/pog-cm-admin/calm-assets/moneda-bitcoin-con-graficos-atras--d93df7d3.jpg",
+              "content": "Existen varias formas de comprar Bitcoin: (1) Exchanges centralizados (CEX) como Coinbase, Binance o Kraken: rápidos, con muchos métodos de pago, pero requieren KYC (verificación de identidad). (2) Exchanges descentralizados (DEX): sin KYC, pero más complejos. (3) P2P (peer-to-peer) como Bisq o Hodl Hodl: compras directamente a otras personas. (4) Cajeros automáticos de Bitcoin: físicos, convenientes, pero con altas comisiones. Para principiantes, los exchanges centralizados son la opción más accesible."
+            },
+            {
+              "type": "example",
+              "title": "Comprar Bitcoin en un exchange paso a paso",
+              "subtitle": "Tu primera compra de Bitcoin",
+              "image_url": "https://www.bitcoin.com/static/7e2e4d9a028a9ac426b67ca8ea0e30eb/how-to-buy-bitcoin_new.png",
+              "content": "1. Crea una cuenta en Coinbase/Binance. 2. Verifica tu identidad (KYC: DNI/pasaporte). 3. Añade un método de pago (tarjeta, transferencia bancaria). 4. Compra la cantidad deseada. 5. IMPORTANTE: retira los bitcoins a tu propia wallet no-custodial para tener el control real. Recuerda: los bitcoins en el exchange no son completamente tuyos hasta que los retiras a tu wallet."
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "¿Qué es el KYC en el contexto de los exchanges?",
+                  "options": [
+                    "Un tipo de criptomoneda",
+                    "Know Your Customer: verificación de identidad requerida por regulaciones",
+                    "Un protocolo de seguridad de la blockchain",
+                    "El tipo de cambio de Bitcoin"
+                  ],
+                  "answer": "Know Your Customer: verificación de identidad requerida por regulaciones",
+                  "feedback": "KYC (Know Your Customer) es el proceso de verificación de identidad que los exchanges centralizados deben realizar por regulaciones anti-lavado de dinero."
+                },
+                {
+                  "q": "¿Por qué se recomienda retirar los Bitcoin del exchange a tu propia wallet?",
+                  "options": [
+                    "Para pagar menos impuestos",
+                    "Porque el exchange puede quebrar o ser hackeado, perdiendo tus fondos",
+                    "Para ganar más intereses",
+                    "Es obligatorio por ley"
+                  ],
+                  "answer": "Porque el exchange puede quebrar o ser hackeado, perdiendo tus fondos",
+                  "feedback": "Exchanges como Mt. Gox o FTX quebraron y sus usuarios perdieron sus fondos. En tu propia wallet, solo tú controlas las claves."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 14,
+          "title": "Seguridad y mejores prácticas",
+          "sections": [
+            {
+              "type": "explanation",
+              "title": "Protege tus Bitcoin",
+              "subtitle": "Seed phrase, 2FA y amenazas comunes",
+              "image_url": "https://assets.bitdegree.org/images/crypto-wallet-security-enable-2fa.jpg",
+              "content": "La seguridad en Bitcoin es tu responsabilidad. Las mejores prácticas incluyen: (1) Seed phrase (frase semilla): 12-24 palabras que respaldo tu wallet completa. Escríbela en papel, nunca digitalmente. Guárdala en un lugar seguro. (2) Autenticación en dos factores (2FA) en todos tus exchanges. (3) Nunca compartas tu clave privada o seed phrase con nadie. (4) Desconfía de promesas de altos rendimientos. (5) Verifica siempre las direcciones antes de enviar (los malware pueden cambiarlas al copiar/pegar)."
+            },
+            {
+              "type": "example",
+              "title": "Estafas comunes en Bitcoin",
+              "subtitle": "Cómo protegerte de los ataques más frecuentes",
+              "content": "Phishing: emails o sitios falsos que imitan exchanges reales para robar tus credenciales. Pump and Dump: grupos que inflan el precio de monedas pequeñas y venden cuando sube. Giveaway scams: 'Envía 1 BTC y te devolvemos 2' (nunca es real). SIM Swapping: roban tu número de teléfono para acceder a tus cuentas. Clipboard hijacking: malware que cambia la dirección que copias. Regla de oro: si suena demasiado bueno para ser verdad, es una estafa."
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "¿Dónde NO debes guardar tu seed phrase?",
+                  "options": [
+                    "En papel dentro de una caja fuerte",
+                    "En una placa de acero grabada",
+                    "En una foto en tu teléfono o en un documento de Google Drive",
+                    "Memorizada en tu cabeza"
+                  ],
+                  "answer": "En una foto en tu teléfono o en un documento de Google Drive",
+                  "feedback": "Guardar la seed phrase digitalmente la expone a hackeos, sincronización en la nube no autorizada y malware. Siempre en papel o metal, offline."
+                },
+                {
+                  "q": "¿Qué debes hacer siempre antes de enviar Bitcoin a una dirección?",
+                  "options": [
+                    "Esperar 24 horas",
+                    "Verificar los primeros y últimos caracteres de la dirección de destino",
+                    "Enviarlo todo de una vez para ahorrar fees",
+                    "Consultar el precio actual"
+                  ],
+                  "answer": "Verificar los primeros y últimos caracteres de la dirección de destino",
+                  "feedback": "El clipboard hijacking puede sustituir una dirección al copiarla. Siempre verifica los primeros y últimos dígitos de la dirección antes de confirmar."
+                },
+                {
+                  "q": "¿Qué es una seed phrase?",
+                  "options": [
+                    "La contraseña de tu exchange",
+                    "Un conjunto de 12-24 palabras que permite recuperar tu wallet completa",
+                    "El número de tu tarjeta de crédito asociada",
+                    "El nombre de usuario de tu cuenta"
+                  ],
+                  "answer": "Un conjunto de 12-24 palabras que permite recuperar tu wallet completa",
+                  "feedback": "La seed phrase (frase semilla) es el backup maestro de tu wallet. Con ella puedes recuperar todos tus fondos en cualquier dispositivo compatible."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Bitcoin como Activo Financiero",
+      "image_unit_url": "https://conecta.tec.mx/sites/default/files/inline-images/bitcoin-fondos-indexados.jpg",
+      "lessons": [
+        {
+          "id": 15,
+          "title": "Bitcoin como reserva de valor",
+          "sections": [
+            {
+              "type": "explanation",
+              "title": "¿Es Bitcoin el 'oro digital'?",
+              "subtitle": "Escasez, durabilidad y descentralización",
+              "image_url": "https://elceo.com/wp-content/uploads/2023/07/insuficiencia.jpg",
+              "content": "Bitcoin comparte muchas características con el oro: escasez (21M máximo), durabilidad (inmune al deterioro), divisibilidad (hasta 8 decimales), portabilidad (envíable a cualquier lugar en minutos) y verificabilidad (cualquiera puede verificar la autenticidad). Pero supera al oro en portabilidad y verificabilidad. A diferencia del oro, la escasez de Bitcoin es absolutamente verificable y no puede aumentarse. Muchos inversores institucionales lo consideran una cobertura contra la inflación."
+            },
+            {
+              "type": "example",
+              "title": "Bitcoin vs Inflación",
+              "subtitle": "Por qué algunos lo llaman el seguro contra la devaluación",
+              "image_url": "https://www.binance.com/bapi/fe/resource/image?image=aHR0cHM6Ly9wdWJsaWMuYm5ic3RhdGljLmNvbS9pbWFnZS9jbXMvYmxvZy8yMDIxMDgyNi9mNGRhYTliMS04ZDU0LTRkNDYtYmNiMS1lMmU5Mzg3MDc0MDYucG5n&w=890&h=500",
+              "content": "En países con alta inflación como Argentina, Venezuela o Turquía, muchos ciudadanos han recurrido a Bitcoin para preservar su poder adquisitivo. Mientras sus monedas locales perdían el 50-90% de su valor en años, quienes guardaron Bitcoin mantuvieron o incrementaron su capacidad de compra en el largo plazo. Sin embargo, Bitcoin también tiene alta volatilidad a corto plazo."
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "¿Hasta cuántos decimales es divisible un Bitcoin?",
+                  "options": [
+                    "2 decimales",
+                    "4 decimales",
+                    "8 decimales",
+                    "10 decimales"
+                  ],
+                  "answer": "8 decimales",
+                  "feedback": "La unidad más pequeña de Bitcoin es el satoshi (sat), equivalente a 0.00000001 BTC. Un Bitcoin es divisible en 100 millones de satoshis."
+                },
+                {
+                  "q": "¿Cómo se llama la unidad más pequeña de Bitcoin?",
+                  "options": ["Bit", "Satoshi", "Wei", "Gwei"],
+                  "answer": "Satoshi",
+                  "feedback": "El satoshi (sat) es la unidad mínima de Bitcoin, igual a 0.00000001 BTC. Fue nombrado en honor a su creador."
+                },
+                {
+                  "q": "¿Qué diferencia principalmente a Bitcoin del oro como reserva de valor?",
+                  "options": [
+                    "El oro es más escaso",
+                    "Bitcoin es más fácil de transportar y su escasez es matemáticamente verificable",
+                    "El oro es más volátil",
+                    "Bitcoin tiene más historia"
+                  ],
+                  "answer": "Bitcoin es más fácil de transportar y su escasez es matemáticamente verificable",
+                  "feedback": "Bitcoin puede enviarse a cualquier parte del mundo en minutos y cualquiera puede verificar que solo habrá 21M BTC. El oro requiere transporte físico y no hay certeza sobre las reservas totales."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 16,
+          "title": "Volatilidad y estrategias de inversión",
+          "sections": [
+            {
+              "type": "explanation",
+              "title": "Cómo gestionar la volatilidad de Bitcoin",
+              "subtitle": "DCA, HODL y gestión del riesgo",
+              "image_url": "https://cdn.prod.website-files.com/65c2a227fbeeb0ab1e4550dd/66957daf655c8ebd70e9f77b_DCA-Blog.png",
+              "content": "Bitcoin es conocido por su alta volatilidad. Estrategias comunes: (1) HODL (Hold On for Dear Life): comprar y mantener a largo plazo sin importar las caídas. (2) DCA (Dollar Cost Averaging): comprar una cantidad fija periódicamente (ej: 100€ cada mes) independientemente del precio. Esto promedia el precio de entrada y reduce el riesgo de comprar en el peor momento. (3) Nunca invertir más de lo que puedes permitirte perder. (4) Estudiar los ciclos de mercado: bear market, bull market, acumulación."
+            },
+            {
+              "type": "example",
+              "title": "DCA en práctica",
+              "subtitle": "Por qué comprar gradualmente reduce el riesgo",
+              "content": "Ejemplo de DCA: inviertes 100€ en Bitcoin cada mes durante 12 meses. Mes 1: precio 30,000€, compras 0.0033 BTC. Mes 6: precio cae a 20,000€, compras 0.005 BTC (¡más BTC por el mismo dinero!). Mes 12: precio sube a 40,000€, compras 0.0025 BTC. Resultado: precio promedio de entrada ~27,000€, menos que si hubieras comprado todo al inicio cuando el precio era alto."
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "¿Qué significa DCA (Dollar Cost Averaging)?",
+                  "options": [
+                    "Comprar todo de una sola vez en el mejor momento",
+                    "Invertir una cantidad fija periódicamente sin importar el precio",
+                    "Vender cuando el precio sube un 10%",
+                    "Diversificar entre múltiples criptomonedas"
+                  ],
+                  "answer": "Invertir una cantidad fija periódicamente sin importar el precio",
+                  "feedback": "DCA consiste en comprar una cantidad fija de forma regular. Cuando el precio baja, compras más BTC; cuando sube, compras menos. Esto promedia tu precio de entrada."
+                },
+                {
+                  "q": "¿Qué es un 'bear market' en el contexto de Bitcoin?",
+                  "options": [
+                    "Un período de precios al alza",
+                    "Un período de precios a la baja sostenido, generalmente >80% desde el máximo",
+                    "Cuando Bitcoin supera los $100,000",
+                    "El momento ideal para vender"
+                  ],
+                  "answer": "Un período de precios a la baja sostenido, generalmente >80% desde el máximo",
+                  "feedback": "Un bear market es una tendencia bajista prolongada. Bitcoin ha tenido varios, con caídas del 80-90% desde sus máximos, seguidos de nuevos máximos históricos."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 17,
+          "title": "Fiscalidad y regulación",
+          "sections": [
+            {
+              "type": "explanation",
+              "title": "Impuestos y aspectos legales de Bitcoin",
+              "subtitle": "Qué debes saber en tu país",
+              "image_url": "https://es.coingape.com/wp-content/uploads/2023/02/mexico-criptomonedas-actividad-vulnerable-lavado.jpg",
+              "content": "En la mayoría de países, Bitcoin está sujeto a tributación. Las ganancias al vender Bitcoin (si el precio de venta es mayor al de compra) generan una ganancia de capital que debes declarar. Cada país tiene su propio régimen: en España, las ganancias tributan en el IRPF (entre 19-26%). En México, como ingreso. En El Salvador, Bitcoin es moneda de curso legal (no hay impuesto a las ganancias). Es fundamental llevar un registro de todas tus operaciones con fecha, precio de compra, precio de venta y comisiones."
+            },
+            {
+              "type": "example",
+              "title": "Cálculo de ganancia de capital",
+              "subtitle": "Ejemplo de declaración básica",
+              "content": "Compraste 0.1 BTC a 20,000€ = 2,000€ invertidos. Lo vendiste cuando estaba a 50,000€ = 5,000€ obtenidos. Ganancia = 5,000 - 2,000 = 3,000€. En España, sobre esos 3,000€ de ganancia pagas: los primeros 6,000€ tributan al 19%. Si no has declarado correctamente, puedes enfrentar sanciones. Usa herramientas como Koinly, CoinTracking o similares para automatizar el seguimiento."
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "¿Necesitas declarar las ganancias de Bitcoin en tu declaración de impuestos?",
+                  "options": [
+                    "No, Bitcoin no está regulado",
+                    "Sí, en la mayoría de países",
+                    "Solo si ganas más de 1 BTC",
+                    "Solo en exchanges extranjeros"
+                  ],
+                  "answer": "Sí, en la mayoría de países",
+                  "feedback": "En la mayoría de jurisdicciones, las ganancias de capital por Bitcoin están sujetas a impuestos. Consulta la normativa específica de tu país."
+                },
+                {
+                  "q": "¿Qué es una 'ganancia de capital' en Bitcoin?",
+                  "options": [
+                    "El interés que genera Bitcoin",
+                    "La diferencia entre el precio de venta y el precio de compra, si es positiva",
+                    "Los satoshis que recibes por hacer staking",
+                    "Los fondos en un exchange"
+                  ],
+                  "answer": "La diferencia entre el precio de venta y el precio de compra, si es positiva",
+                  "feedback": "La ganancia de capital es la plusvalía: lo que ganas al vender a un precio mayor del que compraste. Es sobre esto que se calculan los impuestos."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "La Red Lightning y Escalabilidad",
+      "image_unit_url": "https://www.bitcoin.com/images/uploads/articles/what-is-lightning-network_new.png",
+      "lessons": [
+        {
+          "id": 18,
+          "title": "El problema de escalabilidad de Bitcoin",
+          "sections": [
+            {
+              "type": "explanation",
+              "title": "¿Por qué Bitcoin no puede ser Visa?",
+              "subtitle": "Limitaciones del diseño base de Bitcoin",
+              "image_url": "https://i.blogs.es/d16099/halving/450_1000.jpg",
+              "content": "La blockchain de Bitcoin procesa aproximadamente 7 transacciones por segundo (TPS), mientras que Visa puede manejar hasta 24,000 TPS. Esto se debe a que los bloques tienen un límite de tamaño (1-4 MB) y se producen cada ~10 minutos. Aumentar el tamaño de los bloques comprometería la descentralización (nodos necesitarían más recursos). Este es el famoso 'trilemma de la blockchain': no puedes tener simultáneamente descentralización, seguridad y escalabilidad máximas."
+            },
+            {
+              "type": "example",
+              "title": "El trilemma de la blockchain",
+              "subtitle": "Por qué escalar Bitcoin es tan difícil",
+              "content": "Imagina un triángulo: en cada vértice están Seguridad, Descentralización y Escalabilidad. Bitcoin prioriza Seguridad y Descentralización a costa de Escalabilidad. Si aumentaras el tamaño de los bloques (más escalabilidad), los nodos necesitarían más hardware (menos descentralización). La solución de Bitcoin es escalar en capas secundarias, manteniendo la base segura y descentralizada."
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "¿Cuántas transacciones por segundo procesa Bitcoin en su base?",
+                  "options": ["1 TPS", "7 TPS", "100 TPS", "1,000 TPS"],
+                  "answer": "7 TPS",
+                  "feedback": "La blockchain base de Bitcoin procesa aproximadamente 7 transacciones por segundo, frente a las miles de TPS de redes de pago como Visa."
+                },
+                {
+                  "q": "¿Qué es el 'trilemma de la blockchain'?",
+                  "options": [
+                    "La imposibilidad de tener 3 blockchains simultáneas",
+                    "La dificultad de conseguir simultáneamente descentralización, seguridad y escalabilidad",
+                    "El problema de los 3 halvings de Bitcoin",
+                    "La regulación en 3 países a la vez"
+                  ],
+                  "answer": "La dificultad de conseguir simultáneamente descentralización, seguridad y escalabilidad",
+                  "feedback": "El trilemma propone que una blockchain solo puede optimizar dos de tres propiedades: descentralización, seguridad y escalabilidad."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 19,
+          "title": "Lightning Network: pagos instantáneos",
+          "sections": [
+            {
+              "type": "explanation",
+              "title": "¿Qué es la Lightning Network?",
+              "subtitle": "Una capa 2 para pagos rápidos y baratos",
+              "image_url": "https://public.bnbstatic.com/image/pgc/202601/c448073a8bda07e2c24496891ff47366.png",
+              "content": "Lightning Network (LN) es una 'capa 2' construida sobre Bitcoin que permite transacciones instantáneas y con fees casi nulas. Funciona abriendo canales de pago entre usuarios: dos partes bloquean Bitcoin en un contrato en la blockchain y luego pueden enviarse pagos infinitos entre sí fuera de la blockchain, liquidando solo el saldo final. Los pagos se enrutan a través de la red de canales, permitiendo pagar a cualquiera aunque no tengas un canal directo con ellos."
+            },
+            {
+              "type": "example",
+              "title": "Pagar un café con Lightning",
+              "subtitle": "Cómo funciona un pago LN en la práctica",
+              "image_url": "https://media.licdn.com/dms/image/v2/D4D12AQGWUwKiwlGQEA/article-cover_image-shrink_423_752/B4DZdgfh.gHMAU-/0/1749670568981?e=2147483647&v=beta&t=0Z25d4ym97cI4ZbZ1LLtbkyXW3IHFy60oYAeH4WReNc",
+              "content": "Ana y su cafetería favorita abren un canal Lightning con 0.01 BTC cada uno. Ana paga su café de 500 sats (0.000005 BTC): el canal se actualiza instantáneamente, sin publicar nada en la blockchain. Después de 100 cafés, cierran el canal y solo entonces se registra el saldo final en la blockchain. Costo total de fees: centavos. Tiempo: milisegundos."
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "¿Qué es Lightning Network?",
+                  "options": [
+                    "Una nueva criptomoneda",
+                    "Una capa 2 sobre Bitcoin para pagos instantáneos y baratos",
+                    "Un exchange descentralizado",
+                    "Un protocolo de minería más rápido"
+                  ],
+                  "answer": "Una capa 2 sobre Bitcoin para pagos instantáneos y baratos",
+                  "feedback": "Lightning Network es una solución de escalabilidad de capa 2 que permite micropagos instantáneos entre usuarios sin publicar cada transacción en la blockchain."
+                },
+                {
+                  "q": "¿Cuándo se registra una transacción Lightning en la blockchain de Bitcoin?",
+                  "options": [
+                    "Inmediatamente con cada pago",
+                    "Cada 10 minutos automáticamente",
+                    "Solo al abrir o cerrar el canal de pago",
+                    "Nunca se registra"
+                  ],
+                  "answer": "Solo al abrir o cerrar el canal de pago",
+                  "feedback": "Las transacciones Lightning ocurren off-chain (fuera de la blockchain). Solo la apertura y el cierre del canal quedan registrados en la blockchain principal."
+                },
+                {
+                  "q": "¿Qué son los 'satoshis' en el contexto de Lightning?",
+                  "options": [
+                    "Un tipo de nodo de Lightning",
+                    "La unidad mínima de Bitcoin (0.00000001 BTC), usada frecuentemente en LN",
+                    "Las comisiones de los canales",
+                    "Un token diferente a Bitcoin"
+                  ],
+                  "answer": "La unidad mínima de Bitcoin (0.00000001 BTC), usada frecuentemente en LN",
+                  "feedback": "En Lightning Network se suelen usar satoshis (sats) como unidad para micropagos, ya que las transacciones son tan baratas que tiene sentido pagar cantidades mínimas."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Privacidad y Bitcoin",
+      "image_unit_url": "https://www.criptonoticias.com/wp-content/uploads/2018/07/privacidad-bitcoin-criptomonedas-coinjoin-coinjoinxt.jpg",
+      "lessons": [
+        {
+          "id": 20,
+          "title": "Bitcoin: ¿anónimo o pseudónimo?",
+          "sections": [
+            {
+              "type": "explanation",
+              "title": "La privacidad real de Bitcoin",
+              "subtitle": "Por qué Bitcoin no es totalmente anónimo",
+              "image_url": "https://storage.cryptomus.com/FMEoT5UbAiLm7wrPSut7bZVbiLIg9HoQO5AMmbec.webp",
+              "content": "Bitcoin es pseudónimo, no anónimo. Todas las transacciones son públicas en la blockchain, visibles para cualquiera. Las direcciones no muestran tu nombre, pero si alguien asocia una dirección a tu identidad (por ejemplo, comprando en un exchange con KYC), puede rastrear todas tus transacciones pasadas y futuras. Empresas como Chainalysis se especializan en analizar la blockchain para rastrear el flujo de fondos."
+            },
+            {
+              "type": "example",
+              "title": "Cómo se rastrea Bitcoin",
+              "subtitle": "El análisis de blockchain en acción",
+              "content": "Si compras Bitcoin en Coinbase (que tiene tu DNI), y luego envías esos bitcoins a una dirección, Coinbase sabe que esa dirección es tuya. Si desde esa dirección pagas en una tienda online, la tienda también sabe la dirección. Con análisis de clusters y heurísticas de blockchain, se puede trazar todo el historial. Por eso la privacidad en Bitcoin requiere medidas adicionales como CoinJoin o wallets con privacidad mejorada."
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "¿Bitcoin es completamente anónimo?",
+                  "options": [
+                    "Sí, es totalmente anónimo",
+                    "No, es pseudónimo: las transacciones son públicas",
+                    "Sí, si usas una VPN",
+                    "No, pero tampoco puede rastrearse"
+                  ],
+                  "answer": "No, es pseudónimo: las transacciones son públicas",
+                  "feedback": "Bitcoin es pseudónimo. Las transacciones son públicas; si tu dirección se asocia a tu identidad, todo tu historial es rastreable."
+                },
+                {
+                  "q": "¿Qué empresa es conocida por analizar la blockchain para rastrear Bitcoin?",
+                  "options": ["Google", "Chainalysis", "Amazon", "Facebook"],
+                  "answer": "Chainalysis",
+                  "feedback": "Chainalysis es una empresa especializada en análisis de blockchain que trabaja con gobiernos y exchanges para rastrear transacciones de criptomonedas."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 21,
+          "title": "Técnicas de privacidad en Bitcoin",
+          "sections": [
+            {
+              "type": "explanation",
+              "title": "CoinJoin, Taproot y mejoras de privacidad",
+              "subtitle": "Cómo mejorar tu privacidad financiera",
+              "image_url": "https://atrevus.mx/wp-content/uploads/2021/03/Tips-para-mejorar-finanzas-01-1024x602.png",
+              "content": "Técnicas para mejorar la privacidad en Bitcoin: (1) CoinJoin: combina múltiples transacciones de diferentes usuarios en una sola, dificultando el rastreo. Implementado en wallets como Wasabi o JoinMarket. (2) Usar una dirección nueva para cada transacción (las wallets HD lo hacen automáticamente). (3) Comprar Bitcoin en P2P sin KYC. (4) Taproot (actualización de 2021): hace que las transacciones más complejas parezcan simples, mejorando la privacidad. (5) Lightning Network también mejora la privacidad al mantener transacciones off-chain."
+            },
+            {
+              "type": "example",
+              "title": "CoinJoin en práctica",
+              "subtitle": "Cómo funciona la mezcla de transacciones",
+              "content": "Alice quiere enviar 0.1 BTC a Bob con privacidad. En un proceso CoinJoin: Alice, Carol y Dave (todos con 0.1 BTC) combinan sus transacciones. Entran 3 inputs de 0.1 BTC cada uno, salen 3 outputs de 0.1 BTC. Un observador externo no puede determinar qué output pertenece a quién. Es como mezclar tres sobres con billetes y redistribuirlos."
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "¿Qué es CoinJoin?",
+                  "options": [
+                    "Un tipo de exchange descentralizado",
+                    "Una técnica que combina transacciones de múltiples usuarios para mejorar la privacidad",
+                    "Un fork de Bitcoin",
+                    "Un método de minería"
+                  ],
+                  "answer": "Una técnica que combina transacciones de múltiples usuarios para mejorar la privacidad",
+                  "feedback": "CoinJoin mezcla transacciones de múltiples usuarios en una sola, dificultando rastrear qué fondos van a qué destino."
+                },
+                {
+                  "q": "¿Qué actualización de Bitcoin mejoró la privacidad y la eficiencia en 2021?",
+                  "options": ["SegWit", "Taproot", "Lightning", "Ordinals"],
+                  "answer": "Taproot",
+                  "feedback": "Taproot fue activado en noviembre de 2021 y mejora la privacidad haciendo que transacciones complejas parezcan simples, además de reducir el tamaño de las transacciones."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Bitcoin Avanzado: Protocolo y Desarrollo",
+      "image_unit_url": "https://cdn.prod.website-files.com/6407fd8f51729d7c7c524b5f/65a457397a94950c7e4be397_Logros-2023-V2.jpg",
+      "lessons": [
+        {
+          "id": 22,
+          "title": "El protocolo Bitcoin en profundidad",
+          "sections": [
+            {
+              "type": "explanation",
+              "title": "Script de Bitcoin y contratos básicos",
+              "subtitle": "El lenguaje de programación de Bitcoin",
+              "image_url": "https://www.criptonoticias.com/wp-content/uploads/2021/12/nuevo-lenguaje-programacion-lightnign-bitcoin.jpg",
+              "content": "Bitcoin tiene su propio lenguaje de programación llamado Script, un lenguaje de pila (stack-based) deliberadamente limitado (no es Turing completo) para maximizar la seguridad. Permite crear condiciones para gastar bitcoins: (1) P2PKH (Pay to Public Key Hash): la forma estándar de enviar a una dirección. (2) Multisig: requiere múltiples firmas para gastar (ej: 2 de 3). (3) Timelocks: fondos que no pueden gastarse hasta cierta fecha. (4) P2SH / P2WSH: contratos más complejos. SegWit (Segregated Witness) separó las firmas de los datos de transacción, aumentando la capacidad de la red."
+            },
+            {
+              "type": "example",
+              "title": "Multisig: seguridad con múltiples firmas",
+              "subtitle": "Cómo funciona una billetera 2-de-3",
+              "content": "Una empresa configura una wallet multisig 2-de-3: 3 directivos tienen cada uno una clave. Para mover fondos, se necesitan 2 de las 3 firmas. Esto significa que: ningún directivo puede robar los fondos solo, si un directivo pierde su clave los fondos no se pierden (los otros 2 pueden moverlos), y añade una capa de seguridad corporativa. Exchanges como Coinbase usan multisig para proteger los fondos de sus usuarios."
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "¿Por qué Bitcoin Script no es Turing completo?",
+                  "options": [
+                    "Porque los desarrolladores no sabían programar",
+                    "Por limitación de hardware",
+                    "Por diseño: para maximizar la seguridad y la previsibilidad",
+                    "Por regulaciones gubernamentales"
+                  ],
+                  "answer": "Por diseño: para maximizar la seguridad y la previsibilidad",
+                  "feedback": "Bitcoin Script es limitado intencionalmente. Un lenguaje Turing completo podría tener bugs impredecibles. La simplicidad garantiza que el comportamiento de los contratos sea siempre predecible."
+                },
+                {
+                  "q": "¿Qué significa una billetera multisig 2-de-3?",
+                  "options": [
+                    "Necesitas 3 transacciones para mover fondos",
+                    "Se necesitan al menos 2 de 3 claves privadas para autorizar una transacción",
+                    "El saldo se divide entre 3 personas",
+                    "Necesitas 2 factores de autenticación para entrar"
+                  ],
+                  "answer": "Se necesitan al menos 2 de 3 claves privadas para autorizar una transacción",
+                  "feedback": "Multisig 2-de-3 requiere que 2 de 3 posibles firmantes aprueben una transacción, aumentando la seguridad y eliminando puntos únicos de fallo."
+                },
+                {
+                  "q": "¿Qué mejora introdujo SegWit en Bitcoin?",
+                  "options": [
+                    "Aumentó el límite de 21 millones de Bitcoin",
+                    "Separó las firmas de los datos de transacción, aumentando la capacidad efectiva",
+                    "Eliminó las comisiones de transacción",
+                    "Introdujo contratos inteligentes en Bitcoin"
+                  ],
+                  "answer": "Separó las firmas de los datos de transacción, aumentando la capacidad efectiva",
+                  "feedback": "SegWit (Segregated Witness, 2017) separó los datos de firma (witness) de los datos de transacción, aumentando la capacidad efectiva de los bloques y habilitando Lightning Network."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 23,
+          "title": "Gobernanza y actualizaciones de Bitcoin",
+          "sections": [
+            {
+              "type": "explanation",
+              "title": "¿Quién decide el futuro de Bitcoin?",
+              "subtitle": "BIPs, consenso y la guerra de los bloques",
+              "image_url": "https://www.criptonoticias.com/wp-content/uploads/2023/08/bitcoin-independence-day-SEGWIT-750x375.jpg",
+              "content": "Bitcoin no tiene un CEO ni una empresa que decida su futuro. Los cambios se proponen a través de BIPs (Bitcoin Improvement Proposals). Para que un cambio se adopte, necesita consenso de la comunidad: desarrolladores (Bitcoin Core), mineros, exchanges y usuarios. Los soft forks son cambios compatibles hacia atrás (como SegWit y Taproot). Los hard forks son cambios incompatibles que dividen la red (como Bitcoin Cash en 2017). La resistencia al cambio es una característica de seguridad, no un bug."
+            },
+            {
+              "type": "example",
+              "title": "La guerra de los bloques (2015-2017)",
+              "subtitle": "Cuando Bitcoin casi se divide permanentemente",
+              "content": "Entre 2015 y 2017, hubo un debate feroz sobre cómo escalar Bitcoin. Un lado quería aumentar el tamaño de bloque (Big Blockers), el otro prefería SegWit y soluciones de capa 2 (Small Blockers). El resultado: los Small Blockers ganaron con SegWit; los Big Blockers crearon Bitcoin Cash (BCH) con un hard fork. Esto demostró el poder del consenso en Bitcoin: incluso con polémica, la cadena original prevalece si tiene más apoyo."
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "¿Qué es un BIP en Bitcoin?",
+                  "options": [
+                    "Bitcoin Investment Protocol",
+                    "Bitcoin Improvement Proposal: una propuesta formal de cambio al protocolo",
+                    "Un tipo de billetera",
+                    "Un exchange regulado"
+                  ],
+                  "answer": "Bitcoin Improvement Proposal: una propuesta formal de cambio al protocolo",
+                  "feedback": "BIP significa Bitcoin Improvement Proposal. Es el proceso formal mediante el cual cualquier persona puede proponer cambios al protocolo de Bitcoin para su revisión por la comunidad."
+                },
+                {
+                  "q": "¿Qué diferencia a un soft fork de un hard fork?",
+                  "options": [
+                    "El soft fork es más rápido",
+                    "El soft fork es compatible hacia atrás; el hard fork divide la red si no hay consenso universal",
+                    "El hard fork es más seguro",
+                    "No hay diferencia real"
+                  ],
+                  "answer": "El soft fork es compatible hacia atrás; el hard fork divide la red si no hay consenso universal",
+                  "feedback": "En un soft fork, los nodos no actualizados siguen siendo compatibles. En un hard fork, los nodos no actualizados son incompatibles, potencialmente creando dos cadenas separadas."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 24,
+          "title": "Ordinals, Inscriptions y el futuro del protocolo",
+          "sections": [
+            {
+              "type": "explanation",
+              "title": "Los nuevos casos de uso de Bitcoin",
+              "subtitle": "NFTs, tokens y datos en la blockchain de Bitcoin",
+              "image_url": "https://im2.uva.es/wp-content/uploads/2024/05/NTF_istockphoto-1367699775-612x612-1.jpg",
+              "content": "Con la actualización Taproot y el protocolo Ordinals (2023), fue posible inscribir datos arbitrarios directamente en satoshis individuales de la blockchain de Bitcoin. Esto habilitó: (1) Bitcoin NFTs (imágenes, texto, código inscrito en sats). (2) BRC-20 tokens: estándar experimental para crear tokens fungibles en Bitcoin. (3) Runes (2024): protocolo mejorado para tokens en Bitcoin. Estos desarrollos han generado debate: ¿son spam que satura la red o una expansión legítima del ecosistema de Bitcoin?"
+            },
+            {
+              "type": "example",
+              "title": "Un Ordinal en la práctica",
+              "subtitle": "Cómo se inscribe un NFT en Bitcoin",
+              "content": "En 2023, Casey Rodarmor lanzó el protocolo Ordinals que asigna un número de orden único a cada satoshi (el primero minado = sat 0). Cualquier dato (imagen JPEG, texto, código) puede inscribirse en un satoshi mediante una transacción especial. El resultado: colecciones como 'Bitcoin Puppets' o 'Nodemonkes' se vendieron por miles de dólares. Crítica: estas inscripciones aumentan las fees y el tamaño de la blockchain para todos los usuarios."
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "¿Qué son los Ordinals en Bitcoin?",
+                  "options": [
+                    "Un tipo de minero especializado",
+                    "Un protocolo que permite inscribir datos en satoshis individuales",
+                    "Las reglas de consenso de Bitcoin",
+                    "Un exchange descentralizado"
+                  ],
+                  "answer": "Un protocolo que permite inscribir datos en satoshis individuales",
+                  "feedback": "Ordinals es un protocolo que asigna números de orden únicos a satoshis y permite inscribir datos (imágenes, texto, código) directamente en la blockchain de Bitcoin."
+                },
+                {
+                  "q": "¿Qué actualización de Bitcoin habilitó los Ordinals?",
+                  "options": [
+                    "SegWit",
+                    "Lightning Network",
+                    "Taproot",
+                    "SegWit2x"
+                  ],
+                  "answer": "Taproot",
+                  "feedback": "La actualización Taproot (2021) aumentó el límite de datos permitidos en transacciones Bitcoin, lo que luego fue aprovechado por el protocolo Ordinals."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Bitcoin a Nivel Experto: Macro, Custodia Institucional y el Futuro",
+      "image_unit_url": "https://news.bit2me.com/wp-content/uploads/2025/04/ETF-Bitcoin-696x398.jpg",
+      "lessons": [
+        {
+          "id": 25,
+          "title": "Bitcoin y la macroeconomía global",
+          "sections": [
+            {
+              "type": "explanation",
+              "title": "Bitcoin en el sistema financiero mundial",
+              "subtitle": "Inflación, deuda y el papel de Bitcoin",
+              "image_url": "https://www.criptonoticias.com/wp-content/uploads/2026/02/bitcoin-inflacion-precio-tasas.jpg",
+              "content": "Los bancos centrales del mundo han impreso cantidades masivas de dinero en la última década, especialmente post-2020. Esto ha generado inflación y devaluación de monedas fiat. Bitcoin, con su oferta fija de 21 millones y su política monetaria inmutable, se posiciona como alternativa al dinero inflacionario. Análisis como el 'Stock-to-Flow' modelan el precio de Bitcoin basándose en su escasez relativa. El debate económico entre bitcoiners keynesianos y austriacos refleja visiones opuestas sobre el dinero y la economía."
+            },
+            {
+              "type": "example",
+              "title": "El estándar Bitcoin: ¿una alternativa real?",
+              "subtitle": "Qué pasaría si Bitcoin fuera la reserva global",
+              "content": "El libro 'The Bitcoin Standard' de Saifedean Ammous argumenta que el retorno a un dinero de oferta fija (como fue el patrón oro) eliminaría los ciclos de boom-bust causados por la expansión crediticia. Los países con hiperinflación como Zimbabwe, Venezuela o Argentina son casos de estudio de qué pasa cuando un gobierno puede imprimir dinero sin límite. El Salvador adoptó Bitcoin como moneda de curso legal en 2021, siendo el primer país en hacerlo."
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "¿Qué país fue el primero en adoptar Bitcoin como moneda de curso legal?",
+                  "options": [
+                    "Estados Unidos",
+                    "Panamá",
+                    "El Salvador",
+                    "Argentina"
+                  ],
+                  "answer": "El Salvador",
+                  "feedback": "El Salvador, bajo el presidente Nayib Bukele, adoptó Bitcoin como moneda de curso legal en septiembre de 2021, siendo el primer país en hacerlo."
+                },
+                {
+                  "q": "¿Qué propone el modelo Stock-to-Flow para Bitcoin?",
+                  "options": [
+                    "Que Bitcoin bajará de precio con cada halving",
+                    "Que el precio de Bitcoin puede modelarse basándose en la ratio entre la oferta existente y la nueva producción",
+                    "Que Bitcoin es un activo de renta fija",
+                    "Que Bitcoin depende del precio del petróleo"
+                  ],
+                  "answer": "Que el precio de Bitcoin puede modelarse basándose en la ratio entre la oferta existente y la nueva producción",
+                  "feedback": "El modelo Stock-to-Flow (S2F) relaciona el precio de un activo escaso con la ratio entre el stock existente y el flujo de nueva producción. A mayor S2F, mayor escasez y teóricamente mayor precio."
+                },
+                {
+                  "q": "¿Por qué la oferta fija de Bitcoin es relevante ante la inflación?",
+                  "options": [
+                    "Porque Bitcoin sí puede inflarse si los mineros lo deciden",
+                    "Porque nadie puede crear más bitcoins más allá de los 21 millones programados",
+                    "Porque los gobiernos no pueden regular Bitcoin",
+                    "Porque Bitcoin está respaldado por el oro"
+                  ],
+                  "answer": "Porque nadie puede crear más bitcoins más allá de los 21 millones programados",
+                  "feedback": "La oferta de Bitcoin está fijada en el código: nunca existirán más de 21 millones. A diferencia del dinero fiat, ningún banco central puede 'imprimir' más bitcoins."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 26,
+          "title": "Custodia institucional y ETFs de Bitcoin",
+          "sections": [
+            {
+              "type": "explanation",
+              "title": "Wall Street y Bitcoin",
+              "subtitle": "ETFs, empresas con Bitcoin en balance y custodia institucional",
+              "image_url": "https://img.bgstatic.com/multiLang/image/social/d3a2fa878b477898f56ba24fac81fae61765539544237.webp",
+              "content": "En enero de 2024, la SEC aprobó los primeros ETFs de Bitcoin al contado en EE.UU. (BlackRock, Fidelity, etc.), abriendo Bitcoin a millones de inversores institucionales y minoristas que no quieren gestionar claves privadas. Empresas como MicroStrategy, Tesla y Square tienen Bitcoin en su balance corporativo. La custodia institucional requiere soluciones especiales: custodios regulados (Coinbase Custody, BitGo), seguros, auditorías y wallets multi-firma con procedimientos de seguridad estrictos."
+            },
+            {
+              "type": "example",
+              "title": "MicroStrategy: la empresa con más Bitcoin",
+              "subtitle": "Cómo una empresa usa Bitcoin como reserva de tesorería",
+              "content": "MicroStrategy (hoy Strategy), liderada por Michael Saylor, ha acumulado más de 400,000 BTC en su balance corporativo, convirtiéndose en la empresa con mayor tenencia de Bitcoin del mundo. Su tesis: Bitcoin es el mejor activo de reserva disponible, superior al dólar para preservar el valor a largo plazo. Esta estrategia ha transformado a MicroStrategy de una empresa de software mediocre en un vehículo de inversión en Bitcoin cotizado en bolsa."
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "¿Cuándo aprobó la SEC los primeros ETFs de Bitcoin al contado en EE.UU.?",
+                  "options": ["2017", "2020", "2022", "2024"],
+                  "answer": "2024",
+                  "feedback": "En enero de 2024, la SEC aprobó los primeros ETFs de Bitcoin spot en Estados Unidos, emitidos por gestoras como BlackRock y Fidelity."
+                },
+                {
+                  "q": "¿Qué ventaja ofrece un ETF de Bitcoin frente a comprar Bitcoin directamente?",
+                  "options": [
+                    "Más rentabilidad garantizada",
+                    "No necesitas gestionar claves privadas ni wallets; accedes a través de tu cuenta de inversión tradicional",
+                    "Elimina la volatilidad de Bitcoin",
+                    "Te da más Bitcoin por el mismo precio"
+                  ],
+                  "answer": "No necesitas gestionar claves privadas ni wallets; accedes a través de tu cuenta de inversión tradicional",
+                  "feedback": "Un ETF de Bitcoin permite exposición al precio de Bitcoin sin la complejidad técnica de las wallets y las claves privadas, accesible desde cuentas de corretaje tradicionales."
+                },
+                {
+                  "q": "¿Qué empresa liderada por Michael Saylor es conocida por acumular grandes cantidades de Bitcoin?",
+                  "options": [
+                    "Tesla",
+                    "Apple",
+                    "MicroStrategy (Strategy)",
+                    "BlackRock"
+                  ],
+                  "answer": "MicroStrategy (Strategy)",
+                  "feedback": "MicroStrategy, hoy renombrada Strategy, es la empresa cotizada con mayor tenencia de Bitcoin del mundo, con más de 400,000 BTC acumulados."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 27,
+          "title": "El futuro de Bitcoin",
+          "sections": [
+            {
+              "type": "explanation",
+              "title": "¿Hacia dónde va Bitcoin?",
+              "subtitle": "Desafíos técnicos, regulatorios y el largo plazo",
+              "image_url": "https://img.innovaciondigital360.com/wp-content/uploads/2025/05/19110021/Leyes-de-Inteligencia-Artificial.jpg",
+              "content": "El futuro de Bitcoin enfrenta varios desafíos y oportunidades: (1) Seguridad post-halving: cuando la recompensa sea mínima, ¿serán suficientes las comisiones para incentivar a los mineros? (2) Computación cuántica: ¿podrían los ordenadores cuánticos romper la criptografía de Bitcoin? (3) Regulación global: distintos países tienen enfoques muy diferentes. (4) Adopción masiva: Lightning Network y mejoras de UX pueden hacer Bitcoin accesible a miles de millones. (5) Bitcoin como activo de reserva estatal: cada vez más países estudian tener Bitcoin en sus reservas, como propuso EE.UU. en 2024."
+            },
+            {
+              "type": "example",
+              "title": "El problema de la seguridad post-recompensa",
+              "subtitle": "¿Qué pasa cuando no haya más halvings?",
+              "content": "Alrededor del año 2140, todos los 21 millones de Bitcoin habrán sido minados. Los mineros ya no recibirán recompensa por bloque; solo ganarán las comisiones de transacciones. Para que la red siga siendo segura, las comisiones totales deben ser suficientemente altas. Esto puede lograrse si: el precio de Bitcoin es muy alto, hay muchas transacciones (Lightning ayuda), o los usuarios pagan fees más altas. Es el mayor desafío de largo plazo para el diseño de Bitcoin."
+            },
+            {
+              "type": "quiz",
+              "questions": [
+                {
+                  "q": "¿Aproximadamente en qué año se minará el último Bitcoin?",
+                  "options": ["2050", "2100", "2140", "2200"],
+                  "answer": "2140",
+                  "feedback": "Debido al halving y la dificultad de minería, el último satoshi se minará aproximadamente en el año 2140, cuando la recompensa sea inferior a 1 satoshi."
+                },
+                {
+                  "q": "¿Por qué la computación cuántica podría ser una amenaza para Bitcoin?",
+                  "options": [
+                    "Porque puede minar Bitcoin más rápido",
+                    "Porque podría romper la criptografía de clave pública (curva elíptica) que protege las wallets",
+                    "Porque aumentaría las fees infinitamente",
+                    "Porque haría inútil el Proof of Work"
+                  ],
+                  "answer": "Porque podría romper la criptografía de clave pública (curva elíptica) que protege las wallets",
+                  "feedback": "Un ordenador cuántico suficientemente potente podría romper el algoritmo ECDSA de Bitcoin, derivando claves privadas a partir de claves públicas. La comunidad ya trabaja en soluciones post-cuánticas."
+                },
+                {
+                  "q": "¿Qué incentivo tendrán los mineros cuando ya no haya recompensa por bloque?",
+                  "options": [
+                    "Ninguno, la red dejará de funcionar",
+                    "Las comisiones (fees) de las transacciones incluidas en cada bloque",
+                    "Subsidios de los gobiernos",
+                    "Staking de Bitcoin"
+                  ],
+                  "answer": "Las comisiones (fees) de las transacciones incluidas en cada bloque",
+                  "feedback": "Cuando no haya recompensa de bloque (alrededor de 2140), los mineros se sostendrán exclusivamente con las comisiones de transacciones. Es crucial que estas sean suficientemente altas para mantener la seguridad de la red."
+                },
+                {
+                  "q": "¿Qué evento sin precedentes ocurrió en EE.UU. en 2024 respecto a Bitcoin?",
+                  "options": [
+                    "Bitcoin fue declarado ilegal",
+                    "Se aprobaron los primeros ETFs de Bitcoin spot y hubo propuestas de reserva estratégica de Bitcoin",
+                    "El gobierno minó el 50% del hashrate",
+                    "Bitcoin superó el millón de dólares"
+                  ],
+                  "answer": "Se aprobaron los primeros ETFs de Bitcoin spot y hubo propuestas de reserva estratégica de Bitcoin",
+                  "feedback": "En 2024, la SEC aprobó los ETFs de Bitcoin spot y surgieron propuestas legislativas para incluir Bitcoin en las reservas estratégicas del gobierno de EE.UU., marcando una nueva era de adopción institucional."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

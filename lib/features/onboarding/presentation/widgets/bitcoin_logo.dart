@@ -25,7 +25,6 @@ class BitcoinLogo extends StatelessWidget {
             ),
           ),
 
-          ///Glow / resplandor
           /// Glow / resplandor
           Container(
             width: 180,
@@ -34,7 +33,7 @@ class BitcoinLogo extends StatelessWidget {
               shape: BoxShape.circle,
               boxShadow: [
                 BoxShadow(
-                  color: AppColors.primaryAmber.withValues(alpha: 0.10),
+                  color: AppColors.primaryAmber.withValues(alpha: 0.8),
                   blurRadius: 60,
                   spreadRadius: 0,
                 ),
